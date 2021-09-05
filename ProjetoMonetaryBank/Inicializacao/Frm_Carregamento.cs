@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoMonetaryBank.Inicializacao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,12 +30,14 @@ namespace ProjetoMonetaryBank
         private void Trm_Carregamento_Tick(object sender, EventArgs e)
         {
             contador++;
-            if(contador == 9)
+            if(contador == 5)
             {
                 Trm_Carregamento.Stop();
+                Frm_Login login = new Frm_Login();
+                login.ShowDialog();
                 this.Close();
-
             }
+            
         }
 
         private void Frm_Carregamento_Load(object sender, EventArgs e)
@@ -46,5 +49,7 @@ namespace ProjetoMonetaryBank
         {
 
         }
+
+ 
     }
 }
