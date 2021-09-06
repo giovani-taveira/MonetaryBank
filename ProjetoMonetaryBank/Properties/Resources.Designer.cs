@@ -83,9 +83,29 @@ namespace ProjetoMonetaryBank.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
+        internal static System.Drawing.Icon ico_login {
+            get {
+                object obj = ResourceManager.GetObject("ico_login", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
         internal static System.Drawing.Icon ico_saque {
             get {
                 object obj = ResourceManager.GetObject("ico_saque", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        internal static System.Drawing.Icon ico_senha {
+            get {
+                object obj = ResourceManager.GetObject("ico_senha", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -127,6 +147,16 @@ namespace ProjetoMonetaryBank.Properties {
             get {
                 object obj = ResourceManager.GetObject("icon_transferencia", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_senha {
+            get {
+                object obj = ResourceManager.GetObject("img_senha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

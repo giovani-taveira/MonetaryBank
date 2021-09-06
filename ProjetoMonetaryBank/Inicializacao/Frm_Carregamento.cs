@@ -20,36 +20,28 @@ namespace ProjetoMonetaryBank
             InitializeComponent();
             Prb_Progress.MarqueeAnimationSpeed = 20;
             this.Text = "Monetary Bank";
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
+            Lbl_Mensagem.Text = "Seja Bem Vindo!";
+            Lbl_Loading.Text = "Aguarde um instante...";
+            Cursor = Cursors.WaitCursor;
         }
 
         private void Trm_Carregamento_Tick(object sender, EventArgs e)
         {
             contador++;
-            if(contador == 5)
+            if(contador == 1)
             {
-                Trm_Carregamento.Stop();
-                Frm_Login login = new Frm_Login();
-                login.ShowDialog();
-                this.Close();
+                try
+                {
+                    Trm_Carregamento.Stop();
+                    this.Hide();
+                    Frm_Login login = new Frm_Login();
+                    login.ShowDialog();
+                }
+                finally
+                {
+                    this.Close();
+                }
             }
-            
         }
-
-        private void Frm_Carregamento_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
- 
     }
 }
