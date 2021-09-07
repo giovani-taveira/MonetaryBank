@@ -12,7 +12,8 @@ namespace ProjetoMonetaryBank.Inicializacao
     {
         public class Unit
         {
-            
+            //............Frm_Cadastro.................
+            //Dados Pessoais
             [Required(ErrorMessage = "Nome é obrigatório.")]
             [StringLength(50, ErrorMessage = "Nome  deve ter no máximo 50 caracteres.")]
             public string Nome { get; set; }
@@ -20,7 +21,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             [StringLength(50, ErrorMessage = "Nome do Pai deve ter no máximo 50 caracteres.")]
             public string NomePai { get; set; }
 
-            
             [StringLength(50, ErrorMessage = "Nome da Mãe deve ter no máximo 50 caracteres.")]
             public string NomeMae { get; set; }
 
@@ -28,7 +28,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             public bool TemPai { get; set; }
 
             [Required(ErrorMessage = "CPF obrigatório.")]
-            //[RegularExpression("([0-9]+)" + "." + "-", ErrorMessage = "CPF somente aceita valores numéricos.")]
             [StringLength(14, MinimumLength = 14, ErrorMessage = "CPF deve ter 11 dígitos.")]
             public string CPF { get; set; }
 
@@ -36,15 +35,21 @@ namespace ProjetoMonetaryBank.Inicializacao
             [StringLength(12, MinimumLength = 12, ErrorMessage = "O RG deve ter 9 dígitos.")]
             public string RG { get; set; }
 
+            [Required(ErrorMessage = "A Data de Nascimento é obrigatória.")]
+            [StringLength(12, MinimumLength = 12, ErrorMessage = "A Data de nascimento deve ter 8 dígitos")]
+            public string DataDeNascimento { get; set; }
+
             [Required(ErrorMessage = "Sexo obrigatório.")]
             public int Sexo { get; set; }
 
+
+            //Endereço
             [Required(ErrorMessage = "CEP obrigatório.")]
-            //[StringLength(8, MinimumLength = 8, ErrorMessage = "CEP deve ter 8 dígitos.")]
+            [StringLength(9, MinimumLength = 9, ErrorMessage = "O CEP deve ter 8 dígitos.")]
             public string CEP { get; set; }
 
             [Required(ErrorMessage = "A Rua é obrigatório.")]
-            [StringLength(100, ErrorMessage = "Logradouro deve ter no máximo 100 caracteres.")]
+            [StringLength(100, ErrorMessage = "A Rua deve ter no máximo 100 caracteres.")]
             public string Rua { get; set; }
 
             [Required(ErrorMessage = "Complemento é obrigatório.")]
@@ -60,22 +65,30 @@ namespace ProjetoMonetaryBank.Inicializacao
             public string Cidade { get; set; }
 
             [Required(ErrorMessage = "Estado é obrigatório.")]
-            [StringLength(50, ErrorMessage = "Estado deve ter no máximo 50 caracteres.")]
             public string Estado { get; set; }
 
             [Required(ErrorMessage = "Número do telefone é obrigatório.")]
-
-            //[StringLength(12, MinimumLength = 12, ErrorMessage = "CEP deve ter 8 dígitos.")]
+            [StringLength(14, MinimumLength = 14, ErrorMessage = "O telefone deve ter 9 dígitos.")]
             public string Telefone1 { get; set; }
 
-            //[RegularExpression("([0-9]+)", ErrorMessage = "Número do telefone somente aceita valores numéricos.")]
-            public string Telefone2 { get; set; }
 
+            //Profissão
+            [Required(ErrorMessage = "Campo Profissão é obrigatório")]
+            [StringLength(100, ErrorMessage = "Complemento deve ter no máximo 100 caracteres.")]
             public string Profissao { get; set; }
 
             [Required(ErrorMessage = "Renda é obrigatória.")]
             [Range(0, double.MaxValue, ErrorMessage = "Renda deve ser um valor positivo.")]
             public Double Renda { get; set; }
+
+            //........................Frm_CriaSenha.............................
+
+            [Required(ErrorMessage = "A Senha é obrigatória")]
+            public string Senha { get; set; }
+
+            [Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
+            public string SenhaConfirma { get; set; }
+
 
             public void ValidaClasse()
             {

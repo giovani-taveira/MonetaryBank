@@ -1,3 +1,5 @@
+using ProjetoMonetaryBank.Inicializacao;
+using ProjetoMonetaryBank.Principal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,7 @@ namespace ProjetoMonetaryBank
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Carregamento());
+            Application.Run(new Frm_Principal());
         }
     }
 }

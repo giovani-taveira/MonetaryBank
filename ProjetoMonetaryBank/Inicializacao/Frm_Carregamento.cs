@@ -28,7 +28,7 @@ namespace ProjetoMonetaryBank
         private void Trm_Carregamento_Tick(object sender, EventArgs e)
         {
             contador++;
-            if(contador == 1)
+            if(contador == 6)
             {
                 try
                 {

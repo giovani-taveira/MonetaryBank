@@ -37,9 +37,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_Email = new System.Windows.Forms.Label();
             this.Txt_Email = new System.Windows.Forms.TextBox();
             this.Lbl_Telefone1 = new System.Windows.Forms.Label();
-            this.Lbl_Telefone2 = new System.Windows.Forms.Label();
             this.Msk_Telefone1 = new System.Windows.Forms.MaskedTextBox();
-            this.Msk_Telefone2 = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_Nascimento = new System.Windows.Forms.Label();
             this.Msk_RG = new System.Windows.Forms.MaskedTextBox();
             this.Msk_CPF = new System.Windows.Forms.MaskedTextBox();
@@ -93,26 +91,24 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Txt_NomePai
             // 
-            this.Txt_NomePai.Location = new System.Drawing.Point(7, 331);
+            this.Txt_NomePai.Location = new System.Drawing.Point(5, 261);
             this.Txt_NomePai.Name = "Txt_NomePai";
             this.Txt_NomePai.Size = new System.Drawing.Size(400, 23);
-            this.Txt_NomePai.TabIndex = 10;
+            this.Txt_NomePai.TabIndex = 12;
             // 
             // Txt_NomeMae
             // 
-            this.Txt_NomeMae.Location = new System.Drawing.Point(8, 287);
+            this.Txt_NomeMae.Location = new System.Drawing.Point(5, 192);
             this.Txt_NomeMae.Name = "Txt_NomeMae";
             this.Txt_NomeMae.Size = new System.Drawing.Size(399, 23);
-            this.Txt_NomeMae.TabIndex = 7;
+            this.Txt_NomeMae.TabIndex = 9;
             // 
             // Grp_DadosPessoais
             // 
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_Email);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_Email);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_Telefone1);
-            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Telefone2);
             this.Grp_DadosPessoais.Controls.Add(this.Msk_Telefone1);
-            this.Grp_DadosPessoais.Controls.Add(this.Msk_Telefone2);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_Nascimento);
             this.Grp_DadosPessoais.Controls.Add(this.Msk_RG);
             this.Grp_DadosPessoais.Controls.Add(this.Msk_CPF);
@@ -133,7 +129,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Grp_DadosPessoais.Controls.Add(this.Txt_NomeMae);
             this.Grp_DadosPessoais.Location = new System.Drawing.Point(12, 12);
             this.Grp_DadosPessoais.Name = "Grp_DadosPessoais";
-            this.Grp_DadosPessoais.Size = new System.Drawing.Size(629, 360);
+            this.Grp_DadosPessoais.Size = new System.Drawing.Size(629, 313);
             this.Grp_DadosPessoais.TabIndex = 4;
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
@@ -141,7 +137,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Email
             // 
             this.Lbl_Email.AutoSize = true;
-            this.Lbl_Email.Location = new System.Drawing.Point(7, 225);
+            this.Lbl_Email.Location = new System.Drawing.Point(6, 126);
             this.Lbl_Email.Name = "Lbl_Email";
             this.Lbl_Email.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Email.TabIndex = 13;
@@ -149,50 +145,33 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Txt_Email
             // 
-            this.Txt_Email.Location = new System.Drawing.Point(8, 243);
+            this.Txt_Email.Location = new System.Drawing.Point(6, 144);
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(399, 23);
-            this.Txt_Email.TabIndex = 12;
+            this.Txt_Email.TabIndex = 7;
             this.Txt_Email.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // Lbl_Telefone1
             // 
             this.Lbl_Telefone1.AutoSize = true;
-            this.Lbl_Telefone1.Location = new System.Drawing.Point(10, 181);
+            this.Lbl_Telefone1.Location = new System.Drawing.Point(425, 174);
             this.Lbl_Telefone1.Name = "Lbl_Telefone1";
             this.Lbl_Telefone1.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Telefone1.TabIndex = 0;
             this.Lbl_Telefone1.Text = "label18";
             // 
-            // Lbl_Telefone2
-            // 
-            this.Lbl_Telefone2.AutoSize = true;
-            this.Lbl_Telefone2.Location = new System.Drawing.Point(212, 181);
-            this.Lbl_Telefone2.Name = "Lbl_Telefone2";
-            this.Lbl_Telefone2.Size = new System.Drawing.Size(44, 15);
-            this.Lbl_Telefone2.TabIndex = 0;
-            this.Lbl_Telefone2.Text = "label17";
-            // 
             // Msk_Telefone1
             // 
-            this.Msk_Telefone1.Location = new System.Drawing.Point(7, 199);
+            this.Msk_Telefone1.Location = new System.Drawing.Point(424, 192);
             this.Msk_Telefone1.Mask = "(00)90000-0000";
             this.Msk_Telefone1.Name = "Msk_Telefone1";
-            this.Msk_Telefone1.Size = new System.Drawing.Size(181, 23);
+            this.Msk_Telefone1.Size = new System.Drawing.Size(199, 23);
             this.Msk_Telefone1.TabIndex = 11;
-            // 
-            // Msk_Telefone2
-            // 
-            this.Msk_Telefone2.Location = new System.Drawing.Point(207, 199);
-            this.Msk_Telefone2.Mask = "(00)90000-0000";
-            this.Msk_Telefone2.Name = "Msk_Telefone2";
-            this.Msk_Telefone2.Size = new System.Drawing.Size(200, 23);
-            this.Msk_Telefone2.TabIndex = 9;
             // 
             // Lbl_Nascimento
             // 
             this.Lbl_Nascimento.AutoSize = true;
-            this.Lbl_Nascimento.Location = new System.Drawing.Point(10, 128);
+            this.Lbl_Nascimento.Location = new System.Drawing.Point(424, 126);
             this.Lbl_Nascimento.Name = "Lbl_Nascimento";
             this.Lbl_Nascimento.Size = new System.Drawing.Size(38, 15);
             this.Lbl_Nascimento.TabIndex = 0;
@@ -216,10 +195,10 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Msk_DataNascimento
             // 
-            this.Msk_DataNascimento.Location = new System.Drawing.Point(8, 146);
+            this.Msk_DataNascimento.Location = new System.Drawing.Point(424, 144);
             this.Msk_DataNascimento.Mask = "00/00/0000";
             this.Msk_DataNascimento.Name = "Msk_DataNascimento";
-            this.Msk_DataNascimento.Size = new System.Drawing.Size(399, 23);
+            this.Msk_DataNascimento.Size = new System.Drawing.Size(199, 23);
             this.Msk_DataNascimento.TabIndex = 8;
             this.Msk_DataNascimento.ValidatingType = typeof(System.DateTime);
             this.Msk_DataNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
@@ -227,10 +206,10 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Chk_TemPai
             // 
             this.Chk_TemPai.AutoSize = true;
-            this.Chk_TemPai.Location = new System.Drawing.Point(424, 333);
+            this.Chk_TemPai.Location = new System.Drawing.Point(6, 290);
             this.Chk_TemPai.Name = "Chk_TemPai";
             this.Chk_TemPai.Size = new System.Drawing.Size(83, 19);
-            this.Chk_TemPai.TabIndex = 0;
+            this.Chk_TemPai.TabIndex = 13;
             this.Chk_TemPai.Text = "checkBox2";
             this.Chk_TemPai.UseVisualStyleBackColor = true;
             this.Chk_TemPai.CheckedChanged += new System.EventHandler(this.Chk_TemPai_CheckedChanged);
@@ -238,10 +217,10 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Chk_TemMae
             // 
             this.Chk_TemMae.AutoSize = true;
-            this.Chk_TemMae.Location = new System.Drawing.Point(424, 289);
+            this.Chk_TemMae.Location = new System.Drawing.Point(6, 221);
             this.Chk_TemMae.Name = "Chk_TemMae";
             this.Chk_TemMae.Size = new System.Drawing.Size(83, 19);
-            this.Chk_TemMae.TabIndex = 0;
+            this.Chk_TemMae.TabIndex = 10;
             this.Chk_TemMae.Text = "checkBox1";
             this.Chk_TemMae.UseVisualStyleBackColor = true;
             this.Chk_TemMae.CheckedChanged += new System.EventHandler(this.Chk_TemMae_CheckedChanged);
@@ -258,7 +237,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_NomePai
             // 
             this.Lbl_NomePai.AutoSize = true;
-            this.Lbl_NomePai.Location = new System.Drawing.Point(7, 313);
+            this.Lbl_NomePai.Location = new System.Drawing.Point(5, 243);
             this.Lbl_NomePai.Name = "Lbl_NomePai";
             this.Lbl_NomePai.Size = new System.Drawing.Size(38, 15);
             this.Lbl_NomePai.TabIndex = 0;
@@ -267,7 +246,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_NomeMae
             // 
             this.Lbl_NomeMae.AutoSize = true;
-            this.Lbl_NomeMae.Location = new System.Drawing.Point(5, 269);
+            this.Lbl_NomeMae.Location = new System.Drawing.Point(5, 174);
             this.Lbl_NomeMae.Name = "Lbl_NomeMae";
             this.Lbl_NomeMae.Size = new System.Drawing.Size(38, 15);
             this.Lbl_NomeMae.TabIndex = 0;
@@ -350,9 +329,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Grp_Endereco.Controls.Add(this.Txt_Complemento);
             this.Grp_Endereco.Controls.Add(this.Txt_Numero);
             this.Grp_Endereco.Controls.Add(this.Txt_Rua);
-            this.Grp_Endereco.Location = new System.Drawing.Point(12, 378);
+            this.Grp_Endereco.Location = new System.Drawing.Point(12, 331);
             this.Grp_Endereco.Name = "Grp_Endereco";
-            this.Grp_Endereco.Size = new System.Drawing.Size(629, 202);
+            this.Grp_Endereco.Size = new System.Drawing.Size(629, 185);
             this.Grp_Endereco.TabIndex = 5;
             this.Grp_Endereco.TabStop = false;
             this.Grp_Endereco.Text = "groupBox2";
@@ -360,7 +339,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Bairro
             // 
             this.Lbl_Bairro.AutoSize = true;
-            this.Lbl_Bairro.Location = new System.Drawing.Point(8, 139);
+            this.Lbl_Bairro.Location = new System.Drawing.Point(5, 130);
             this.Lbl_Bairro.Name = "Lbl_Bairro";
             this.Lbl_Bairro.Size = new System.Drawing.Size(38, 15);
             this.Lbl_Bairro.TabIndex = 19;
@@ -368,7 +347,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Txt_Bairro
             // 
-            this.Txt_Bairro.Location = new System.Drawing.Point(7, 157);
+            this.Txt_Bairro.Location = new System.Drawing.Point(5, 148);
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(176, 23);
             this.Txt_Bairro.TabIndex = 18;
@@ -376,7 +355,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Estado
             // 
             this.Lbl_Estado.AutoSize = true;
-            this.Lbl_Estado.Location = new System.Drawing.Point(519, 136);
+            this.Lbl_Estado.Location = new System.Drawing.Point(516, 130);
             this.Lbl_Estado.Name = "Lbl_Estado";
             this.Lbl_Estado.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Estado.TabIndex = 0;
@@ -385,7 +364,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Cidade
             // 
             this.Lbl_Cidade.AutoSize = true;
-            this.Lbl_Cidade.Location = new System.Drawing.Point(207, 139);
+            this.Lbl_Cidade.Location = new System.Drawing.Point(207, 130);
             this.Lbl_Cidade.Name = "Lbl_Cidade";
             this.Lbl_Cidade.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Cidade.TabIndex = 0;
@@ -394,7 +373,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Complemento
             // 
             this.Lbl_Complemento.AutoSize = true;
-            this.Lbl_Complemento.Location = new System.Drawing.Point(207, 80);
+            this.Lbl_Complemento.Location = new System.Drawing.Point(207, 77);
             this.Lbl_Complemento.Name = "Lbl_Complemento";
             this.Lbl_Complemento.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Complemento.TabIndex = 0;
@@ -403,7 +382,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Numero
             // 
             this.Lbl_Numero.AutoSize = true;
-            this.Lbl_Numero.Location = new System.Drawing.Point(12, 81);
+            this.Lbl_Numero.Location = new System.Drawing.Point(5, 77);
             this.Lbl_Numero.Name = "Lbl_Numero";
             this.Lbl_Numero.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Numero.TabIndex = 0;
@@ -421,7 +400,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_CEP
             // 
             this.Lbl_CEP.AutoSize = true;
-            this.Lbl_CEP.Location = new System.Drawing.Point(12, 28);
+            this.Lbl_CEP.Location = new System.Drawing.Point(6, 28);
             this.Lbl_CEP.Name = "Lbl_CEP";
             this.Lbl_CEP.Size = new System.Drawing.Size(38, 15);
             this.Lbl_CEP.TabIndex = 0;
@@ -429,47 +408,47 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Msk_CEP
             // 
-            this.Msk_CEP.Location = new System.Drawing.Point(7, 46);
+            this.Msk_CEP.Location = new System.Drawing.Point(5, 46);
             this.Msk_CEP.Mask = "00000-000";
             this.Msk_CEP.Name = "Msk_CEP";
             this.Msk_CEP.Size = new System.Drawing.Size(176, 23);
-            this.Msk_CEP.TabIndex = 12;
+            this.Msk_CEP.TabIndex = 14;
             // 
             // Cmb_Estados
             // 
             this.Cmb_Estados.FormattingEnabled = true;
-            this.Cmb_Estados.Location = new System.Drawing.Point(516, 157);
+            this.Cmb_Estados.Location = new System.Drawing.Point(516, 148);
             this.Cmb_Estados.Name = "Cmb_Estados";
             this.Cmb_Estados.Size = new System.Drawing.Size(107, 23);
-            this.Cmb_Estados.TabIndex = 17;
+            this.Cmb_Estados.TabIndex = 20;
             // 
             // Txt_Cidade
             // 
-            this.Txt_Cidade.Location = new System.Drawing.Point(207, 157);
+            this.Txt_Cidade.Location = new System.Drawing.Point(207, 148);
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(300, 23);
-            this.Txt_Cidade.TabIndex = 16;
+            this.Txt_Cidade.TabIndex = 19;
             // 
             // Txt_Complemento
             // 
-            this.Txt_Complemento.Location = new System.Drawing.Point(207, 99);
+            this.Txt_Complemento.Location = new System.Drawing.Point(207, 95);
             this.Txt_Complemento.Name = "Txt_Complemento";
             this.Txt_Complemento.Size = new System.Drawing.Size(416, 23);
-            this.Txt_Complemento.TabIndex = 15;
+            this.Txt_Complemento.TabIndex = 17;
             // 
             // Txt_Numero
             // 
-            this.Txt_Numero.Location = new System.Drawing.Point(7, 99);
+            this.Txt_Numero.Location = new System.Drawing.Point(5, 95);
             this.Txt_Numero.Name = "Txt_Numero";
             this.Txt_Numero.Size = new System.Drawing.Size(176, 23);
-            this.Txt_Numero.TabIndex = 14;
+            this.Txt_Numero.TabIndex = 16;
             // 
             // Txt_Rua
             // 
             this.Txt_Rua.Location = new System.Drawing.Point(207, 46);
             this.Txt_Rua.Name = "Txt_Rua";
             this.Txt_Rua.Size = new System.Drawing.Size(416, 23);
-            this.Txt_Rua.TabIndex = 13;
+            this.Txt_Rua.TabIndex = 15;
             // 
             // Grp_Profissao
             // 
@@ -479,9 +458,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Grp_Profissao.Controls.Add(this.Txt_Renda);
             this.Grp_Profissao.Controls.Add(this.Txt_Profissao);
             this.Grp_Profissao.Controls.Add(this.Txt_Carteira);
-            this.Grp_Profissao.Location = new System.Drawing.Point(12, 586);
+            this.Grp_Profissao.Location = new System.Drawing.Point(12, 522);
             this.Grp_Profissao.Name = "Grp_Profissao";
-            this.Grp_Profissao.Size = new System.Drawing.Size(634, 127);
+            this.Grp_Profissao.Size = new System.Drawing.Size(629, 127);
             this.Grp_Profissao.TabIndex = 6;
             this.Grp_Profissao.TabStop = false;
             this.Grp_Profissao.Text = "groupBox3";
@@ -489,7 +468,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Renda
             // 
             this.Lbl_Renda.AutoSize = true;
-            this.Lbl_Renda.Location = new System.Drawing.Point(13, 67);
+            this.Lbl_Renda.Location = new System.Drawing.Point(6, 70);
             this.Lbl_Renda.Name = "Lbl_Renda";
             this.Lbl_Renda.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Renda.TabIndex = 0;
@@ -515,28 +494,28 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Txt_Renda
             // 
-            this.Txt_Renda.Location = new System.Drawing.Point(7, 85);
+            this.Txt_Renda.Location = new System.Drawing.Point(5, 88);
             this.Txt_Renda.Name = "Txt_Renda";
             this.Txt_Renda.Size = new System.Drawing.Size(180, 23);
-            this.Txt_Renda.TabIndex = 20;
+            this.Txt_Renda.TabIndex = 23;
             // 
             // Txt_Profissao
             // 
             this.Txt_Profissao.Location = new System.Drawing.Point(207, 41);
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(416, 23);
-            this.Txt_Profissao.TabIndex = 19;
+            this.Txt_Profissao.TabIndex = 22;
             // 
             // Txt_Carteira
             // 
-            this.Txt_Carteira.Location = new System.Drawing.Point(7, 41);
+            this.Txt_Carteira.Location = new System.Drawing.Point(5, 41);
             this.Txt_Carteira.Name = "Txt_Carteira";
             this.Txt_Carteira.Size = new System.Drawing.Size(181, 23);
-            this.Txt_Carteira.TabIndex = 18;
+            this.Txt_Carteira.TabIndex = 21;
             // 
             // Btn_Continuar
             // 
-            this.Btn_Continuar.Location = new System.Drawing.Point(514, 740);
+            this.Btn_Continuar.Location = new System.Drawing.Point(511, 655);
             this.Btn_Continuar.Name = "Btn_Continuar";
             this.Btn_Continuar.Size = new System.Drawing.Size(130, 40);
             this.Btn_Continuar.TabIndex = 7;
@@ -548,7 +527,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Btn_Cancelar
             // 
-            this.Btn_Cancelar.Location = new System.Drawing.Point(17, 740);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(12, 655);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(130, 40);
             this.Btn_Cancelar.TabIndex = 8;
@@ -562,7 +541,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 792);
+            this.ClientSize = new System.Drawing.Size(656, 710);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Continuar);
             this.Controls.Add(this.Grp_Profissao);
@@ -625,12 +604,10 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.Button Btn_Continuar;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.MaskedTextBox Msk_Telefone1;
-        private System.Windows.Forms.MaskedTextBox Msk_Telefone2;
         private System.Windows.Forms.Label Lbl_Renda;
         private System.Windows.Forms.Label Lbl_Profissao;
         private System.Windows.Forms.Label Lbl_Carteira;
         private System.Windows.Forms.Label Lbl_Telefone1;
-        private System.Windows.Forms.Label Lbl_Telefone2;
         private System.Windows.Forms.Label Lbl_Email;
         private System.Windows.Forms.TextBox Txt_Email;
         private System.Windows.Forms.Label Lbl_Bairro;

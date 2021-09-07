@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoMonetaryBank.Inicializacao
 {
-    partial class Frm_CriaSenhacs
+    partial class Frm_CriaSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace ProjetoMonetaryBank.Inicializacao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CriaSenhacs));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CriaSenha));
             this.Txt_CPF = new System.Windows.Forms.TextBox();
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Lbl_CPF = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Txt_CPF
             // 
-            this.Txt_CPF.Location = new System.Drawing.Point(179, 46);
+            this.Txt_CPF.Location = new System.Drawing.Point(179, 55);
             this.Txt_CPF.Name = "Txt_CPF";
             this.Txt_CPF.Size = new System.Drawing.Size(246, 23);
             this.Txt_CPF.TabIndex = 0;
@@ -72,7 +72,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Senha.Location = new System.Drawing.Point(179, 99);
             this.Txt_Senha.Name = "Txt_Senha";
             this.Txt_Senha.Size = new System.Drawing.Size(246, 23);
-            this.Txt_Senha.TabIndex = 3;
+            this.Txt_Senha.TabIndex = 1;
             // 
             // Lbl_SenhaConfirma
             // 
@@ -89,7 +89,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_SenhaConfirma.Location = new System.Drawing.Point(179, 152);
             this.Txt_SenhaConfirma.Name = "Txt_SenhaConfirma";
             this.Txt_SenhaConfirma.Size = new System.Drawing.Size(246, 23);
-            this.Txt_SenhaConfirma.TabIndex = 5;
+            this.Txt_SenhaConfirma.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -106,16 +106,17 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Finalizar.Location = new System.Drawing.Point(325, 203);
             this.Btn_Finalizar.Name = "Btn_Finalizar";
             this.Btn_Finalizar.Size = new System.Drawing.Size(99, 35);
-            this.Btn_Finalizar.TabIndex = 7;
+            this.Btn_Finalizar.TabIndex = 3;
             this.Btn_Finalizar.Text = "button1";
             this.Btn_Finalizar.UseVisualStyleBackColor = true;
+            this.Btn_Finalizar.Click += new System.EventHandler(this.Btn_Finalizar_Click);
             // 
             // Btn_Voltar
             // 
             this.Btn_Voltar.Location = new System.Drawing.Point(33, 203);
             this.Btn_Voltar.Name = "Btn_Voltar";
             this.Btn_Voltar.Size = new System.Drawing.Size(99, 35);
-            this.Btn_Voltar.TabIndex = 8;
+            this.Btn_Voltar.TabIndex = 4;
             this.Btn_Voltar.Text = "button2";
             this.Btn_Voltar.UseVisualStyleBackColor = true;
             this.Btn_Voltar.Click += new System.EventHandler(this.Btn_Voltar_Click);

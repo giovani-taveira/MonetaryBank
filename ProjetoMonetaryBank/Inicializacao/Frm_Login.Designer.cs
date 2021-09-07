@@ -68,7 +68,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Continuar.Location = new System.Drawing.Point(84, 398);
             this.Btn_Continuar.Name = "Btn_Continuar";
             this.Btn_Continuar.Size = new System.Drawing.Size(200, 40);
-            this.Btn_Continuar.TabIndex = 3;
+            this.Btn_Continuar.TabIndex = 4;
             this.Btn_Continuar.Text = "button1";
             this.Btn_Continuar.UseVisualStyleBackColor = true;
             this.Btn_Continuar.MouseLeave += new System.EventHandler(this.Btn_Continuar_MouseLeave);
@@ -98,7 +98,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_Cadastro.Location = new System.Drawing.Point(33, 354);
             this.Lbl_Cadastro.Name = "Lbl_Cadastro";
             this.Lbl_Cadastro.Size = new System.Drawing.Size(38, 15);
-            this.Lbl_Cadastro.TabIndex = 6;
+            this.Lbl_Cadastro.TabIndex = 3;
             this.Lbl_Cadastro.Text = "label3";
             this.Lbl_Cadastro.Click += new System.EventHandler(this.Lbl_Cadastro_Click);
             this.Lbl_Cadastro.MouseLeave += new System.EventHandler(this.Lbl_Cadastro_MouseLeave);

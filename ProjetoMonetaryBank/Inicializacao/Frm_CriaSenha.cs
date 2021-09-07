@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoMonetaryBank.Inicializacao
 {
-    public partial class Frm_CriaSenhacs : Form
+    public partial class Frm_CriaSenha : Form
     {
-        public Frm_CriaSenhacs()
+        public Frm_CriaSenha()
         {
             InitializeComponent();
             Lbl_CPF.Text = "CPF";
@@ -40,6 +40,38 @@ namespace ProjetoMonetaryBank.Inicializacao
             {
                 this.Close();
             }
+        }
+
+        Validacoes.Unit ValidaSenha()
+        {
+            Validacoes.Unit C = new Validacoes.Unit();
+            C.Senha = Txt_Senha.Text;
+            C.SenhaConfirma = Txt_SenhaConfirma.Text;
+            return C;
+        }
+
+        private void Btn_Finalizar_Click(object sender, EventArgs e)
+        {
+
+            if(Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
+            {
+                try
+                {
+                    this.Hide();
+                    Frm_Login f = new Frm_Login();
+                    f.ShowDialog();
+                }
+                finally
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show( "As Senhas devem ser iguais!");
+            }
+
+           
         }
     }
 }

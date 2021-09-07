@@ -29,7 +29,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             Lbl_RG.Text = "RG";
             Lbl_Nascimento.Text = "Data de Nascimento";
             Lbl_Telefone1.Text = "Telefone 1";
-            Lbl_Telefone2.Text = "Telefone 2";
             Lbl_Email.Text = "Email";
             Lbl_NomeMae.Text = "Nome da Mãe";
             Chk_TemMae.Text = "Não Consta";
@@ -166,7 +165,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 try
                 {
                     this.Hide();
-                    Frm_CriaSenhacs f = new Frm_CriaSenhacs();
+                    Frm_CriaSenha f = new Frm_CriaSenha();
                     f.ShowDialog();
                 }
                 finally
@@ -225,7 +224,6 @@ namespace ProjetoMonetaryBank.Inicializacao
                 }
 
                 C.Telefone1 = Msk_Telefone1.Text;
-                C.Telefone2 = Msk_Telefone2.Text;
                 C.Profissao = Txt_Profissao.Text;
 
                 if (Information.IsNumeric(Txt_Renda.Text))
