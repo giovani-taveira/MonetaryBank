@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using ProjetoMonetaryBank.Inicializacao;
+using System.Data.SqlClient;
+
 
 namespace ProjetoMonetaryBank.Inicializacao
 {
@@ -50,6 +52,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             Btn_Continuar.Text = "Continuar";
             Lbl_Bairro.Text = "Bairro";
 
+
             //Estados do combo box
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
@@ -79,24 +82,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             Cmb_Estados.Items.Add("São Paulo(SP)");
             Cmb_Estados.Items.Add("Sergipe(SE)");
             Cmb_Estados.Items.Add("Tocantins(TO)");
-
         }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void textBox11_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             try
@@ -136,6 +122,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             if (Chk_TemMae.Checked == true)
             {
                 Txt_NomeMae.Enabled = false;
+                Txt_NomeMae.Text = "";
             }
             else
             {
@@ -148,6 +135,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             if (Chk_TemPai.Checked == true)
             {
                 Txt_NomePai.Enabled = false;
+                Txt_NomePai.Text = "";
             }
             else
             {
@@ -157,35 +145,117 @@ namespace ProjetoMonetaryBank.Inicializacao
 
         public  void Btn_Continuar_Click(object sender, EventArgs e)
         {
+            //String de conexão
+             SqlConnection connect = new SqlConnection("Data Source=DESKTOP-S261MAM;Initial Catalog=MonetaryBank;Integrated Security=True");
+
+            //comando de inserção de dados no banco
+            string sql = "INSERT INTO Cliente(CPF, NumeroConta, Nome, Sexo, RG, Email, Nascimento, Telefone, NomeMae, NaoConstaMae, " +
+                "NomePai, NaoConstaPai, CEP, Rua, Numero, Complemento, Bairro, Cidade, Estado, Carteira, Profissao, Renda)" +
+                "VALUES (@CPF, @NumeroCOnta, @Nome, @Sexo, @RG, @Email, @Nascimento, @Telefone, @NomeMae, @NaoConstaMae, " +
+                "@NomePai, @NaoConstaPai, @CEP, @Rua, @Numero, @Complemento, @Bairro, @Cidade, @Estado, @Carteira, @Profissao, @Renda)";
+
+            string sql2 = "INSERT INTO LoginTable(CPF) VALUES (@CPF)";
+
+            Random NumeroConta = new Random();
+            NumeroConta.Next();
+
             try
             {
-                Validacoes.Unit C = new Validacoes.Unit();
-                C = LeituraFormulario();
-                C.ValidaClasse();
+                SqlCommand c = new SqlCommand(sql, connect);
+                int status = 0;
+
+                //Inserindo os dados no banco
+                c.Parameters.Add(new SqlParameter("@CPF", this.Msk_CPF.Text));
+                c.Parameters.Add(new SqlParameter("@NumeroConta", NumeroConta.Next()));
+                c.Parameters.Add(new SqlParameter("@Nome", this.Txt_Nome.Text));
+
+                if (Rdb_Masculino.Checked)
+                {
+                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Masculino.Text.First<char>()));
+                }
+                else if (Rdb_Feminino.Checked)
+                {
+                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Feminino.Text.First<char>()));
+                }
+                else if (Rdb_Indefinido.Checked)
+                {
+                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Indefinido.Text.First<char>()));
+                }
+
+                c.Parameters.Add(new SqlParameter("@RG", this.Msk_RG.Text));
+                c.Parameters.Add(new SqlParameter("@Email", this.Txt_Email.Text));
+                c.Parameters.Add(new SqlParameter("@Nascimento", this.Msk_DataNascimento.Text));
+                c.Parameters.Add(new SqlParameter("@Telefone", this.Msk_Telefone1.Text));
+                c.Parameters.Add(new SqlParameter("@NomeMae", this.Txt_NomeMae.Text));
+                c.Parameters.Add(new SqlParameter("@NaoConstaMae", this.Chk_TemMae.Checked));
+                c.Parameters.Add(new SqlParameter("@NomePai", this.Txt_NomePai.Text));
+                c.Parameters.Add(new SqlParameter("@NaoConstaPai", this.Chk_TemPai.Checked));
+                c.Parameters.Add(new SqlParameter("@CEP", this.Msk_CEP.Text));
+                c.Parameters.Add(new SqlParameter("@Rua", this.Txt_Rua.Text));
+                c.Parameters.Add(new SqlParameter("@Numero", this.Txt_Numero.Text));
+                c.Parameters.Add(new SqlParameter("@Complemento", this.Txt_Complemento.Text));
+                c.Parameters.Add(new SqlParameter("@Bairro", this.Txt_Bairro.Text));
+                c.Parameters.Add(new SqlParameter("@Cidade", this.Txt_Cidade.Text));
+                c.Parameters.Add(new SqlParameter("@Estado", this.Cmb_Estados.Text));
+                c.Parameters.Add(new SqlParameter("@Carteira", this.Txt_Carteira.Text));
+                c.Parameters.Add(new SqlParameter("@Profissao", this.Txt_Profissao.Text));
+                c.Parameters.Add(new SqlParameter("@Renda", this.Txt_Renda.Text));
+
+                SqlCommand d = new SqlCommand(sql2, connect);
+                d.Parameters.Add(new SqlParameter("@CPF", this.Msk_CPF.Text));
+
                 try
                 {
-                    this.Hide();
-                    Frm_CriaSenha f = new Frm_CriaSenha();
-                    f.ShowDialog();
+                    Validacoes.Unit C = new Validacoes.Unit();
+                    C = LeituraFormulario();
+                    C.ValidaClasse();
+                    try
+                    {
+                        //Abrindo uma conexão com o banco
+                        connect.Open();
+
+                        //Executando o banco
+                        c.ExecuteNonQuery();
+                        d.ExecuteNonQuery();
+
+                        //fechando a conexão com o banco
+                        connect.Close();
+
+                        status = 1;
+                        if (status == 1)
+                        {
+                            this.Hide();
+                            Frm_CriaSenha f = new Frm_CriaSenha();
+                            f.ShowDialog();
+                        }
+                    }
+                    finally
+                    {
+                        this.Close();
+                    }
                 }
-                finally
+                catch (ValidationException Ex)
                 {
-                    this.Close();
+                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch(ValidationException Ex)
+            catch (SqlException ex)
             {
-                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
             }
 
             Validacoes.Unit LeituraFormulario()
             {
+                //Validações dos dados do formulario
                 Validacoes.Unit C = new Validacoes.Unit();
                 C.RG = Msk_RG.Text;
                 C.Nome = Txt_Nome.Text;
                 C.NomeMae = Txt_NomeMae.Text;
                 C.NomePai = Txt_NomePai.Text;
+                C.DataDeNascimento = Msk_DataNascimento.Text;
+                C.Numero = Txt_Numero.Text;
+                C.Carteira = Txt_Carteira.Text;
+                
                 if (Chk_TemPai.Checked)
                 {
                     C.TemPai = true;
@@ -206,8 +276,8 @@ namespace ProjetoMonetaryBank.Inicializacao
                 {
                     C.Sexo = 2;
                 }
-                C.CPF = Msk_CPF.Text;
 
+                C.CPF = Msk_CPF.Text;
                 C.CEP = Msk_CEP.Text;
                 C.Rua = Txt_Rua.Text;
                 C.Complemento = Txt_Complemento.Text;
@@ -226,6 +296,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 C.Telefone1 = Msk_Telefone1.Text;
                 C.Profissao = Txt_Profissao.Text;
 
+                //metodo do VB
                 if (Information.IsNumeric(Txt_Renda.Text))
                 {
                     Double vRenda = Convert.ToDouble(Txt_Renda.Text);

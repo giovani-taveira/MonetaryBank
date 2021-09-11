@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using ProjetoMonetaryBank.Inicializacao;
 
 namespace ProjetoMonetaryBank.Inicializacao
 {
@@ -15,9 +17,9 @@ namespace ProjetoMonetaryBank.Inicializacao
         public Frm_CriaSenha()
         {
             InitializeComponent();
-            Lbl_CPF.Text = "CPF";
-            Txt_CPF.Enabled = false;
-            Lbl_Senha.Text = "Crie uma nova senha";
+            Lbl_CPF.Text = "Digite seu CPF";
+
+            Lbl_Senha.Text = "nova senha";
             Lbl_SenhaConfirma.Text = "Digite a senha novamente";
             Btn_Finalizar.Text = "Finalizar";
             Btn_Voltar.Text = "Voltar";
@@ -52,26 +54,60 @@ namespace ProjetoMonetaryBank.Inicializacao
 
         private void Btn_Finalizar_Click(object sender, EventArgs e)
         {
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-S261MAM;Initial Catalog=MonetaryBank;Integrated Security=True");
+            string sql = "SELECT COUNT(CPF) FROM Cliente WHERE CPF = @CPF";
+            SqlCommand c = new SqlCommand(sql, conn);
+            c.Parameters.AddWithValue("@CPF", Msk_CPF.Text);
+            conn.Open();
+            SqlDataReader rd = c.ExecuteReader();
 
-            if(Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
+            if (rd.Read())
             {
                 try
                 {
-                    this.Hide();
-                    Frm_Login f = new Frm_Login();
-                    f.ShowDialog();
+                    if (Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
+                    {
+                        //Atualizando a senha de acordo com a coluna CPF
+                        string atualiza = ("UPDATE LoginTable SET Senha = @Senha WHERE CPF = '" + Msk_CPF.Text + "'");
+                        conn.Close();
+                        conn.Open();
+                        SqlCommand g = new SqlCommand(atualiza, conn);
+                        g.Parameters.Add(new SqlParameter("@Senha", this.Txt_Senha.Text));
+                        g.ExecuteNonQuery();
+                        conn.Close();
+                        MessageBox.Show("Cadastro bem sucedido");
+                        // "Fecha" o frm_CriaSenha
+                        try
+                        {
+                            this.Hide();
+                            Frm_Login f = new Frm_Login();
+                            f.ShowDialog();
+                        }
+                        finally
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("As senha devem ser iguais");
+                    }
                 }
-                finally
+                catch (SqlException ex)
                 {
-                    this.Close();
+                    MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
                 }
             }
             else
             {
-                MessageBox.Show( "As Senhas devem ser iguais!");
+                MessageBox.Show("CPF Inválido!");
             }
+        }
+    
 
-           
+        private void Frm_CriaSenha_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

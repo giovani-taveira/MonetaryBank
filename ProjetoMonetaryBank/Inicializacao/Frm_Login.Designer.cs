@@ -71,6 +71,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Continuar.TabIndex = 4;
             this.Btn_Continuar.Text = "button1";
             this.Btn_Continuar.UseVisualStyleBackColor = true;
+            this.Btn_Continuar.Click += new System.EventHandler(this.Btn_Continuar_Click);
             this.Btn_Continuar.MouseLeave += new System.EventHandler(this.Btn_Continuar_MouseLeave);
             this.Btn_Continuar.MouseHover += new System.EventHandler(this.Btn_Continuar_MouseHover);
             // 

@@ -149,7 +149,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(399, 23);
             this.Txt_Email.TabIndex = 7;
-            this.Txt_Email.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // Lbl_Telefone1
             // 
@@ -201,7 +200,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_DataNascimento.Size = new System.Drawing.Size(199, 23);
             this.Msk_DataNascimento.TabIndex = 8;
             this.Msk_DataNascimento.ValidatingType = typeof(System.DateTime);
-            this.Msk_DataNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // Chk_TemPai
             // 
@@ -278,7 +276,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_Nome.Size = new System.Drawing.Size(38, 15);
             this.Lbl_Nome.TabIndex = 0;
             this.Lbl_Nome.Text = "label1";
-            this.Lbl_Nome.Click += new System.EventHandler(this.label1_Click);
             // 
             // Rdb_Indefinido
             // 

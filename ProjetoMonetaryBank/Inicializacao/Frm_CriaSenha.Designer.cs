@@ -30,7 +30,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CriaSenha));
-            this.Txt_CPF = new System.Windows.Forms.TextBox();
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Lbl_CPF = new System.Windows.Forms.Label();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
@@ -39,15 +38,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Btn_Finalizar = new System.Windows.Forms.Button();
             this.Btn_Voltar = new System.Windows.Forms.Button();
+            this.Msk_CPF = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Txt_CPF
-            // 
-            this.Txt_CPF.Location = new System.Drawing.Point(179, 55);
-            this.Txt_CPF.Name = "Txt_CPF";
-            this.Txt_CPF.Size = new System.Drawing.Size(246, 23);
-            this.Txt_CPF.TabIndex = 0;
             // 
             // Lbl_Senha
             // 
@@ -61,6 +54,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_CPF
             // 
             this.Lbl_CPF.AutoSize = true;
+            this.Lbl_CPF.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_CPF.Location = new System.Drawing.Point(179, 28);
             this.Lbl_CPF.Name = "Lbl_CPF";
             this.Lbl_CPF.Size = new System.Drawing.Size(38, 15);
@@ -121,11 +115,20 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Voltar.UseVisualStyleBackColor = true;
             this.Btn_Voltar.Click += new System.EventHandler(this.Btn_Voltar_Click);
             // 
-            // Frm_CriaSenhacs
+            // Msk_CPF
+            // 
+            this.Msk_CPF.Location = new System.Drawing.Point(179, 46);
+            this.Msk_CPF.Mask = "000,000,000-00";
+            this.Msk_CPF.Name = "Msk_CPF";
+            this.Msk_CPF.Size = new System.Drawing.Size(245, 23);
+            this.Msk_CPF.TabIndex = 8;
+            // 
+            // Frm_CriaSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 262);
+            this.Controls.Add(this.Msk_CPF);
             this.Controls.Add(this.Btn_Voltar);
             this.Controls.Add(this.Btn_Finalizar);
             this.Controls.Add(this.pictureBox1);
@@ -134,13 +137,13 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Controls.Add(this.Txt_Senha);
             this.Controls.Add(this.Lbl_CPF);
             this.Controls.Add(this.Lbl_Senha);
-            this.Controls.Add(this.Txt_CPF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Frm_CriaSenhacs";
+            this.Name = "Frm_CriaSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CriaSenhacs";
+            this.Load += new System.EventHandler(this.Frm_CriaSenha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,8 +151,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox Txt_CPF;
         private System.Windows.Forms.Label Lbl_Senha;
         private System.Windows.Forms.Label Lbl_CPF;
         private System.Windows.Forms.TextBox Txt_Senha;
@@ -158,5 +159,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Btn_Finalizar;
         private System.Windows.Forms.Button Btn_Voltar;
+        private System.Windows.Forms.MaskedTextBox Msk_CPF;
     }
 }

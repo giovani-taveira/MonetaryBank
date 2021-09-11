@@ -27,7 +27,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             public bool TemMae { get; set; }
             public bool TemPai { get; set; }
 
-            [Required(ErrorMessage = "CPF obrigatório.")]
+            //[Required(ErrorMessage = "CPF obrigatório.")]
             [StringLength(14, MinimumLength = 14, ErrorMessage = "CPF deve ter 11 dígitos.")]
             public string CPF { get; set; }
 
@@ -36,11 +36,15 @@ namespace ProjetoMonetaryBank.Inicializacao
             public string RG { get; set; }
 
             [Required(ErrorMessage = "A Data de Nascimento é obrigatória.")]
-            [StringLength(12, MinimumLength = 12, ErrorMessage = "A Data de nascimento deve ter 8 dígitos")]
+            [StringLength(10, MinimumLength = 10, ErrorMessage = "A Data de nascimento deve ter 8 dígitos")]
             public string DataDeNascimento { get; set; }
 
             [Required(ErrorMessage = "Sexo obrigatório.")]
             public int Sexo { get; set; }
+
+            [Required(ErrorMessage = "Número do telefone é obrigatório.")]
+            [StringLength(14, MinimumLength = 14, ErrorMessage = "O telefone deve ter 9 dígitos.")]
+            public string Telefone1 { get; set; }
 
 
             //Endereço
@@ -51,6 +55,10 @@ namespace ProjetoMonetaryBank.Inicializacao
             [Required(ErrorMessage = "A Rua é obrigatório.")]
             [StringLength(100, ErrorMessage = "A Rua deve ter no máximo 100 caracteres.")]
             public string Rua { get; set; }
+
+            [Required(ErrorMessage = "O número é obrigatório.")]
+            [StringLength(10, ErrorMessage = "O número deve ter no máximo 10 caracteres.")]
+            public string Numero { get; set; }
 
             [Required(ErrorMessage = "Complemento é obrigatório.")]
             [StringLength(100, ErrorMessage = "Complemento deve ter no máximo 100 caracteres.")]
@@ -67,14 +75,14 @@ namespace ProjetoMonetaryBank.Inicializacao
             [Required(ErrorMessage = "Estado é obrigatório.")]
             public string Estado { get; set; }
 
-            [Required(ErrorMessage = "Número do telefone é obrigatório.")]
-            [StringLength(14, MinimumLength = 14, ErrorMessage = "O telefone deve ter 9 dígitos.")]
-            public string Telefone1 { get; set; }
-
 
             //Profissão
+            [Required(ErrorMessage = "O número da carteira de trabalhao é obrigatório")]
+            [StringLength(100, ErrorMessage = "O número da carteira deve ter no máximo 100 caracteres.")]
+            public string Carteira { get; set; }
+
             [Required(ErrorMessage = "Campo Profissão é obrigatório")]
-            [StringLength(100, ErrorMessage = "Complemento deve ter no máximo 100 caracteres.")]
+            [StringLength(100, ErrorMessage = "Profissão deve ter no máximo 100 caracteres.")]
             public string Profissao { get; set; }
 
             [Required(ErrorMessage = "Renda é obrigatória.")]
@@ -83,11 +91,13 @@ namespace ProjetoMonetaryBank.Inicializacao
 
             //........................Frm_CriaSenha.............................
 
-            [Required(ErrorMessage = "A Senha é obrigatória")]
+            //[Required(ErrorMessage = "A Senha é obrigatória")]
             public string Senha { get; set; }
 
-            [Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
+            //[Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
             public string SenhaConfirma { get; set; }
+
+
 
 
             public void ValidaClasse()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoMonetaryBank.Principal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,20 @@ namespace ProjetoMonetaryBank.Inicializacao
             {
                 this.Hide();
                 Frm_Cadastro f = new Frm_Cadastro();
+                f.ShowDialog();
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
+        private void Btn_Continuar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                Frm_Principal f = new Frm_Principal();
                 f.ShowDialog();
             }
             finally
