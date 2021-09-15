@@ -20,6 +20,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             Lbl_Senha.Text = "Senha";
             Lbl_Cadastro.Text = "É novo por aqui? então cadastre-se!";
             Lbl_Cadastro.ForeColor = Color.DarkGreen;
+            Lbl_NovaSenha.Text = "Esqueci minha Senha";
+            Lbl_NovaSenha.ForeColor = Color.DarkGreen;
             Btn_Continuar.Text = "Entrar";
         }
 
@@ -69,6 +71,30 @@ namespace ProjetoMonetaryBank.Inicializacao
             {
                 this.Close();
             }
+        }
+
+        private void Lbl_NovaSenha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Hide();
+                Frm_CriaSenha f = new Frm_CriaSenha();
+                f.ShowDialog();
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
+        private void Lbl_NovaSenha_MouseHover(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void Lbl_NovaSenha_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
         }
     }
 }

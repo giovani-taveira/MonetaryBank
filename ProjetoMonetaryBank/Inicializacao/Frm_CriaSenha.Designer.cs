@@ -87,7 +87,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProjetoMonetaryBank.Properties.Resources.img_senha;
+            this.pictureBox1.Image = global::Forms.Properties.Resources.img_senha;
             this.pictureBox1.Location = new System.Drawing.Point(33, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 129);

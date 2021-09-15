@@ -51,7 +51,7 @@ namespace ProjetoMonetaryBank
             // 
             // Pcb_Logo
             // 
-            this.Pcb_Logo.Image = global::ProjetoMonetaryBank.Properties.Resources.Logo_Finalizado;
+            this.Pcb_Logo.Image = global::Forms.Properties.Resources.Logo_Finalizado;
             this.Pcb_Logo.Location = new System.Drawing.Point(38, 12);
             this.Pcb_Logo.Name = "Pcb_Logo";
             this.Pcb_Logo.Size = new System.Drawing.Size(300, 275);

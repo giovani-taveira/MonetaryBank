@@ -3,6 +3,7 @@ using ProjetoMonetaryBank.Principal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,7 +20,7 @@ namespace ProjetoMonetaryBank
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_CriaSenha());
+            Application.Run(new Frm_Login());
         }
     }
 }

@@ -36,8 +36,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
             this.Lbl_Email = new System.Windows.Forms.Label();
             this.Txt_Email = new System.Windows.Forms.TextBox();
-            this.Lbl_Telefone1 = new System.Windows.Forms.Label();
-            this.Msk_Telefone1 = new System.Windows.Forms.MaskedTextBox();
+            this.Lbl_Telefone = new System.Windows.Forms.Label();
+            this.Msk_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.Lbl_Nascimento = new System.Windows.Forms.Label();
             this.Msk_RG = new System.Windows.Forms.MaskedTextBox();
             this.Msk_CPF = new System.Windows.Forms.MaskedTextBox();
@@ -71,10 +71,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Grp_Profissao = new System.Windows.Forms.GroupBox();
             this.Lbl_Renda = new System.Windows.Forms.Label();
             this.Lbl_Profissao = new System.Windows.Forms.Label();
-            this.Lbl_Carteira = new System.Windows.Forms.Label();
             this.Txt_Renda = new System.Windows.Forms.TextBox();
             this.Txt_Profissao = new System.Windows.Forms.TextBox();
-            this.Txt_Carteira = new System.Windows.Forms.TextBox();
             this.Btn_Continuar = new System.Windows.Forms.Button();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Grp_DadosPessoais.SuspendLayout();
@@ -107,8 +105,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_Email);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_Email);
-            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Telefone1);
-            this.Grp_DadosPessoais.Controls.Add(this.Msk_Telefone1);
+            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Telefone);
+            this.Grp_DadosPessoais.Controls.Add(this.Msk_Telefone);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_Nascimento);
             this.Grp_DadosPessoais.Controls.Add(this.Msk_RG);
             this.Grp_DadosPessoais.Controls.Add(this.Msk_CPF);
@@ -150,22 +148,22 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Email.Size = new System.Drawing.Size(399, 23);
             this.Txt_Email.TabIndex = 7;
             // 
-            // Lbl_Telefone1
+            // Lbl_Telefone
             // 
-            this.Lbl_Telefone1.AutoSize = true;
-            this.Lbl_Telefone1.Location = new System.Drawing.Point(425, 174);
-            this.Lbl_Telefone1.Name = "Lbl_Telefone1";
-            this.Lbl_Telefone1.Size = new System.Drawing.Size(44, 15);
-            this.Lbl_Telefone1.TabIndex = 0;
-            this.Lbl_Telefone1.Text = "label18";
+            this.Lbl_Telefone.AutoSize = true;
+            this.Lbl_Telefone.Location = new System.Drawing.Point(425, 174);
+            this.Lbl_Telefone.Name = "Lbl_Telefone";
+            this.Lbl_Telefone.Size = new System.Drawing.Size(44, 15);
+            this.Lbl_Telefone.TabIndex = 0;
+            this.Lbl_Telefone.Text = "label18";
             // 
-            // Msk_Telefone1
+            // Msk_Telefone
             // 
-            this.Msk_Telefone1.Location = new System.Drawing.Point(424, 192);
-            this.Msk_Telefone1.Mask = "(00)90000-0000";
-            this.Msk_Telefone1.Name = "Msk_Telefone1";
-            this.Msk_Telefone1.Size = new System.Drawing.Size(199, 23);
-            this.Msk_Telefone1.TabIndex = 11;
+            this.Msk_Telefone.Location = new System.Drawing.Point(424, 192);
+            this.Msk_Telefone.Mask = "(00)90000-0000";
+            this.Msk_Telefone.Name = "Msk_Telefone";
+            this.Msk_Telefone.Size = new System.Drawing.Size(199, 23);
+            this.Msk_Telefone.TabIndex = 11;
             // 
             // Lbl_Nascimento
             // 
@@ -451,13 +449,11 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.Grp_Profissao.Controls.Add(this.Lbl_Renda);
             this.Grp_Profissao.Controls.Add(this.Lbl_Profissao);
-            this.Grp_Profissao.Controls.Add(this.Lbl_Carteira);
             this.Grp_Profissao.Controls.Add(this.Txt_Renda);
             this.Grp_Profissao.Controls.Add(this.Txt_Profissao);
-            this.Grp_Profissao.Controls.Add(this.Txt_Carteira);
             this.Grp_Profissao.Location = new System.Drawing.Point(12, 522);
             this.Grp_Profissao.Name = "Grp_Profissao";
-            this.Grp_Profissao.Size = new System.Drawing.Size(629, 127);
+            this.Grp_Profissao.Size = new System.Drawing.Size(629, 86);
             this.Grp_Profissao.TabIndex = 6;
             this.Grp_Profissao.TabStop = false;
             this.Grp_Profissao.Text = "groupBox3";
@@ -465,7 +461,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Renda
             // 
             this.Lbl_Renda.AutoSize = true;
-            this.Lbl_Renda.Location = new System.Drawing.Point(6, 70);
+            this.Lbl_Renda.Location = new System.Drawing.Point(5, 23);
             this.Lbl_Renda.Name = "Lbl_Renda";
             this.Lbl_Renda.Size = new System.Drawing.Size(44, 15);
             this.Lbl_Renda.TabIndex = 0;
@@ -480,21 +476,12 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_Profissao.TabIndex = 0;
             this.Lbl_Profissao.Text = "label15";
             // 
-            // Lbl_Carteira
-            // 
-            this.Lbl_Carteira.AutoSize = true;
-            this.Lbl_Carteira.Location = new System.Drawing.Point(13, 23);
-            this.Lbl_Carteira.Name = "Lbl_Carteira";
-            this.Lbl_Carteira.Size = new System.Drawing.Size(44, 15);
-            this.Lbl_Carteira.TabIndex = 0;
-            this.Lbl_Carteira.Text = "label14";
-            // 
             // Txt_Renda
             // 
-            this.Txt_Renda.Location = new System.Drawing.Point(5, 88);
+            this.Txt_Renda.Location = new System.Drawing.Point(7, 41);
             this.Txt_Renda.Name = "Txt_Renda";
             this.Txt_Renda.Size = new System.Drawing.Size(180, 23);
-            this.Txt_Renda.TabIndex = 23;
+            this.Txt_Renda.TabIndex = 21;
             // 
             // Txt_Profissao
             // 
@@ -503,16 +490,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Profissao.Size = new System.Drawing.Size(416, 23);
             this.Txt_Profissao.TabIndex = 22;
             // 
-            // Txt_Carteira
-            // 
-            this.Txt_Carteira.Location = new System.Drawing.Point(5, 41);
-            this.Txt_Carteira.Name = "Txt_Carteira";
-            this.Txt_Carteira.Size = new System.Drawing.Size(181, 23);
-            this.Txt_Carteira.TabIndex = 21;
-            // 
             // Btn_Continuar
             // 
-            this.Btn_Continuar.Location = new System.Drawing.Point(511, 655);
+            this.Btn_Continuar.Location = new System.Drawing.Point(514, 628);
             this.Btn_Continuar.Name = "Btn_Continuar";
             this.Btn_Continuar.Size = new System.Drawing.Size(130, 40);
             this.Btn_Continuar.TabIndex = 7;
@@ -524,7 +504,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Btn_Cancelar
             // 
-            this.Btn_Cancelar.Location = new System.Drawing.Point(12, 655);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(12, 628);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(130, 40);
             this.Btn_Cancelar.TabIndex = 8;
@@ -538,7 +518,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 710);
+            this.ClientSize = new System.Drawing.Size(656, 687);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Continuar);
             this.Controls.Add(this.Grp_Profissao);
@@ -550,6 +530,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Name = "Frm_Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
+            this.Load += new System.EventHandler(this.Frm_Cadastro_Load);
             this.Grp_DadosPessoais.ResumeLayout(false);
             this.Grp_DadosPessoais.PerformLayout();
             this.Grp_Endereco.ResumeLayout(false);
@@ -597,14 +578,12 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.GroupBox Grp_Profissao;
         private System.Windows.Forms.TextBox Txt_Renda;
         private System.Windows.Forms.TextBox Txt_Profissao;
-        private System.Windows.Forms.TextBox Txt_Carteira;
         private System.Windows.Forms.Button Btn_Continuar;
         private System.Windows.Forms.Button Btn_Cancelar;
-        private System.Windows.Forms.MaskedTextBox Msk_Telefone1;
+        private System.Windows.Forms.MaskedTextBox Msk_Telefone;
         private System.Windows.Forms.Label Lbl_Renda;
         private System.Windows.Forms.Label Lbl_Profissao;
-        private System.Windows.Forms.Label Lbl_Carteira;
-        private System.Windows.Forms.Label Lbl_Telefone1;
+        private System.Windows.Forms.Label Lbl_Telefone;
         private System.Windows.Forms.Label Lbl_Email;
         private System.Windows.Forms.TextBox Txt_Email;
         private System.Windows.Forms.Label Lbl_Bairro;

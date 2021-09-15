@@ -31,30 +31,24 @@ namespace ProjetoMonetaryBank.Inicializacao
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Txt_CPF = new System.Windows.Forms.TextBox();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
             this.Btn_Continuar = new System.Windows.Forms.Button();
             this.Lbl_CPF = new System.Windows.Forms.Label();
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Lbl_Cadastro = new System.Windows.Forms.Label();
+            this.Lbl_NovaSenha = new System.Windows.Forms.Label();
+            this.Msk_CPFLogin = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProjetoMonetaryBank.Properties.Resources.Logo_Finalizado;
+            this.pictureBox1.Image = global::Forms.Properties.Resources.Logo_Finalizado;
             this.pictureBox1.Location = new System.Drawing.Point(33, -11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(298, 264);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // Txt_CPF
-            // 
-            this.Txt_CPF.Location = new System.Drawing.Point(33, 274);
-            this.Txt_CPF.Name = "Txt_CPF";
-            this.Txt_CPF.Size = new System.Drawing.Size(298, 23);
-            this.Txt_CPF.TabIndex = 1;
             // 
             // Txt_Senha
             // 
@@ -65,7 +59,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             // Btn_Continuar
             // 
-            this.Btn_Continuar.Location = new System.Drawing.Point(84, 398);
+            this.Btn_Continuar.Location = new System.Drawing.Point(80, 385);
             this.Btn_Continuar.Name = "Btn_Continuar";
             this.Btn_Continuar.Size = new System.Drawing.Size(200, 40);
             this.Btn_Continuar.TabIndex = 4;
@@ -96,14 +90,34 @@ namespace ProjetoMonetaryBank.Inicializacao
             // Lbl_Cadastro
             // 
             this.Lbl_Cadastro.AutoSize = true;
-            this.Lbl_Cadastro.Location = new System.Drawing.Point(33, 354);
+            this.Lbl_Cadastro.Location = new System.Drawing.Point(84, 428);
             this.Lbl_Cadastro.Name = "Lbl_Cadastro";
             this.Lbl_Cadastro.Size = new System.Drawing.Size(38, 15);
-            this.Lbl_Cadastro.TabIndex = 3;
+            this.Lbl_Cadastro.TabIndex = 5;
             this.Lbl_Cadastro.Text = "label3";
             this.Lbl_Cadastro.Click += new System.EventHandler(this.Lbl_Cadastro_Click);
             this.Lbl_Cadastro.MouseLeave += new System.EventHandler(this.Lbl_Cadastro_MouseLeave);
             this.Lbl_Cadastro.MouseHover += new System.EventHandler(this.Lbl_Cadastro_MouseHover);
+            // 
+            // Lbl_NovaSenha
+            // 
+            this.Lbl_NovaSenha.AutoSize = true;
+            this.Lbl_NovaSenha.Location = new System.Drawing.Point(33, 354);
+            this.Lbl_NovaSenha.Name = "Lbl_NovaSenha";
+            this.Lbl_NovaSenha.Size = new System.Drawing.Size(38, 15);
+            this.Lbl_NovaSenha.TabIndex = 3;
+            this.Lbl_NovaSenha.Text = "label3";
+            this.Lbl_NovaSenha.Click += new System.EventHandler(this.Lbl_NovaSenha_Click);
+            this.Lbl_NovaSenha.MouseLeave += new System.EventHandler(this.Lbl_NovaSenha_MouseLeave);
+            this.Lbl_NovaSenha.MouseHover += new System.EventHandler(this.Lbl_NovaSenha_MouseHover);
+            // 
+            // Msk_CPFLogin
+            // 
+            this.Msk_CPFLogin.Location = new System.Drawing.Point(33, 274);
+            this.Msk_CPFLogin.Mask = "000,000,000-00";
+            this.Msk_CPFLogin.Name = "Msk_CPFLogin";
+            this.Msk_CPFLogin.Size = new System.Drawing.Size(298, 23);
+            this.Msk_CPFLogin.TabIndex = 9;
             // 
             // Frm_Login
             // 
@@ -111,12 +125,13 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.Msk_CPFLogin);
+            this.Controls.Add(this.Lbl_NovaSenha);
             this.Controls.Add(this.Lbl_Cadastro);
             this.Controls.Add(this.Lbl_Senha);
             this.Controls.Add(this.Lbl_CPF);
             this.Controls.Add(this.Btn_Continuar);
             this.Controls.Add(this.Txt_Senha);
-            this.Controls.Add(this.Txt_CPF);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -133,11 +148,12 @@ namespace ProjetoMonetaryBank.Inicializacao
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox Txt_CPF;
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.Button Btn_Continuar;
         private System.Windows.Forms.Label Lbl_CPF;
         private System.Windows.Forms.Label Lbl_Senha;
         private System.Windows.Forms.Label Lbl_Cadastro;
+        private System.Windows.Forms.Label Lbl_NovaSenha;
+        private System.Windows.Forms.MaskedTextBox Msk_CPFLogin;
     }
 }

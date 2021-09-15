@@ -77,11 +77,8 @@ namespace ProjetoMonetaryBank.Inicializacao
 
 
             //Profissão
-            [Required(ErrorMessage = "O número da carteira de trabalhao é obrigatório")]
-            [StringLength(100, ErrorMessage = "O número da carteira deve ter no máximo 100 caracteres.")]
-            public string Carteira { get; set; }
 
-            [Required(ErrorMessage = "Campo Profissão é obrigatório")]
+            [Required(ErrorMessage = "Profissão é obrigatório")]
             [StringLength(100, ErrorMessage = "Profissão deve ter no máximo 100 caracteres.")]
             public string Profissao { get; set; }
 

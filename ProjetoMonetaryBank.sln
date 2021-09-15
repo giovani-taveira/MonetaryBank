@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoMonetaryBank", "ProjetoMonetaryBank\ProjetoMonetaryBank.csproj", "{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forms", "ProjetoMonetaryBank\Forms.csproj", "{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBase", "DataBase\DataBase.csproj", "{C294D8E2-D55D-49C0-A4CB-811797B765FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C294D8E2-D55D-49C0-A4CB-811797B765FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C294D8E2-D55D-49C0-A4CB-811797B765FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C294D8E2-D55D-49C0-A4CB-811797B765FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C294D8E2-D55D-49C0-A4CB-811797B765FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
