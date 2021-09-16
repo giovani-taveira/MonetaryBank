@@ -94,9 +94,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             //[Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
             public string SenhaConfirma { get; set; }
 
-
-
-
             public void ValidaClasse()
             {
                 ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);

@@ -143,7 +143,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Name = "Frm_CriaSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CriaSenhacs";
-            this.Load += new System.EventHandler(this.Frm_CriaSenha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
