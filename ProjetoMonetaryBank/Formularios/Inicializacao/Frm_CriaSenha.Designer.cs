@@ -39,6 +39,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Finalizar = new System.Windows.Forms.Button();
             this.Btn_Voltar = new System.Windows.Forms.Button();
             this.Msk_CPF = new System.Windows.Forms.MaskedTextBox();
+            this.Btn_Senha1 = new System.Windows.Forms.Button();
+            this.Btn_Senha2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.Txt_Senha.Location = new System.Drawing.Point(179, 99);
             this.Txt_Senha.Name = "Txt_Senha";
-            this.Txt_Senha.Size = new System.Drawing.Size(246, 23);
+            this.Txt_Senha.PasswordChar = '*';
+            this.Txt_Senha.Size = new System.Drawing.Size(169, 23);
             this.Txt_Senha.TabIndex = 1;
             // 
             // Lbl_SenhaConfirma
@@ -82,7 +85,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.Txt_SenhaConfirma.Location = new System.Drawing.Point(179, 152);
             this.Txt_SenhaConfirma.Name = "Txt_SenhaConfirma";
-            this.Txt_SenhaConfirma.Size = new System.Drawing.Size(246, 23);
+            this.Txt_SenhaConfirma.PasswordChar = '*';
+            this.Txt_SenhaConfirma.Size = new System.Drawing.Size(169, 23);
             this.Txt_SenhaConfirma.TabIndex = 2;
             // 
             // pictureBox1
@@ -123,11 +127,33 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_CPF.Size = new System.Drawing.Size(245, 23);
             this.Msk_CPF.TabIndex = 8;
             // 
+            // Btn_Senha1
+            // 
+            this.Btn_Senha1.Location = new System.Drawing.Point(354, 99);
+            this.Btn_Senha1.Name = "Btn_Senha1";
+            this.Btn_Senha1.Size = new System.Drawing.Size(70, 23);
+            this.Btn_Senha1.TabIndex = 9;
+            this.Btn_Senha1.Text = "Mostrar";
+            this.Btn_Senha1.UseVisualStyleBackColor = true;
+            this.Btn_Senha1.Click += new System.EventHandler(this.Btn_Senha1_Click);
+            // 
+            // Btn_Senha2
+            // 
+            this.Btn_Senha2.Location = new System.Drawing.Point(354, 152);
+            this.Btn_Senha2.Name = "Btn_Senha2";
+            this.Btn_Senha2.Size = new System.Drawing.Size(70, 23);
+            this.Btn_Senha2.TabIndex = 10;
+            this.Btn_Senha2.Text = "Mostrar";
+            this.Btn_Senha2.UseVisualStyleBackColor = true;
+            this.Btn_Senha2.Click += new System.EventHandler(this.Btn_Senha2_Click);
+            // 
             // Frm_CriaSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 262);
+            this.Controls.Add(this.Btn_Senha2);
+            this.Controls.Add(this.Btn_Senha1);
             this.Controls.Add(this.Msk_CPF);
             this.Controls.Add(this.Btn_Voltar);
             this.Controls.Add(this.Btn_Finalizar);
@@ -159,5 +185,7 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.Button Btn_Finalizar;
         private System.Windows.Forms.Button Btn_Voltar;
         private System.Windows.Forms.MaskedTextBox Msk_CPF;
+        private System.Windows.Forms.Button Btn_Senha1;
+        private System.Windows.Forms.Button Btn_Senha2;
     }
 }

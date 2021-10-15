@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using ProjetoMonetaryBank.Inicializacao;
 using System.Data.SqlClient;
+using Forms.BancoDeDados;
 //using DataBase;
 
 
@@ -102,17 +103,14 @@ namespace ProjetoMonetaryBank.Inicializacao
         {
             Cursor = Cursors.Hand;
         }
-
         private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
         }
-
         private void Btn_Continuar_MouseHover(object sender, EventArgs e)
         {
             Cursor = Cursors.Hand;
         }
-
         private void Btn_Continuar_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
@@ -172,72 +170,51 @@ namespace ProjetoMonetaryBank.Inicializacao
         //Banco de dados
         public void InsereCliente()
         {
-            
-            //String de conexão
-            SqlConnection connect = new SqlConnection("Data Source=DESKTOP-S261MAM;Initial Catalog=MonetaryBank;Integrated Security=True");
-
-            //comando de inserção de dados no banco
-            string sql = "INSERT INTO Cliente(CPF, NumeroConta, Nome, Sexo, RG, Email, Nascimento, Telefone, NomeMae, NaoConstaMae, " +
-             "NomePai, NaoConstaPai, CEP, Rua, Numero, Complemento, Bairro, Cidade, Estado, Profissao, Renda)" +
-             "VALUES (@CPF, @NumeroCOnta, @Nome, @Sexo, @RG, @Email, @Nascimento, @Telefone, @NomeMae, @NaoConstaMae, " +
-             "@NomePai, @NaoConstaPai, @CEP, @Rua, @Numero, @Complemento, @Bairro, @Cidade, @Estado, @Profissao, @Renda)";
-
-            string sql2 = "INSERT INTO LoginTable(CPF) VALUES (@CPF)";
+            Cliente c = new Cliente();
+            Endereco e = new Endereco();
+            Context ctx = new Context();
 
             try
             {
-                SqlCommand c = new SqlCommand(sql, connect);
+                c.Nome = Txt_Nome.Text;
+                c.CPF = Msk_CPF.Text;
+                c.RG = Msk_RG.Text;
+                c.Email = Txt_Email.Text;
+                c.Nacimento = Msk_DataNascimento.Text;
+                c.Telefone = Msk_Telefone.Text;
+                c.NomeMae = Txt_NomeMae.Text;
+                c.NaoConstaMae = Chk_TemMae.Checked;
+                c.NomePai = Txt_NomePai.Text;
+                c.NaoConstaPai = Chk_TemPai.Checked;
+                c.CEP = Msk_CEP.Text;
+                c.Profissao = Txt_Profissao.Text;
+                c.Renda = Txt_Renda.Text;
 
-                Random NumeroConta = new Random();
 
-                //Abrindo uma conexão com o banco
-                connect.Open();
-
-                //Inserindo os dados no banco
-                c.Parameters.Add(new SqlParameter("@CPF", this.Msk_CPF.Text));
-                c.Parameters.Add(new SqlParameter("@NumeroConta", NumeroConta.Next()));
-                c.Parameters.Add(new SqlParameter("@Nome", this.Txt_Nome.Text));
+                e.Cep = Msk_CEP.Text;
+                e.Logradouro = Txt_Rua.Text;
+                e.Numero = Txt_Numero.Text;
+                e.Complemento = Txt_Complemento.Text;
+                e.Bairro = Txt_Bairro.Text;
+                e.Cidade = Txt_Cidade.Text;
+                e.Estado = Cmb_Estados.Text;
 
                 if (Rdb_Masculino.Checked)
                 {
-                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Masculino.Text.First<char>()));
+                    c.Sexo = Rdb_Masculino.Text.First<char>();
                 }
                 else if (Rdb_Feminino.Checked)
                 {
-                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Feminino.Text.First<char>()));
+                    c.Sexo = Rdb_Feminino.Text.First<char>();
                 }
                 else if (Rdb_Indefinido.Checked)
                 {
-                    c.Parameters.Add(new SqlParameter("@Sexo", Rdb_Indefinido.Text.First<char>()));
+                    c.Sexo = Rdb_Indefinido.Text.First<char>();
                 }
 
-                c.Parameters.Add(new SqlParameter("@RG", this.Msk_RG.Text));
-                c.Parameters.Add(new SqlParameter("@Email", this.Txt_Email.Text));
-                c.Parameters.Add(new SqlParameter("@Nascimento", this.Msk_DataNascimento.Text));
-                c.Parameters.Add(new SqlParameter("@Telefone", this.Msk_Telefone.Text));
-                c.Parameters.Add(new SqlParameter("@NomeMae", this.Txt_NomeMae.Text));
-                c.Parameters.Add(new SqlParameter("@NaoConstaMae", this.Chk_TemMae.Checked));
-                c.Parameters.Add(new SqlParameter("@NomePai", this.Txt_NomePai.Text));
-                c.Parameters.Add(new SqlParameter("@NaoConstaPai", this.Chk_TemPai.Checked));
-                c.Parameters.Add(new SqlParameter("@CEP", this.Msk_CEP.Text));
-                c.Parameters.Add(new SqlParameter("@Rua", this.Txt_Rua.Text));
-                c.Parameters.Add(new SqlParameter("@Numero", this.Txt_Numero.Text));
-                c.Parameters.Add(new SqlParameter("@Complemento", this.Txt_Complemento.Text));
-                c.Parameters.Add(new SqlParameter("@Bairro", this.Txt_Bairro.Text));
-                c.Parameters.Add(new SqlParameter("@Cidade", this.Txt_Cidade.Text));
-                c.Parameters.Add(new SqlParameter("@Estado", this.Cmb_Estados.Text));
-                c.Parameters.Add(new SqlParameter("@Profissao", this.Txt_Profissao.Text));
-                c.Parameters.Add(new SqlParameter("@Renda", this.Txt_Renda.Text));
-
-                SqlCommand d = new SqlCommand(sql2, connect);
-                d.Parameters.Add(new SqlParameter("@CPF", this.Msk_CPF.Text));
-
-                //Executando o banco
-                c.ExecuteNonQuery();
-                d.ExecuteNonQuery();
-
-                //fechando a conexão com o banco
-                connect.Close();
+                ctx.endereco.Add(e);
+                ctx.cliente.Add(c);
+                ctx.SaveChanges();
             }
             catch (SqlException ex)
             {
@@ -319,56 +296,6 @@ namespace ProjetoMonetaryBank.Inicializacao
 
         private void Frm_Cadastro_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
-
-    //public void Linq()
-    //{
-        //Cliente NovoCliente = new Cliente();
-
-        //NovoCliente.CPF = Msk_CPF.Text;
-        //Random NumeroConta = new Random();
-        //NumeroConta.Next();
-        //NovoCliente.Nome = Txt_Nome.Text;
-        //NovoCliente.RG = Msk_RG.Text;
-        //NovoCliente.Email = Txt_Email.Text;
-        //NovoCliente.Nascimento = Msk_DataNascimento.Text;
-        //NovoCliente.Telefone = Msk_Telefone.Text;
-        //NovoCliente.NomeMae = Txt_NomeMae.Text;
-        //NovoCliente.NaoConstaMae = Chk_TemMae.Checked;
-        //NovoCliente.NomePai = Txt_NomePai.Text;
-        //NovoCliente.NaoConstaPai = Chk_TemPai.Checked;
-        //NovoCliente.CEP = Msk_CEP.Text;
-        //NovoCliente.Rua = Txt_Rua.Text;
-        //NovoCliente.Numero = Txt_Rua.Text;
-        //NovoCliente.Complemento = Txt_Complemento.Text;
-        //NovoCliente.Bairro = Txt_Bairro.Text;
-        //NovoCliente.Cidade = Txt_Cidade.Text;
-        //NovoCliente.Estado = Txt_Cidade.Text;
-        //NovoCliente.Profissao = Txt_Profissao.Text;
-        ////NovoCliente.Renda = Convert.ToDecimal(Txt_Renda.Text);
-
-        //if (Rdb_Feminino.Checked)
-        //{
-        //    NovoCliente.Sexo = Rdb_Feminino.Text.First<char>();
-        //}
-        //else if (Rdb_Masculino.Checked)
-        //{
-        //    NovoCliente.Sexo = Rdb_Masculino.Text.First<char>();
-        //}
-        //else if (Rdb_Indefinido.Checked)
-        //{
-        //    NovoCliente.Sexo = Rdb_Indefinido.Text.First<char>();
-        //}
-
-        //try
-        //{
-        //    //AcessoDB.InsereCliente(NovoCliente);
-        //}
-        //catch (Exception ex)
-        //{
-        //    MessageBox.Show(ex.Message, "Ocorreu uma falha", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-    //}
