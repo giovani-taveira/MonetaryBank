@@ -93,6 +93,16 @@ namespace Forms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
+        internal static System.Drawing.Icon ico_Sair {
+            get {
+                object obj = ResourceManager.GetObject("ico_Sair", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
         internal static System.Drawing.Icon ico_saque {
             get {
                 object obj = ResourceManager.GetObject("ico_saque", resourceCulture);

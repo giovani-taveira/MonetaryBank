@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MonetaryBank" Class="LoginDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-S261MAM;Initial Catalog=MonetaryBank;Integrated Security=True" SettingsObjectName="DataBase.Properties.Settings" SettingsPropertyName="MonetaryBankConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.LoginTable" Member="LoginTable">
-    <Type Name="LoginTable">
-      <Column Name="CPF" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-</Database>

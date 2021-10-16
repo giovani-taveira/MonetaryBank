@@ -139,6 +139,9 @@
   <data name="ico_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens-icones\ico-login.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ico_Sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens-icones\ico_sair.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ico_saque" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens-icones\ico-saque.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoMonetaryBank.Principal
 {
-    partial class Frm_Principal
+    public partial class Frm_Principal
     {
         /// <summary>
         /// Required designer variable.
@@ -35,17 +35,19 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Depositar = new System.Windows.Forms.Button();
             this.Btn_Transferencia = new System.Windows.Forms.Button();
             this.Btn_Historico = new System.Windows.Forms.Button();
-            this.Lbl_SeuSaldo = new System.Windows.Forms.Label();
+            this.Lbl_Saldo = new System.Windows.Forms.Label();
             this.Lbl_Operacoes = new System.Windows.Forms.Label();
             this.Pcb_Imagem = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_NomeUsuario
             // 
             this.Lbl_NomeUsuario.AutoSize = true;
             this.Lbl_NomeUsuario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_NomeUsuario.Location = new System.Drawing.Point(130, 45);
+            this.Lbl_NomeUsuario.Location = new System.Drawing.Point(128, 66);
             this.Lbl_NomeUsuario.Name = "Lbl_NomeUsuario";
             this.Lbl_NomeUsuario.Size = new System.Drawing.Size(63, 25);
             this.Lbl_NomeUsuario.TabIndex = 0;
@@ -59,6 +61,7 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Sacar.TabIndex = 1;
             this.Btn_Sacar.Text = "button1";
             this.Btn_Sacar.UseVisualStyleBackColor = true;
+            this.Btn_Sacar.Click += new System.EventHandler(this.Btn_Sacar_Click);
             // 
             // Btn_Depositar
             // 
@@ -87,15 +90,15 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Historico.Text = "button4";
             this.Btn_Historico.UseVisualStyleBackColor = true;
             // 
-            // Lbl_SeuSaldo
+            // Lbl_Saldo
             // 
-            this.Lbl_SeuSaldo.AutoSize = true;
-            this.Lbl_SeuSaldo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_SeuSaldo.Location = new System.Drawing.Point(12, 160);
-            this.Lbl_SeuSaldo.Name = "Lbl_SeuSaldo";
-            this.Lbl_SeuSaldo.Size = new System.Drawing.Size(63, 25);
-            this.Lbl_SeuSaldo.TabIndex = 5;
-            this.Lbl_SeuSaldo.Text = "label1";
+            this.Lbl_Saldo.AutoSize = true;
+            this.Lbl_Saldo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_Saldo.Location = new System.Drawing.Point(12, 160);
+            this.Lbl_Saldo.Name = "Lbl_Saldo";
+            this.Lbl_Saldo.Size = new System.Drawing.Size(63, 25);
+            this.Lbl_Saldo.TabIndex = 5;
+            this.Lbl_Saldo.Text = "label1";
             // 
             // Lbl_Operacoes
             // 
@@ -115,14 +118,23 @@ namespace ProjetoMonetaryBank.Principal
             this.Pcb_Imagem.TabIndex = 7;
             this.Pcb_Imagem.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(346, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Pcb_Imagem);
             this.Controls.Add(this.Lbl_Operacoes);
-            this.Controls.Add(this.Lbl_SeuSaldo);
+            this.Controls.Add(this.Lbl_Saldo);
             this.Controls.Add(this.Btn_Historico);
             this.Controls.Add(this.Btn_Transferencia);
             this.Controls.Add(this.Btn_Depositar);
@@ -134,20 +146,21 @@ namespace ProjetoMonetaryBank.Principal
             this.Text = "Frm_Principal";
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Lbl_NomeUsuario;
         private System.Windows.Forms.Button Btn_Sacar;
         private System.Windows.Forms.Button Btn_Depositar;
         private System.Windows.Forms.Button Btn_Transferencia;
         private System.Windows.Forms.Button Btn_Historico;
-        private System.Windows.Forms.Label Lbl_SeuSaldo;
         private System.Windows.Forms.Label Lbl_Operacoes;
         private System.Windows.Forms.PictureBox Pcb_Imagem;
+        private System.Windows.Forms.Label Lbl_NomeUsuario;
+        private System.Windows.Forms.Label Lbl_Saldo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

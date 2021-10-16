@@ -1,4 +1,5 @@
-﻿using ProjetoMonetaryBank.Principal;
+﻿using Forms.BancoDeDados;
+using ProjetoMonetaryBank.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,17 +60,45 @@ namespace ProjetoMonetaryBank.Inicializacao
             }
         }
 
-        private void Btn_Continuar_Click(object sender, EventArgs e)
+        public void Btn_Continuar_Click(object sender, EventArgs e)
         {
             try
             {
-                this.Hide();
-                Frm_Principal f = new Frm_Principal();
-                f.ShowDialog();
+                this.Cursor = Cursors.WaitCursor;
+                using (var ctx = new Context())
+                {
+                    var query = ctx.login.Where(x => x.CPF == Msk_CPFLogin.Text 
+                        && x.Senha == Txt_Senha.Text).FirstOrDefault<Login>();
+
+                    if (query != null)
+                    {
+                        var queryNome = ctx.cliente.Where(x => x.CPF == Msk_CPFLogin.Text)
+                            .FirstOrDefault<Cliente>().ToString();
+
+                        MessageBox.Show($"Bem vindo {queryNome}");
+
+                        try
+                        {
+                            this.Hide();
+                            using (var f = new Frm_Principal(queryNome))
+                            {
+                                f.ShowDialog();
+                            }
+                        }
+                        finally
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário ou senha estão incorretos!");
+                    }
+                }
             }
-            finally
+            catch (NullReferenceException ex)
             {
-                this.Close();
+                MessageBox.Show(ex.Message, "Erro");
             }
         }
 
