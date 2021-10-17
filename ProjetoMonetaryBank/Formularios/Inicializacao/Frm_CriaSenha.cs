@@ -24,6 +24,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             Lbl_SenhaConfirma.Text = "Digite a senha novamente";
             Btn_Finalizar.Text = "Finalizar";
             Btn_Voltar.Text = "Voltar";
+            this.Text = "Monetary Bank";
         }
 
         private void Lbl_SenhaConfirma_Click(object sender, EventArgs e)

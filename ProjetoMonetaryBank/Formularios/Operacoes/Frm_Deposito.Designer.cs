@@ -1,7 +1,7 @@
 ﻿
 namespace Forms.Formularios.Operacoes
 {
-    partial class Frm_Saque
+    partial class Frm_Deposito
     {
         /// <summary>
         /// Required designer variable.
@@ -47,8 +47,8 @@ namespace Forms.Formularios.Operacoes
             this.Btn_Confirmar.Text = "button1";
             this.Btn_Confirmar.UseVisualStyleBackColor = true;
             this.Btn_Confirmar.Click += new System.EventHandler(this.Btn_Confirmar_Click);
-            this.Btn_Confirmar.MouseEnter += new System.EventHandler(this.Btn_Confirmar_MouseEnter_1);
-            this.Btn_Confirmar.MouseLeave += new System.EventHandler(this.Btn_Confirmar_MouseLeave_1);
+            this.Btn_Confirmar.MouseEnter += new System.EventHandler(this.Btn_Confirmar_MouseEnter);
+            this.Btn_Confirmar.MouseLeave += new System.EventHandler(this.Btn_Confirmar_MouseLeave);
             // 
             // Lbl_NomeOperacao
             // 
@@ -58,7 +58,6 @@ namespace Forms.Formularios.Operacoes
             this.Lbl_NomeOperacao.Size = new System.Drawing.Size(38, 15);
             this.Lbl_NomeOperacao.TabIndex = 1;
             this.Lbl_NomeOperacao.Text = "label1";
-            this.Lbl_NomeOperacao.Click += new System.EventHandler(this.Lbl_NomeOperacao_Click);
             // 
             // Txt_Valor
             // 
@@ -101,10 +100,10 @@ namespace Forms.Formularios.Operacoes
             this.Btn_Cancelar.Text = "button2";
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
-            this.Btn_Cancelar.MouseEnter += new System.EventHandler(this.Btn_Cancelar_MouseEnter_1);
-            this.Btn_Cancelar.MouseLeave += new System.EventHandler(this.Btn_Cancelar_MouseLeave_1);
+            this.Btn_Cancelar.MouseEnter += new System.EventHandler(this.Btn_Cancelar_MouseEnter);
+            this.Btn_Cancelar.MouseLeave += new System.EventHandler(this.Btn_Cancelar_MouseLeave);
             // 
-            // Frm_Saque
+            // Frm_Deposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,7 +117,7 @@ namespace Forms.Formularios.Operacoes
             this.Controls.Add(this.Btn_Confirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MinimizeBox = false;
-            this.Name = "Frm_Saque";
+            this.Name = "Frm_Deposito";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Saque";
             this.ResumeLayout(false);

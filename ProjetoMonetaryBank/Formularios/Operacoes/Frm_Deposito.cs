@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace Forms.Formularios.Operacoes
 {
-    public partial class Frm_Saque : Form
+    public partial class Frm_Deposito : Form
     {
-        public Frm_Saque()
+        public Frm_Deposito()
         {
             InitializeComponent();
-            Lbl_NomeOperacao.Text = "Operação de Saque";
-            Lbl_ValidaSenha.Text = "Digite sua Senha";
-            Lbl_Valor.Text = "Qual valor deseja sacar?";
+            Lbl_NomeOperacao.Text = "Operação de Deposito";
+            Lbl_Valor.Text = "Digite o Valor a ser Depositado";
+            Lbl_ValidaSenha.Text = "Confirme Sua Senha";
             Btn_Cancelar.Text = "Cancelar";
             Btn_Confirmar.Text = "Confirmar";
-            this.Text = "Sacar";
+            this.Text = "Depositar";
         }
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
@@ -33,27 +33,22 @@ namespace Forms.Formularios.Operacoes
             MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
-        private void Lbl_NomeOperacao_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void Btn_Cancelar_MouseEnter_1(object sender, EventArgs e)
+        private void Btn_Cancelar_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
 
-        private void Btn_Cancelar_MouseLeave_1(object sender, EventArgs e)
+        private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }
 
-        private void Btn_Confirmar_MouseEnter_1(object sender, EventArgs e)
+        private void Btn_Confirmar_MouseEnter(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
         }
 
-        private void Btn_Confirmar_MouseLeave_1(object sender, EventArgs e)
+        private void Btn_Confirmar_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
         }

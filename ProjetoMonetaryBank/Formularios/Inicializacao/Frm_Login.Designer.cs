@@ -62,7 +62,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Continuar.Location = new System.Drawing.Point(80, 385);
             this.Btn_Continuar.Name = "Btn_Continuar";
             this.Btn_Continuar.Size = new System.Drawing.Size(200, 40);
-            this.Btn_Continuar.TabIndex = 4;
+            this.Btn_Continuar.TabIndex = 3;
             this.Btn_Continuar.Text = "button1";
             this.Btn_Continuar.UseVisualStyleBackColor = true;
             this.Btn_Continuar.Click += new System.EventHandler(this.Btn_Continuar_Click);
@@ -117,7 +117,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_CPFLogin.Mask = "000,000,000-00";
             this.Msk_CPFLogin.Name = "Msk_CPFLogin";
             this.Msk_CPFLogin.Size = new System.Drawing.Size(298, 23);
-            this.Msk_CPFLogin.TabIndex = 9;
+            this.Msk_CPFLogin.TabIndex = 1;
             // 
             // Frm_Login
             // 

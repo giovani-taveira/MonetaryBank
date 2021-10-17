@@ -10,17 +10,23 @@ using System.Windows.Forms;
 
 namespace Forms.Formularios.Operacoes
 {
-    public partial class Frm_Saque : Form
+    public partial class Frm_Tranferencia : Form
     {
-        public Frm_Saque()
+        public Frm_Tranferencia()
         {
             InitializeComponent();
-            Lbl_NomeOperacao.Text = "Operação de Saque";
-            Lbl_ValidaSenha.Text = "Digite sua Senha";
-            Lbl_Valor.Text = "Qual valor deseja sacar?";
+            Lbl_NomeOperacao.Text = "Operação de Transferência";
+            Lbl_Valor.Text = "Digite o Valor a ser Transferido";
+            Lbl_ValidaSenha.Text = "Confirme Sua Senha";
+            Lbl_CpfRecebedor.Text = "Digite o CPF do Recebedor";
             Btn_Cancelar.Text = "Cancelar";
             Btn_Confirmar.Text = "Confirmar";
-            this.Text = "Sacar";
+            this.Text = "Transferir";
+        }
+
+        private void Lbl_ValidaSenha_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Btn_Cancelar_Click(object sender, EventArgs e)
@@ -31,11 +37,6 @@ namespace Forms.Formularios.Operacoes
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-        }
-
-        private void Lbl_NomeOperacao_Click(object sender, EventArgs e)
-        {
-          
         }
 
         private void Btn_Cancelar_MouseEnter_1(object sender, EventArgs e)
