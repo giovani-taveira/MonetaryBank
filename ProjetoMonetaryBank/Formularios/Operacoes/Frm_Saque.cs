@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms.BancoDeDados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Forms.Formularios.Operacoes
 {
     public partial class Frm_Saque : Form
     {
+        string cpf;
         public Frm_Saque()
         {
             InitializeComponent();
@@ -23,6 +25,11 @@ namespace Forms.Formularios.Operacoes
             this.Text = "Sacar";
         }
 
+        public Frm_Saque(string Cpf) : this()
+        {
+            cpf = Cpf;
+        }
+
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -30,7 +37,23 @@ namespace Forms.Formularios.Operacoes
 
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                using (var ctx = new Context())
+                {
+                    var RetiraSaldo = ctx.cliente.First(p => p.CPF == cpf);
+                    var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                    if(RetiraSaldo.Saldo >= ValorConvertido)
+                    {
+                        RetiraSaldo.Saldo = RetiraSaldo.Saldo - ValorConvertido;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saldo Insuficiente ", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    ctx.SaveChanges();
+                }
+            }
         }
 
         private void Lbl_NomeOperacao_Click(object sender, EventArgs e)

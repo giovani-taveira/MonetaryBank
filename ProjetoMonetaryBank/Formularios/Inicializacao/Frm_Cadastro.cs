@@ -189,6 +189,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 c.CEP = Msk_CEP.Text;
                 c.Profissao = Txt_Profissao.Text;
                 c.Renda = Txt_Renda.Text;
+                c.Saldo = 0.00;
 
 
                 e.Cep = Msk_CEP.Text;

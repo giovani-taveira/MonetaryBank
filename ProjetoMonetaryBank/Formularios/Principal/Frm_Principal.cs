@@ -14,7 +14,7 @@ namespace ProjetoMonetaryBank.Principal
 {
     public partial class Frm_Principal : Form
     {
-
+        string CPF;
         public Frm_Principal()
         {
             InitializeComponent();
@@ -27,9 +27,16 @@ namespace ProjetoMonetaryBank.Principal
             this.Text = "Monetary Bank";
         }
 
-        public Frm_Principal(string Nome) : this()
+        public Frm_Principal(string Nome, double Saldo, string Cpf) : this()
         {
-             Lbl_NomeUsuario.Text = Nome;
+             Lbl_NomeUsuario.Text = "Olá " + Nome;
+             Lbl_Saldo.Text = "Seu Saldo: R$" + Saldo.ToString();
+             CPF = Cpf;
+        }
+
+        public Frm_Principal(double Saldo) : this()
+        {
+            Lbl_Saldo.Text = Saldo.ToString();
         }
         public void Frm_Principal_Load(object sender, EventArgs e)
         {
@@ -40,8 +47,10 @@ namespace ProjetoMonetaryBank.Principal
         {
             try
             {
-                Frm_Saque f = new Frm_Saque();
-                f.ShowDialog();
+                using (var f = new Frm_Saque(CPF))
+                {
+                    f.ShowDialog();
+                }
             }
             catch (Exception)
             {
@@ -51,14 +60,18 @@ namespace ProjetoMonetaryBank.Principal
 
         private void Btn_Depositar_Click(object sender, EventArgs e)
         {
-            Frm_Deposito f = new Frm_Deposito();
-            f.ShowDialog();
+            using (var f = new Frm_Deposito(CPF))
+            {
+                f.ShowDialog();
+            }
         }
 
         private void Btn_Transferencia_Click(object sender, EventArgs e)
         {
-            Frm_Tranferencia f = new Frm_Tranferencia();
-            f.ShowDialog();
+            using (var f = new Frm_Tranferencia(CPF))
+            {
+                f.ShowDialog();
+            }
         }
 
         private void Btn_Historico_Click(object sender, EventArgs e)
@@ -129,6 +142,11 @@ namespace ProjetoMonetaryBank.Principal
         private void Pcb_Imagem_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private void Lbl_Teste_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

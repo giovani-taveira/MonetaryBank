@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Forms.BancoDeDados;
+using ProjetoMonetaryBank.Principal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace Forms.Formularios.Operacoes
 {
     public partial class Frm_Deposito : Form
     {
+        string cpf;
         public Frm_Deposito()
         {
             InitializeComponent();
@@ -23,6 +26,11 @@ namespace Forms.Formularios.Operacoes
             this.Text = "Depositar";
         }
 
+        public Frm_Deposito(string Cpf) : this()
+        {
+            cpf = Cpf;
+        }
+
         private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -30,7 +38,21 @@ namespace Forms.Formularios.Operacoes
 
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==DialogResult.Yes)
+            {
+                using (var ctx = new Context())
+                {
+                    var AdicionaSaldo = ctx.cliente.First(p => p.CPF == cpf);
+                    var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                    AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
+                    ctx.SaveChanges();
+                    //using (var f = new Frm_Principal(AdicionaSaldo.Saldo))
+                    //{
+
+                    //}
+                    this.Close();
+                }
+            }
         }
 
         private void Btn_Cancelar_MouseEnter(object sender, EventArgs e)

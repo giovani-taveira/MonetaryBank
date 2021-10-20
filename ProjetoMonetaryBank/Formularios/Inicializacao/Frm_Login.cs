@@ -73,16 +73,16 @@ namespace ProjetoMonetaryBank.Inicializacao
                     if (query != null)
                     {
                         var queryNome = ctx.cliente.Where(x => x.CPF == Msk_CPFLogin.Text)
-                            .FirstOrDefault<Cliente>().ToString();
-
-                        MessageBox.Show($"Bem vindo {queryNome}");
+                            .FirstOrDefault<Cliente>();
+                        MessageBox.Show($"Bem vindo {queryNome.Nome}");
 
                         try
                         {
                             this.Hide();
-                            using (var f = new Frm_Principal(queryNome))
+                            using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF))
                             {
                                 f.ShowDialog();
+
                             }
                         }
                         finally

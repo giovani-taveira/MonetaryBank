@@ -37,7 +37,7 @@ namespace Forms.Formularios.Operacoes
             this.Lbl_ValidaSenha = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.Lbl_CpfRecebedor = new System.Windows.Forms.Label();
-            this.Txt_CpfRecebedor = new System.Windows.Forms.TextBox();
+            this.Msk_CpfRecebedor = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // Btn_Confirmar
@@ -115,20 +115,21 @@ namespace Forms.Formularios.Operacoes
             this.Lbl_CpfRecebedor.TabIndex = 8;
             this.Lbl_CpfRecebedor.Text = "label2";
             // 
-            // Txt_CpfRecebedor
+            // Msk_CpfRecebedor
             // 
-            this.Txt_CpfRecebedor.Location = new System.Drawing.Point(32, 88);
-            this.Txt_CpfRecebedor.Name = "Txt_CpfRecebedor";
-            this.Txt_CpfRecebedor.Size = new System.Drawing.Size(293, 23);
-            this.Txt_CpfRecebedor.TabIndex = 7;
+            this.Msk_CpfRecebedor.Location = new System.Drawing.Point(32, 88);
+            this.Msk_CpfRecebedor.Mask = "000,000,000-00";
+            this.Msk_CpfRecebedor.Name = "Msk_CpfRecebedor";
+            this.Msk_CpfRecebedor.Size = new System.Drawing.Size(293, 23);
+            this.Msk_CpfRecebedor.TabIndex = 9;
             // 
             // Frm_Tranferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 313);
+            this.Controls.Add(this.Msk_CpfRecebedor);
             this.Controls.Add(this.Lbl_CpfRecebedor);
-            this.Controls.Add(this.Txt_CpfRecebedor);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Lbl_ValidaSenha);
             this.Controls.Add(this.Lbl_Valor);
@@ -156,6 +157,6 @@ namespace Forms.Formularios.Operacoes
         private System.Windows.Forms.Label Lbl_ValidaSenha;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Label Lbl_CpfRecebedor;
-        private System.Windows.Forms.TextBox Txt_CpfRecebedor;
+        private System.Windows.Forms.MaskedTextBox Msk_CpfRecebedor;
     }
 }

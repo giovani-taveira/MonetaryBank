@@ -38,9 +38,11 @@ namespace ProjetoMonetaryBank.Principal
             this.Lbl_Saldo = new System.Windows.Forms.Label();
             this.Lbl_Operacoes = new System.Windows.Forms.Label();
             this.Pcb_Imagem = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_NomeUsuario
@@ -70,7 +72,7 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Depositar.Location = new System.Drawing.Point(46, 297);
             this.Btn_Depositar.Name = "Btn_Depositar";
             this.Btn_Depositar.Size = new System.Drawing.Size(133, 66);
-            this.Btn_Depositar.TabIndex = 2;
+            this.Btn_Depositar.TabIndex = 3;
             this.Btn_Depositar.Text = "button2";
             this.Btn_Depositar.UseVisualStyleBackColor = true;
             this.Btn_Depositar.Click += new System.EventHandler(this.Btn_Depositar_Click);
@@ -82,7 +84,7 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Transferencia.Location = new System.Drawing.Point(202, 226);
             this.Btn_Transferencia.Name = "Btn_Transferencia";
             this.Btn_Transferencia.Size = new System.Drawing.Size(135, 65);
-            this.Btn_Transferencia.TabIndex = 3;
+            this.Btn_Transferencia.TabIndex = 2;
             this.Btn_Transferencia.Text = "button3";
             this.Btn_Transferencia.UseVisualStyleBackColor = true;
             this.Btn_Transferencia.Click += new System.EventHandler(this.Btn_Transferencia_Click);
@@ -133,21 +135,35 @@ namespace ProjetoMonetaryBank.Principal
             this.Pcb_Imagem.MouseEnter += new System.EventHandler(this.Pcb_Imagem_MouseEnter);
             this.Pcb_Imagem.MouseLeave += new System.EventHandler(this.Pcb_Imagem_MouseLeave);
             // 
-            // pictureBox1
+            // toolStrip1
             // 
-            this.pictureBox1.Image = global::Forms.Properties.Resources.img_config;
-            this.pictureBox1.Location = new System.Drawing.Point(311, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(384, 25);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 400);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.Pcb_Imagem);
             this.Controls.Add(this.Lbl_Operacoes);
             this.Controls.Add(this.Lbl_Saldo);
@@ -164,7 +180,8 @@ namespace ProjetoMonetaryBank.Principal
             this.Text = "Frm_Principal";
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +196,8 @@ namespace ProjetoMonetaryBank.Principal
         private System.Windows.Forms.PictureBox Pcb_Imagem;
         private System.Windows.Forms.Label Lbl_NomeUsuario;
         private System.Windows.Forms.Label Lbl_Saldo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

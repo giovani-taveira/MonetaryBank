@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Forms.BancoDeDados;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Forms.Formularios.Operacoes
 {
     public partial class Frm_Tranferencia : Form
     {
+        string cpf;
         public Frm_Tranferencia()
         {
             InitializeComponent();
@@ -22,6 +24,11 @@ namespace Forms.Formularios.Operacoes
             Btn_Cancelar.Text = "Cancelar";
             Btn_Confirmar.Text = "Confirmar";
             this.Text = "Transferir";
+        }
+
+        public Frm_Tranferencia(string Cpf) : this()
+        {
+            cpf = Cpf;
         }
 
         private void Lbl_ValidaSenha_Click(object sender, EventArgs e)
@@ -36,7 +43,19 @@ namespace Forms.Formularios.Operacoes
 
         private void Btn_Confirmar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (MessageBox.Show("Você tem certeza que deseja realizar esta operação?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                using (var ctx = new Context())
+                {
+                    var AdicionaSaldo = ctx.cliente.First(p => p.CPF == Msk_CpfRecebedor.Text);
+                    var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                    AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
+                    var PerdeSaldo = ctx.cliente.First(p => p.CPF == cpf);
+                    PerdeSaldo.Saldo -= ValorConvertido;
+
+                    ctx.SaveChanges();
+                }
+            }
         }
 
         private void Btn_Cancelar_MouseEnter_1(object sender, EventArgs e)

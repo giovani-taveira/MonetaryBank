@@ -10,7 +10,6 @@ namespace Forms.BancoDeDados
 {
     public class Cliente
     {
-        //public int ID { get; set; }
         [Key]
         [StringLength(14)]
         public string CPF { get; set; }
@@ -39,5 +38,6 @@ namespace Forms.BancoDeDados
         public string Profissao { get; set; }
         [StringLength(15)]
         public string Renda { get; set; }
+        public double Saldo { get; set; }
     }
 }
