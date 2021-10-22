@@ -12,8 +12,10 @@ using System.Windows.Forms;
 
 namespace ProjetoMonetaryBank.Inicializacao
 {
+
     public partial class Frm_Login : Form
     {
+        bool verSenha = false;
         public Frm_Login()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             Lbl_NovaSenha.Text = "Esqueci minha Senha";
             Lbl_NovaSenha.ForeColor = Color.DarkGreen;
             Btn_Continuar.Text = "Entrar";
+            Btn_VerSenha.Text = "Mostrar";
         }
 
         private void Lbl_Cadastro_MouseHover(object sender, EventArgs e)
@@ -79,10 +82,9 @@ namespace ProjetoMonetaryBank.Inicializacao
                         try
                         {
                             this.Hide();
-                            using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF))
+                            using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF, query.Senha))
                             {
                                 f.ShowDialog();
-
                             }
                         }
                         finally
@@ -124,6 +126,22 @@ namespace ProjetoMonetaryBank.Inicializacao
         private void Lbl_NovaSenha_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
+        }
+
+        private void Btn_VerSenha_Click(object sender, EventArgs e)
+        {
+            if (verSenha == false)
+            {
+                Txt_Senha.PasswordChar = '\0';
+                verSenha = true;
+                Btn_VerSenha.Text = "Esconder";
+            }
+            else
+            {
+                Txt_Senha.PasswordChar = '*';
+                verSenha = false;
+                Btn_VerSenha.Text = "Mostrar";
+            }
         }
     }
 }

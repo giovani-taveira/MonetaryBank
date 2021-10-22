@@ -86,14 +86,61 @@ namespace ProjetoMonetaryBank.Inicializacao
             [Range(0, double.MaxValue, ErrorMessage = "Renda deve ser um valor positivo.")]
             public Double Renda { get; set; }
 
-            //........................Frm_CriaSenha.............................
+            public void ValidaClasse()
+            {
 
-            //[Required(ErrorMessage = "A Senha é obrigatória")]
+                ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);
+                List<ValidationResult> results = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(this, context, results, true);
+
+                if (isValid == false)
+                {
+                    StringBuilder sbrErrors = new StringBuilder();
+                    foreach (var validationResult in results)
+                    {
+                        sbrErrors.AppendLine(validationResult.ErrorMessage);
+                    }
+                    throw new ValidationException(sbrErrors.ToString());
+                }
+            }
+        }
+
+        public class Transferencia
+        {
+            [StringLength(14, MinimumLength = 14, ErrorMessage = "CPF deve ter 11 dígitos.")]
+            public string CPFRecebedor { get; set; }
+            [Required(ErrorMessage = "O Valor é Obrigatório")]
+            public string Valor { get; set; }
+
+            [Required(ErrorMessage = "A Senha é Obrigatória")]
             public string Senha { get; set; }
 
-            //[Required(ErrorMessage = "A Senha de confirmação é obrigatória")]
-            public string SenhaConfirma { get; set; }
 
+            public void ValidaClasse()
+            {
+                ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);
+                List<ValidationResult> results = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(this, context, results, true);
+
+                if (isValid == false)
+                {
+                    StringBuilder sbrErrors = new StringBuilder();
+                    foreach (var validationResult in results)
+                    {
+                        sbrErrors.AppendLine(validationResult.ErrorMessage);
+                    }
+                    throw new ValidationException(sbrErrors.ToString());
+                }
+            }
+        }
+
+        public class OutrasOperacoes
+        {
+            [Required(ErrorMessage = "O Valor é Obrigatório")]
+            public string Valor { get; set; }
+
+            [Required(ErrorMessage = "A Senha é Obrigatória")]
+            public string Senha { get; set; }
             public void ValidaClasse()
             {
                 ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);

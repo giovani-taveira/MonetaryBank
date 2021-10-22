@@ -38,6 +38,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_Cadastro = new System.Windows.Forms.Label();
             this.Lbl_NovaSenha = new System.Windows.Forms.Label();
             this.Msk_CPFLogin = new System.Windows.Forms.MaskedTextBox();
+            this.Btn_VerSenha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             // 
             this.Txt_Senha.Location = new System.Drawing.Point(33, 328);
             this.Txt_Senha.Name = "Txt_Senha";
-            this.Txt_Senha.Size = new System.Drawing.Size(298, 23);
+            this.Txt_Senha.PasswordChar = '*';
+            this.Txt_Senha.Size = new System.Drawing.Size(217, 23);
             this.Txt_Senha.TabIndex = 2;
             // 
             // Btn_Continuar
@@ -119,12 +121,23 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_CPFLogin.Size = new System.Drawing.Size(298, 23);
             this.Msk_CPFLogin.TabIndex = 1;
             // 
+            // Btn_VerSenha
+            // 
+            this.Btn_VerSenha.Location = new System.Drawing.Point(256, 328);
+            this.Btn_VerSenha.Name = "Btn_VerSenha";
+            this.Btn_VerSenha.Size = new System.Drawing.Size(75, 24);
+            this.Btn_VerSenha.TabIndex = 6;
+            this.Btn_VerSenha.Text = "button1";
+            this.Btn_VerSenha.UseVisualStyleBackColor = true;
+            this.Btn_VerSenha.Click += new System.EventHandler(this.Btn_VerSenha_Click);
+            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.Btn_VerSenha);
             this.Controls.Add(this.Msk_CPFLogin);
             this.Controls.Add(this.Lbl_NovaSenha);
             this.Controls.Add(this.Lbl_Cadastro);
@@ -155,5 +168,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.Label Lbl_Cadastro;
         private System.Windows.Forms.Label Lbl_NovaSenha;
         private System.Windows.Forms.MaskedTextBox Msk_CPFLogin;
+        private System.Windows.Forms.Button Btn_VerSenha;
     }
 }

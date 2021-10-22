@@ -46,13 +46,13 @@ namespace ProjetoMonetaryBank.Inicializacao
             }
         }
 
-        Validacoes.Unit ValidaSenha()
-        {
-            Validacoes.Unit C = new Validacoes.Unit();
-            C.Senha = Txt_Senha.Text;
-            C.SenhaConfirma = Txt_SenhaConfirma.Text;
-            return C;
-        }
+        //Validacoes.Unit ValidaSenha()
+        //{
+        //    Validacoes.Unit C = new Validacoes.Unit();
+        //    C.Senha = Txt_Senha.Text;
+        //    C.SenhaConfirma = Txt_SenhaConfirma.Text;
+        //    return C;
+        //}
 
         private void Btn_Finalizar_Click(object sender, EventArgs e)
         {

@@ -36,6 +36,7 @@ namespace Forms.Formularios.Operacoes
             this.Lbl_Valor = new System.Windows.Forms.Label();
             this.Lbl_ValidaSenha = new System.Windows.Forms.Label();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
+            this.Btn_Senha = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Confirmar
@@ -71,7 +72,8 @@ namespace Forms.Formularios.Operacoes
             // 
             this.Txt_ValidaSenha.Location = new System.Drawing.Point(32, 164);
             this.Txt_ValidaSenha.Name = "Txt_ValidaSenha";
-            this.Txt_ValidaSenha.Size = new System.Drawing.Size(293, 23);
+            this.Txt_ValidaSenha.PasswordChar = '*';
+            this.Txt_ValidaSenha.Size = new System.Drawing.Size(212, 23);
             this.Txt_ValidaSenha.TabIndex = 3;
             // 
             // Lbl_Valor
@@ -104,11 +106,22 @@ namespace Forms.Formularios.Operacoes
             this.Btn_Cancelar.MouseEnter += new System.EventHandler(this.Btn_Cancelar_MouseEnter_1);
             this.Btn_Cancelar.MouseLeave += new System.EventHandler(this.Btn_Cancelar_MouseLeave_1);
             // 
+            // Btn_Senha
+            // 
+            this.Btn_Senha.Location = new System.Drawing.Point(250, 164);
+            this.Btn_Senha.Name = "Btn_Senha";
+            this.Btn_Senha.Size = new System.Drawing.Size(75, 24);
+            this.Btn_Senha.TabIndex = 7;
+            this.Btn_Senha.Text = "button1";
+            this.Btn_Senha.UseVisualStyleBackColor = true;
+            this.Btn_Senha.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_Saque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 287);
+            this.Controls.Add(this.Btn_Senha);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Lbl_ValidaSenha);
             this.Controls.Add(this.Lbl_Valor);
@@ -135,5 +148,6 @@ namespace Forms.Formularios.Operacoes
         private System.Windows.Forms.Label Lbl_Valor;
         private System.Windows.Forms.Label Lbl_ValidaSenha;
         private System.Windows.Forms.Button Btn_Cancelar;
+        private System.Windows.Forms.Button Btn_Senha;
     }
 }

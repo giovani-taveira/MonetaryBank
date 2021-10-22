@@ -1,4 +1,5 @@
-﻿using Forms.Formularios.Operacoes;
+﻿using Forms.BancoDeDados;
+using Forms.Formularios.Operacoes;
 using ProjetoMonetaryBank.Inicializacao;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace ProjetoMonetaryBank.Principal
     public partial class Frm_Principal : Form
     {
         string CPF;
+        string senha;
+        double saldo;
         public Frm_Principal()
         {
             InitializeComponent();
@@ -27,17 +30,14 @@ namespace ProjetoMonetaryBank.Principal
             this.Text = "Monetary Bank";
         }
 
-        public Frm_Principal(string Nome, double Saldo, string Cpf) : this()
+        public Frm_Principal(string Nome, double Saldo, string Cpf, string Senha) : this()
         {
-             Lbl_NomeUsuario.Text = "Olá " + Nome;
-             Lbl_Saldo.Text = "Seu Saldo: R$" + Saldo.ToString();
-             CPF = Cpf;
+            Lbl_NomeUsuario.Text = "Olá " + Nome;
+            CPF = Cpf;
+            senha = Senha;
+            VerificaSaldo(CPF);
         }
 
-        public Frm_Principal(double Saldo) : this()
-        {
-            Lbl_Saldo.Text = Saldo.ToString();
-        }
         public void Frm_Principal_Load(object sender, EventArgs e)
         {
 
@@ -47,9 +47,10 @@ namespace ProjetoMonetaryBank.Principal
         {
             try
             {
-                using (var f = new Frm_Saque(CPF))
+                using (var f = new Frm_Saque(CPF, senha))
                 {
                     f.ShowDialog();
+                    VerificaSaldo(CPF);
                 }
             }
             catch (Exception)
@@ -60,17 +61,29 @@ namespace ProjetoMonetaryBank.Principal
 
         private void Btn_Depositar_Click(object sender, EventArgs e)
         {
-            using (var f = new Frm_Deposito(CPF))
+            using (var f = new Frm_Deposito(CPF, senha))
             {
                 f.ShowDialog();
+                VerificaSaldo(CPF);
             }
         }
 
         private void Btn_Transferencia_Click(object sender, EventArgs e)
         {
-            using (var f = new Frm_Tranferencia(CPF))
+            using (var f = new Frm_Tranferencia(CPF, senha))
             {
                 f.ShowDialog();
+                VerificaSaldo(CPF);
+            }
+        }
+
+        public void VerificaSaldo(string Cpf)
+        {
+            using (var ctx = new Context())
+            {
+                var saldoAtualiza = ctx.cliente.Where(p => p.CPF == Cpf).FirstOrDefault<Cliente>();
+                saldo = saldoAtualiza.Saldo;
+                Lbl_Saldo.Text = "Seu Saldo: R$" + saldo.ToString();
             }
         }
 
