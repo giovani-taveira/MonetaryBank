@@ -1,26 +1,23 @@
-﻿using System;
+﻿using Forms.BancoDeDados;
+using Microsoft.VisualBasic;
+using ProjetoMonetaryBank.Inicializacao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
-using ProjetoMonetaryBank.Inicializacao;
-using System.Data.SqlClient;
-using Forms.BancoDeDados;
-//using DataBase;
 
-
-namespace ProjetoMonetaryBank.Inicializacao
+namespace Forms.Formularios.Operacoes
 {
-    public partial class Frm_Cadastro : Form
+    public partial class Frm_AtualizaCadastro : Form
     {
-        public Frm_Cadastro()
+        string CPF;
+        public Frm_AtualizaCadastro()
         {
             InitializeComponent();
 
@@ -85,66 +82,56 @@ namespace ProjetoMonetaryBank.Inicializacao
             Cmb_Estados.Items.Add("Sergipe(SE)");
             Cmb_Estados.Items.Add("Tocantins(TO)");
         }
-        private void Btn_Cancelar_Click(object sender, EventArgs e)
+
+        public Frm_AtualizaCadastro(string cpf) : this()
         {
-            try
+            CPF = cpf;
+
+            using(var ctx = new Context())
             {
-                this.Hide();
-                Frm_Login f = new Frm_Login();
-                f.ShowDialog();
-            }
-            finally
-            {
-                this.Close();
+                var query = ctx.cliente.SingleOrDefault(c => c.CPF == CPF);
+                var queryEndereco = ctx.endereco.SingleOrDefault(e => e.Cep == query.CEP);
+
+                Txt_Nome.Text = query.Nome;
+                Msk_CPF.Text = query.CPF;
+                Msk_RG.Text = query.RG;
+                Txt_Email.Text = query.Email;
+                Txt_NomeMae.Text = query.NomeMae;
+                Txt_NomePai.Text = query.NomePai;
+                Msk_DataNascimento.Text = query.Nacimento;
+                Msk_Telefone.Text = query.Telefone;
+                Txt_Renda.Text = query.Renda;
+                Txt_Profissao.Text = query.Profissao;
+                Msk_CEP.Text = query.CEP;
+
+                Txt_Rua.Text = queryEndereco.Logradouro;
+                Txt_Bairro.Text = queryEndereco.Bairro;
+                Txt_Cidade.Text = queryEndereco.Cidade;
+                Txt_Numero.Text = queryEndereco.Numero;
+                Cmb_Estados.SelectedItem = queryEndereco.Estado;
+                Txt_Complemento.Text = queryEndereco.Complemento;
+
+                if(query.NaoConstaPai == true)
+                {
+                    Chk_TemPai.Checked = true;
+                }
+                else
+                {
+                    Chk_TemPai.Checked = false;
+                }
+                if (query.NaoConstaMae == true)
+                {
+                    Chk_TemMae.Checked = true;
+                }
+                else
+                {
+                    Chk_TemMae.Checked = false;
+                }
             }
         }
 
-        private void Btn_Cancelar_MouseHover(object sender, EventArgs e)
+        private void Btn_Continuar_Click(object sender, EventArgs e)
         {
-            Cursor = Cursors.Hand;
-        }
-        private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
-        }
-        private void Btn_Continuar_MouseHover(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-        private void Btn_Continuar_MouseLeave(object sender, EventArgs e)
-        {
-            Cursor = Cursors.Default;
-        }
-
-        private void Chk_TemMae_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Chk_TemMae.Checked == true)
-            {
-                Txt_NomeMae.Enabled = false;
-                Txt_NomeMae.Text = "";
-            }
-            else
-            {
-                Txt_NomeMae.Enabled = true;
-            }
-        }
-
-        private void Chk_TemPai_CheckedChanged(object sender, EventArgs e)
-        {
-            if (Chk_TemPai.Checked == true)
-            {
-                Txt_NomePai.Enabled = false;
-                Txt_NomePai.Text = "";
-            }
-            else
-            {
-                Txt_NomePai.Enabled = true;
-            }
-        }
-
-        public void Btn_Continuar_Click(object sender, EventArgs e)
-        {
-            bool CadastroConcluido = false;
             try
             {
                 Validacoes.Unit C = new Validacoes.Unit();
@@ -152,36 +139,34 @@ namespace ProjetoMonetaryBank.Inicializacao
                 C.ValidaClasse();
                 try
                 {
-                    var ctx = new Context();
-                    
-                    var verificaExistencia = ctx.cliente.Where(c => c.CPF == Msk_CPF.Text).SingleOrDefault();
-                    
-                    if(verificaExistencia != null)
+                    using (var ctx = new Context())
                     {
-                        MessageBox.Show("Esse usuário ja existe!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        InsereCliente();
-                        MessageBox.Show("Cadastro Realizado com Sucesso!");
-                        using (var f = new Frm_CriaSenha(Msk_CPF.Text))
-                        {
-                            this.Hide();
-                            f.ShowDialog();
-                        }
-                        CadastroConcluido = true;
+                        var u = ctx.cliente.FirstOrDefault(c => c.CPF == CPF);
+                        var a = ctx.endereco.FirstOrDefault(c => c.Cep == u.CEP);
+
+                        u.Email = Txt_Email.Text;
+                        u.Telefone = Msk_Telefone.Text;
+                        u.Profissao = Txt_Profissao.Text;
+                        u.Profissao = Txt_Renda.Text;
+                        u.CEP = Msk_CEP.Text;
+                        a.Cep = u.CEP;
+                        a.Bairro = Txt_Bairro.Text;
+                        a.Cidade = Txt_Cidade.Text;
+                        a.Logradouro = Txt_Rua.Text;
+                        a.Numero = Txt_Numero.Text;
+                        a.Estado = Cmb_Estados.Text;
+                        a.Complemento = Txt_Complemento.Text;
+
+                        ctx.SaveChanges();
                     }
                 }
-                catch(Exception Ex)
+                catch (Exception Ex)
                 {
                     MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    if(CadastroConcluido == true)
-                    {
-                        this.Close();
-                    }
+                    this.Close();
                 }
             }
             catch (ValidationException Ex)
@@ -189,72 +174,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //Banco de dados
-        public void InsereCliente()
-        {
-            Cliente c = new Cliente();
-            Endereco e = new Endereco();
-            Login l = new Login();
-            Context ctx = new Context();
-
-            try
-            {
-                c.Nome = Txt_Nome.Text;
-                c.CPF = Msk_CPF.Text;
-                c.RG = Msk_RG.Text;
-                c.Email = Txt_Email.Text;
-                c.Nacimento = Msk_DataNascimento.Text;
-                c.Telefone = Msk_Telefone.Text;
-                c.NomeMae = Txt_NomeMae.Text;
-                c.NaoConstaMae = Chk_TemMae.Checked;
-                c.NomePai = Txt_NomePai.Text;
-                c.NaoConstaPai = Chk_TemPai.Checked;
-                c.CEP = Msk_CEP.Text;
-                c.Profissao = Txt_Profissao.Text;
-                c.Renda = Txt_Renda.Text;
-                c.Saldo = 0.00;
-
-
-                e.Cep = Msk_CEP.Text;
-                e.Logradouro = Txt_Rua.Text;
-                e.Numero = Txt_Numero.Text;
-                e.Complemento = Txt_Complemento.Text;
-                e.Bairro = Txt_Bairro.Text;
-                e.Cidade = Txt_Cidade.Text;
-                e.Estado = Cmb_Estados.Text;
-
-                //l.CPF = Msk_CPF.Text;
-
-                if (Rdb_Masculino.Checked)
-                {
-                    c.Sexo = Rdb_Masculino.Text.First<char>();
-                }
-                else if (Rdb_Feminino.Checked)
-                {
-                    c.Sexo = Rdb_Feminino.Text.First<char>();
-                }
-                else if (Rdb_Indefinido.Checked)
-                {
-                    c.Sexo = Rdb_Indefinido.Text.First<char>();
-                }
-
-                //ctx.login.Add(l);
-                ctx.endereco.Add(e);
-                ctx.cliente.Add(c);
-                ctx.SaveChanges();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
-            }
-
-            catch (ValidationException Ex)
-            {
-                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+        
         Validacoes.Unit LeituraFormulario()
         {
             //Validações dos dados do formulario
@@ -322,8 +242,29 @@ namespace ProjetoMonetaryBank.Inicializacao
             return C;
         }
 
-        private void Frm_Cadastro_Load(object sender, EventArgs e)
+        private void Btn_Cancelar_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void Btn_Continuar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void Btn_Continuar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void Btn_Cancelar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
         }
     }
 }

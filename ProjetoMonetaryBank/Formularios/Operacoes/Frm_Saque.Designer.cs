@@ -29,6 +29,7 @@ namespace Forms.Formularios.Operacoes
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Saque));
             this.Btn_Confirmar = new System.Windows.Forms.Button();
             this.Lbl_NomeOperacao = new System.Windows.Forms.Label();
             this.Txt_Valor = new System.Windows.Forms.TextBox();
@@ -54,9 +55,10 @@ namespace Forms.Formularios.Operacoes
             // Lbl_NomeOperacao
             // 
             this.Lbl_NomeOperacao.AutoSize = true;
+            this.Lbl_NomeOperacao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_NomeOperacao.Location = new System.Drawing.Point(32, 25);
             this.Lbl_NomeOperacao.Name = "Lbl_NomeOperacao";
-            this.Lbl_NomeOperacao.Size = new System.Drawing.Size(38, 15);
+            this.Lbl_NomeOperacao.Size = new System.Drawing.Size(63, 25);
             this.Lbl_NomeOperacao.TabIndex = 1;
             this.Lbl_NomeOperacao.Text = "label1";
             this.Lbl_NomeOperacao.Click += new System.EventHandler(this.Lbl_NomeOperacao_Click);
@@ -130,6 +132,7 @@ namespace Forms.Formularios.Operacoes
             this.Controls.Add(this.Lbl_NomeOperacao);
             this.Controls.Add(this.Btn_Confirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "Frm_Saque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

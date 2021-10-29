@@ -54,9 +54,10 @@ namespace Forms.Formularios.Operacoes
             // Lbl_NomeOperacao
             // 
             this.Lbl_NomeOperacao.AutoSize = true;
-            this.Lbl_NomeOperacao.Location = new System.Drawing.Point(32, 25);
+            this.Lbl_NomeOperacao.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_NomeOperacao.Location = new System.Drawing.Point(32, 24);
             this.Lbl_NomeOperacao.Name = "Lbl_NomeOperacao";
-            this.Lbl_NomeOperacao.Size = new System.Drawing.Size(38, 15);
+            this.Lbl_NomeOperacao.Size = new System.Drawing.Size(63, 25);
             this.Lbl_NomeOperacao.TabIndex = 1;
             this.Lbl_NomeOperacao.Text = "label1";
             // 

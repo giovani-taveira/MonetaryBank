@@ -1,4 +1,5 @@
 ﻿using Forms.BancoDeDados;
+using Forms.Formularios.Inicializacao;
 using ProjetoMonetaryBank.Principal;
 using System;
 using System.Collections.Generic;
@@ -71,25 +72,32 @@ namespace ProjetoMonetaryBank.Inicializacao
                 using (var ctx = new Context())
                 {
                     var query = ctx.login.Where(x => x.CPF == Msk_CPFLogin.Text 
-                        && x.Senha == Txt_Senha.Text).FirstOrDefault<Login>();
+                        && x.Senha == Txt_Senha.Text).SingleOrDefault<Login>();
 
                     if (query != null)
                     {
-                        var queryNome = ctx.cliente.Where(x => x.CPF == Msk_CPFLogin.Text)
-                            .FirstOrDefault<Cliente>();
-                        MessageBox.Show($"Bem vindo {queryNome.Nome}");
-
-                        try
+                        if(query.Senha != null)
                         {
-                            this.Hide();
-                            using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF, query.Senha))
+                            var queryNome = ctx.cliente.Where(x => x.CPF == Msk_CPFLogin.Text)
+                                .FirstOrDefault<Cliente>();
+                            MessageBox.Show($"Bem vindo {queryNome.Nome}");
+
+                            try
                             {
-                                f.ShowDialog();
+                                this.Hide();
+                                using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF, query.Senha, queryNome.CEP))
+                                {
+                                    f.ShowDialog();
+                                }
+                            }
+                            finally
+                            {
+                                this.Close();
                             }
                         }
-                        finally
+                        else
                         {
-                            this.Close();
+                            MessageBox.Show("Você não cadastrou uma senha. Clique em esqueci minha senha e registre uma");
                         }
                     }
                     else
@@ -108,13 +116,12 @@ namespace ProjetoMonetaryBank.Inicializacao
         {
             try
             {
-                this.Hide();
-                Frm_CriaSenha f = new Frm_CriaSenha();
+                AtualizaSenha f = new AtualizaSenha();
                 f.ShowDialog();
             }
-            finally
+            catch(Exception Ex)
             {
-                this.Close();
+                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -69,19 +69,27 @@ namespace Forms.Formularios.Operacoes
                             else
                             {
                                 var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
-                                if (ValorConvertido != 0)
-                                {
-                                    AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
-                                    var PerdeSaldo = ctx.cliente.First(p => p.CPF == cpf);
-                                    PerdeSaldo.Saldo -= ValorConvertido;
+                                AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
+                                var PerdeSaldo = ctx.cliente.First(p => p.CPF == cpf);
 
-                                    ctx.SaveChanges();
-                                    MessageBox.Show("Operação realizada com sucesso!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    this.Close();
+                                if (PerdeSaldo.Saldo >= ValorConvertido)
+                                {
+                                    if (ValorConvertido != 0)
+                                    {
+                                        PerdeSaldo.Saldo -= ValorConvertido;
+                                        InsereHistorico();
+                                        ctx.SaveChanges();
+                                        MessageBox.Show("Operação realizada com sucesso!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("O valor deve ser maior que 0!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("O valor deve ser maior que 0!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("Saldo Insuficiente ", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }
@@ -91,7 +99,7 @@ namespace Forms.Formularios.Operacoes
                         }
                     }
                 }
-                else
+                else if(Txt_ValidaSenha.Text != senha)
                 {
                     MessageBox.Show("Senha Incorreta", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -99,6 +107,31 @@ namespace Forms.Formularios.Operacoes
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void InsereHistorico()
+        {
+            using (var ctx = new Context())
+            {
+                var Recebedor = ctx.cliente.First(p => p.CPF == Msk_CpfRecebedor.Text);
+                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                Historico h = new Historico();
+                try
+                {
+                    h.CPF = cpf;
+                    h.Operacao = "Transferência";
+                    h.NomeRecebedor = Recebedor.Nome;
+                    h.Valor = ValorConvertido;
+                    h.Data_Operacao = DateTime.Now;
+
+                    ctx.historico.Add(h);
+                    ctx.SaveChanges();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

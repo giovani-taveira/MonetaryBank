@@ -27,7 +27,6 @@
                         Renda = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
-            
         }
         
         public override void Down()

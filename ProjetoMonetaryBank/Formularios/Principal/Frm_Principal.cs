@@ -1,4 +1,5 @@
 ﻿using Forms.BancoDeDados;
+using Forms.Formularios.Inicializacao;
 using Forms.Formularios.Operacoes;
 using ProjetoMonetaryBank.Inicializacao;
 using System;
@@ -18,6 +19,7 @@ namespace ProjetoMonetaryBank.Principal
         string CPF;
         string senha;
         double saldo;
+        string Cep;
         public Frm_Principal()
         {
             InitializeComponent();
@@ -28,19 +30,21 @@ namespace ProjetoMonetaryBank.Principal
             Btn_Sacar.Text = "Sacar";
             Btn_Transferencia.Text = "Transferir";
             this.Text = "Monetary Bank";
+            Tsm_AlterarDados.Text = "Alterar Dados";
+            Tsm_ApagarConta.Text = "Apagar Conta";
+            Tsm_AlterarDados.Text = "Alterar Dados";
+            Tsm_AlterarSenha.Text = "Alterar Senha";
+            Tsm_Conta.Text = "Conta";
+            Tsm_Sair.Text = "Sair";
         }
 
-        public Frm_Principal(string Nome, double Saldo, string Cpf, string Senha) : this()
+        public Frm_Principal(string Nome, double Saldo, string Cpf, string Senha, string CEP) : this()
         {
             Lbl_NomeUsuario.Text = "Olá " + Nome;
             CPF = Cpf;
             senha = Senha;
+            Cep = CEP;
             VerificaSaldo(CPF);
-        }
-
-        public void Frm_Principal_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Btn_Sacar_Click(object sender, EventArgs e)
@@ -89,11 +93,20 @@ namespace ProjetoMonetaryBank.Principal
 
         private void Btn_Historico_Click(object sender, EventArgs e)
         {
-            Frm_Historico f = new Frm_Historico();
-            f.ShowDialog();
+            try
+            {
+                using (var f = new Frm_Historico(CPF))
+                {
+                    f.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Um erro inesperado aconteceu", "Erro");
+            }
         }
 
-        private void Pcb_Imagem_Click(object sender, EventArgs e)
+        private void Tls_Sair_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -157,8 +170,73 @@ namespace ProjetoMonetaryBank.Principal
             this.Cursor = Cursors.Default;
         }
 
-        private void Lbl_Teste_Click(object sender, EventArgs e)
+        private void Tsm_Sair_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.Hide();
+                Frm_Login f = new Frm_Login();
+                f.ShowDialog();
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
+        private void Tsm_ApagarConta_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Você tem certeza que deseja apagar sua conta? Essa ação não poderá ser desfeita!", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            {
+                using (var ctx = new Context())
+                {
+                    var RemoverConta = ctx.cliente.SingleOrDefault(x => x.CPF == CPF);
+                    var RemoverContaLogin = ctx.login.SingleOrDefault(x => x.CPF == CPF);
+                    var RemoverContaEndereco = ctx.endereco.SingleOrDefault(x => x.Cep == Cep);
+
+                    ctx.cliente.Remove(RemoverConta);
+                    ctx.login.Remove(RemoverContaLogin);
+                    ctx.endereco.Remove(RemoverContaEndereco);
+                    ctx.SaveChanges();
+
+                    try
+                    {
+                        this.Hide();
+                        Frm_Login f = new Frm_Login();
+                        f.ShowDialog();
+                    }
+                    finally
+                    {
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+        private void Tsm_AlterarDados_Click(object sender, EventArgs e)
+        {
+            using (var f = new Frm_AtualizaCadastro(CPF))
+            {
+                f.ShowDialog();
+            }
+        }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Tsm_AlterarSenha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AtualizaSenha f = new AtualizaSenha();
+                f.ShowDialog();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

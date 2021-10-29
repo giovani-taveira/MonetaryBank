@@ -39,5 +39,6 @@ namespace Forms.BancoDeDados
         public DbSet<Cliente> cliente { get; set;}
         public DbSet<Endereco> endereco { get; set; }
         public DbSet<Login> login { get; set; }
+        public DbSet<Historico> historico { get; set; }
     }
 }

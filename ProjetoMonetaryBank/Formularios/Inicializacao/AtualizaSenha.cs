@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Forms.BancoDeDados;
+using ProjetoMonetaryBank.Inicializacao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using ProjetoMonetaryBank.Inicializacao;
-using Forms.BancoDeDados;
 
-namespace ProjetoMonetaryBank.Inicializacao
+namespace Forms.Formularios.Inicializacao
 {
-    public partial class Frm_CriaSenha : Form
+    public partial class AtualizaSenha : Form
     {
         bool verSenha = false;
-        public Frm_CriaSenha()
+        public AtualizaSenha()
         {
             InitializeComponent();
+
             Lbl_CPF.Text = "CPF";
             Lbl_Senha.Text = "nova senha";
             Lbl_SenhaConfirma.Text = "Digite a senha novamente";
@@ -27,40 +27,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Text = "Monetary Bank";
         }
 
-        public Frm_CriaSenha(string cpf) : this()
-        {
-            Msk_CPF.Text = cpf;
-        }
-        private void Lbl_SenhaConfirma_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_Voltar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Hide();
-                Frm_Cadastro f = new Frm_Cadastro();
-                f.ShowDialog();
-            }
-            finally
-            {
-                this.Close();
-            }
-        }
-
-        private void Btn_Finalizar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                NovaSenha();
-                MessageBox.Show("Senha Criada com Sucesso");
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+             this.Close();
         }
 
         private void Btn_Senha1_Click(object sender, EventArgs e)
@@ -94,22 +63,33 @@ namespace ProjetoMonetaryBank.Inicializacao
                 Btn_Senha2.Text = "Mostrar";
             }
         }
+
+        private void Btn_Finalizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NovaSenha();
+                MessageBox.Show("Senha Atualizada com Sucesso");
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         void NovaSenha()
         {
             try
             {
-                Login l = new Login();
-
                 using (var ctx = new Context())
                 {
-                    var resultado = ctx.cliente.Where(x => x.CPF == Msk_CPF.Text).FirstOrDefault<Cliente>();
-                    l.CPF = Msk_CPF.Text;
+                    var resultado = ctx.login.Where(x => x.CPF == Msk_CPF.Text).FirstOrDefault<Login>();
                     if (resultado != null)
                     {
                         if (Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
                         {
-                            l.Senha = Txt_Senha.Text;
-                            ctx.login.Add(l);
+                            resultado.Senha = Txt_Senha.Text;
+                            //ctx.login.Add(l);
                             ctx.SaveChanges();
                             try
                             {
@@ -133,7 +113,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
             }

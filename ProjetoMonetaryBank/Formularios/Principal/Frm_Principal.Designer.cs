@@ -37,19 +37,20 @@ namespace ProjetoMonetaryBank.Principal
             this.Btn_Historico = new System.Windows.Forms.Button();
             this.Lbl_Saldo = new System.Windows.Forms.Label();
             this.Lbl_Operacoes = new System.Windows.Forms.Label();
-            this.Pcb_Imagem = new System.Windows.Forms.PictureBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Tsm_Conta = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tsm_ApagarConta = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tsm_AlterarDados = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tsm_Sair = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tsm_AlterarSenha = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Lbl_NomeUsuario
             // 
             this.Lbl_NomeUsuario.AutoSize = true;
             this.Lbl_NomeUsuario.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_NomeUsuario.Location = new System.Drawing.Point(12, 77);
+            this.Lbl_NomeUsuario.Location = new System.Drawing.Point(12, 53);
             this.Lbl_NomeUsuario.Name = "Lbl_NomeUsuario";
             this.Lbl_NomeUsuario.Size = new System.Drawing.Size(63, 25);
             this.Lbl_NomeUsuario.TabIndex = 0;
@@ -57,7 +58,7 @@ namespace ProjetoMonetaryBank.Principal
             // 
             // Btn_Sacar
             // 
-            this.Btn_Sacar.Location = new System.Drawing.Point(46, 226);
+            this.Btn_Sacar.Location = new System.Drawing.Point(47, 220);
             this.Btn_Sacar.Name = "Btn_Sacar";
             this.Btn_Sacar.Size = new System.Drawing.Size(133, 65);
             this.Btn_Sacar.TabIndex = 1;
@@ -69,7 +70,7 @@ namespace ProjetoMonetaryBank.Principal
             // 
             // Btn_Depositar
             // 
-            this.Btn_Depositar.Location = new System.Drawing.Point(46, 297);
+            this.Btn_Depositar.Location = new System.Drawing.Point(47, 291);
             this.Btn_Depositar.Name = "Btn_Depositar";
             this.Btn_Depositar.Size = new System.Drawing.Size(133, 66);
             this.Btn_Depositar.TabIndex = 3;
@@ -81,7 +82,7 @@ namespace ProjetoMonetaryBank.Principal
             // 
             // Btn_Transferencia
             // 
-            this.Btn_Transferencia.Location = new System.Drawing.Point(202, 226);
+            this.Btn_Transferencia.Location = new System.Drawing.Point(203, 220);
             this.Btn_Transferencia.Name = "Btn_Transferencia";
             this.Btn_Transferencia.Size = new System.Drawing.Size(135, 65);
             this.Btn_Transferencia.TabIndex = 2;
@@ -93,7 +94,7 @@ namespace ProjetoMonetaryBank.Principal
             // 
             // Btn_Historico
             // 
-            this.Btn_Historico.Location = new System.Drawing.Point(202, 297);
+            this.Btn_Historico.Location = new System.Drawing.Point(203, 291);
             this.Btn_Historico.Name = "Btn_Historico";
             this.Btn_Historico.Size = new System.Drawing.Size(135, 66);
             this.Btn_Historico.TabIndex = 4;
@@ -107,7 +108,7 @@ namespace ProjetoMonetaryBank.Principal
             // 
             this.Lbl_Saldo.AutoSize = true;
             this.Lbl_Saldo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Saldo.Location = new System.Drawing.Point(12, 133);
+            this.Lbl_Saldo.Location = new System.Drawing.Point(12, 110);
             this.Lbl_Saldo.Name = "Lbl_Saldo";
             this.Lbl_Saldo.Size = new System.Drawing.Size(63, 25);
             this.Lbl_Saldo.TabIndex = 5;
@@ -117,54 +118,67 @@ namespace ProjetoMonetaryBank.Principal
             // 
             this.Lbl_Operacoes.AutoSize = true;
             this.Lbl_Operacoes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Lbl_Operacoes.Location = new System.Drawing.Point(12, 187);
+            this.Lbl_Operacoes.Location = new System.Drawing.Point(12, 176);
             this.Lbl_Operacoes.Name = "Lbl_Operacoes";
             this.Lbl_Operacoes.Size = new System.Drawing.Size(63, 25);
             this.Lbl_Operacoes.TabIndex = 6;
             this.Lbl_Operacoes.Text = "label1";
             // 
-            // Pcb_Imagem
+            // menuStrip1
             // 
-            this.Pcb_Imagem.Image = global::Forms.Properties.Resources.img_Sair;
-            this.Pcb_Imagem.Location = new System.Drawing.Point(344, 12);
-            this.Pcb_Imagem.Name = "Pcb_Imagem";
-            this.Pcb_Imagem.Size = new System.Drawing.Size(28, 27);
-            this.Pcb_Imagem.TabIndex = 7;
-            this.Pcb_Imagem.TabStop = false;
-            this.Pcb_Imagem.Click += new System.EventHandler(this.Pcb_Imagem_Click);
-            this.Pcb_Imagem.MouseEnter += new System.EventHandler(this.Pcb_Imagem_MouseEnter);
-            this.Pcb_Imagem.MouseLeave += new System.EventHandler(this.Pcb_Imagem_MouseLeave);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Tsm_Conta,
+            this.Tsm_Sair});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(384, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStrip1
+            // Tsm_Conta
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(384, 25);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
+            this.Tsm_Conta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Tsm_ApagarConta,
+            this.Tsm_AlterarDados,
+            this.Tsm_AlterarSenha});
+            this.Tsm_Conta.Name = "Tsm_Conta";
+            this.Tsm_Conta.Size = new System.Drawing.Size(125, 20);
+            this.Tsm_Conta.Text = "toolStripMenuItem1";
             // 
-            // toolStripLabel1
+            // Tsm_ApagarConta
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
+            this.Tsm_ApagarConta.Name = "Tsm_ApagarConta";
+            this.Tsm_ApagarConta.Size = new System.Drawing.Size(180, 22);
+            this.Tsm_ApagarConta.Text = "toolStripMenuItem2";
+            this.Tsm_ApagarConta.Click += new System.EventHandler(this.Tsm_ApagarConta_Click);
             // 
-            // toolStripLabel2
+            // Tsm_AlterarDados
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabel2.Text = "toolStripLabel2";
+            this.Tsm_AlterarDados.Name = "Tsm_AlterarDados";
+            this.Tsm_AlterarDados.Size = new System.Drawing.Size(180, 22);
+            this.Tsm_AlterarDados.Text = "toolStripMenuItem4";
+            this.Tsm_AlterarDados.Click += new System.EventHandler(this.Tsm_AlterarDados_Click);
+            // 
+            // Tsm_Sair
+            // 
+            this.Tsm_Sair.Name = "Tsm_Sair";
+            this.Tsm_Sair.Size = new System.Drawing.Size(125, 20);
+            this.Tsm_Sair.Text = "toolStripMenuItem3";
+            this.Tsm_Sair.Click += new System.EventHandler(this.Tsm_Sair_Click);
+            // 
+            // Tsm_AlterarSenha
+            // 
+            this.Tsm_AlterarSenha.Name = "Tsm_AlterarSenha";
+            this.Tsm_AlterarSenha.Size = new System.Drawing.Size(180, 22);
+            this.Tsm_AlterarSenha.Text = "toolStripMenuItem1";
+            this.Tsm_AlterarSenha.Click += new System.EventHandler(this.Tsm_AlterarSenha_Click);
             // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 400);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.Pcb_Imagem);
+            this.ClientSize = new System.Drawing.Size(384, 388);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Lbl_Operacoes);
             this.Controls.Add(this.Lbl_Saldo);
             this.Controls.Add(this.Btn_Historico);
@@ -174,14 +188,14 @@ namespace ProjetoMonetaryBank.Principal
             this.Controls.Add(this.Lbl_NomeUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Principal";
             this.Load += new System.EventHandler(this.Frm_Principal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Imagem)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,11 +207,13 @@ namespace ProjetoMonetaryBank.Principal
         private System.Windows.Forms.Button Btn_Transferencia;
         private System.Windows.Forms.Button Btn_Historico;
         private System.Windows.Forms.Label Lbl_Operacoes;
-        private System.Windows.Forms.PictureBox Pcb_Imagem;
         private System.Windows.Forms.Label Lbl_NomeUsuario;
         private System.Windows.Forms.Label Lbl_Saldo;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem Tsm_Conta;
+        private System.Windows.Forms.ToolStripMenuItem Tsm_ApagarConta;
+        private System.Windows.Forms.ToolStripMenuItem Tsm_AlterarDados;
+        private System.Windows.Forms.ToolStripMenuItem Tsm_Sair;
+        private System.Windows.Forms.ToolStripMenuItem Tsm_AlterarSenha;
     }
 }

@@ -63,6 +63,7 @@ namespace Forms.Formularios.Operacoes
                             {
                                 AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
                                 ctx.SaveChanges();
+                                InsereHistorico();
                                 MessageBox.Show("Operação realizada com sucesso!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
@@ -77,7 +78,7 @@ namespace Forms.Formularios.Operacoes
                         MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if(Txt_ValidaSenha.Text != senha)
                 {
                     MessageBox.Show("Senha Incorreta", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -88,6 +89,28 @@ namespace Forms.Formularios.Operacoes
             }
         }
 
+        void InsereHistorico()
+        {
+            using (var ctx = new Context())
+            {
+                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                Historico h = new Historico();
+                try
+                {
+                    h.CPF = cpf;
+                    h.Operacao = "Deposito";
+                    h.Valor = ValorConvertido;
+                    h.Data_Operacao = DateTime.Now;
+
+                    ctx.historico.Add(h);
+                    ctx.SaveChanges();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         Validacoes.OutrasOperacoes LeituraFormulario()
         {
             //Validações dos dados do formulario

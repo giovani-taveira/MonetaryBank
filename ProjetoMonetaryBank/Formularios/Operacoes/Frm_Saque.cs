@@ -55,6 +55,8 @@ namespace Forms.Formularios.Operacoes
                     {
                         using (var ctx = new Context())
                         {
+                            Historico h = new Historico();
+
                             var RetiraSaldo = ctx.cliente.First(p => p.CPF == cpf);
                             var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
                             if (RetiraSaldo.Saldo >= ValorConvertido)
@@ -63,6 +65,7 @@ namespace Forms.Formularios.Operacoes
                                 {
                                     RetiraSaldo.Saldo = RetiraSaldo.Saldo - ValorConvertido;
                                     ctx.SaveChanges();
+                                    InsereHistorico();
                                     MessageBox.Show("Operação realizada com sucesso!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
@@ -90,6 +93,29 @@ namespace Forms.Formularios.Operacoes
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        void InsereHistorico()
+        {
+            using(var ctx = new Context())
+            {
+                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                Historico h = new Historico();
+                try
+                {
+                    h.CPF = cpf;
+                    h.Operacao = "Saque";
+                    h.Valor = ValorConvertido;
+                    h.Data_Operacao = DateTime.Now;
+
+                    ctx.historico.Add(h);
+                    ctx.SaveChanges();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

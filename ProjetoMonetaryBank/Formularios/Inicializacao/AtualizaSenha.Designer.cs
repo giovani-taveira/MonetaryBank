@@ -1,7 +1,7 @@
 ﻿
-namespace ProjetoMonetaryBank.Inicializacao
+namespace Forms.Formularios.Inicializacao
 {
-    partial class Frm_CriaSenha
+    partial class AtualizaSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CriaSenha));
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Lbl_CPF = new System.Windows.Forms.Label();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
@@ -79,7 +78,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_SenhaConfirma.Size = new System.Drawing.Size(38, 15);
             this.Lbl_SenhaConfirma.TabIndex = 4;
             this.Lbl_SenhaConfirma.Text = "label3";
-            this.Lbl_SenhaConfirma.Click += new System.EventHandler(this.Lbl_SenhaConfirma_Click);
             // 
             // Txt_SenhaConfirma
             // 
@@ -124,7 +122,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_CPF.Location = new System.Drawing.Point(179, 46);
             this.Msk_CPF.Mask = "000,000,000-00";
             this.Msk_CPF.Name = "Msk_CPF";
-            this.Msk_CPF.ReadOnly = true;
             this.Msk_CPF.Size = new System.Drawing.Size(245, 23);
             this.Msk_CPF.TabIndex = 8;
             // 
@@ -148,7 +145,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_Senha2.UseVisualStyleBackColor = true;
             this.Btn_Senha2.Click += new System.EventHandler(this.Btn_Senha2_Click);
             // 
-            // Frm_CriaSenha
+            // AtualizaSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,9 +162,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Controls.Add(this.Lbl_CPF);
             this.Controls.Add(this.Lbl_Senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Frm_CriaSenha";
+            this.Name = "AtualizaSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CriaSenhacs";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
