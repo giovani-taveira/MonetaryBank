@@ -20,7 +20,7 @@ namespace ProjetoMonetaryBank.Inicializacao
         {
             InitializeComponent();
             Lbl_CPF.Text = "CPF";
-            Lbl_Senha.Text = "nova senha";
+            Lbl_Senha.Text = "Nova senha";
             Lbl_SenhaConfirma.Text = "Digite a senha novamente";
             Btn_Finalizar.Text = "Finalizar";
             Btn_Voltar.Text = "Voltar";
@@ -98,22 +98,19 @@ namespace ProjetoMonetaryBank.Inicializacao
         {
             try
             {
-                Login l = new Login();
-
                 using (var ctx = new Context())
                 {
-                    var resultado = ctx.cliente.Where(x => x.CPF == Msk_CPF.Text).FirstOrDefault<Cliente>();
-                    l.CPF = Msk_CPF.Text;
+                    var resultado = ctx.login.Where(x => x.cpf == Msk_CPF.Text).FirstOrDefault<Login>();
                     if (resultado != null)
                     {
                         if (Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
                         {
-                            l.Senha = Txt_Senha.Text;
-                            ctx.login.Add(l);
+                            resultado.Senha = Txt_Senha.Text;
                             ctx.SaveChanges();
+                            MessageBox.Show("Senha Criada com Sucesso");
                             try
                             {
-                                this.Hide();
+                                this.Hide(); 
                                 Frm_Login f = new Frm_Login();
                                 f.ShowDialog();
                             }
@@ -133,7 +130,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                     }
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
             }

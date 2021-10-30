@@ -57,8 +57,8 @@ namespace Forms.Formularios.Operacoes
                         {
                             Historico h = new Historico();
 
-                            var RetiraSaldo = ctx.cliente.First(p => p.CPF == cpf);
-                            var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                            var RetiraSaldo = ctx.login.First(p => p.cpf == cpf);
+                            var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                             if (RetiraSaldo.Saldo >= ValorConvertido)
                             {
                                 if (ValorConvertido != 0)
@@ -100,13 +100,13 @@ namespace Forms.Formularios.Operacoes
         {
             using(var ctx = new Context())
             {
-                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                 Historico h = new Historico();
                 try
                 {
-                    h.CPF = cpf;
+                    h.Cpf = cpf;
                     h.Operacao = "Saque";
-                    h.Valor = ValorConvertido;
+                    h.Valor = Math.Round(ValorConvertido, 2);
                     h.Data_Operacao = DateTime.Now;
 
                     ctx.historico.Add(h);

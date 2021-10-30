@@ -29,6 +29,7 @@ namespace Forms.Formularios.Inicializacao
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AtualizaSenha));
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Lbl_CPF = new System.Windows.Forms.Label();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
@@ -106,6 +107,8 @@ namespace Forms.Formularios.Inicializacao
             this.Btn_Finalizar.Text = "button1";
             this.Btn_Finalizar.UseVisualStyleBackColor = true;
             this.Btn_Finalizar.Click += new System.EventHandler(this.Btn_Finalizar_Click);
+            this.Btn_Finalizar.MouseEnter += new System.EventHandler(this.Btn_Finalizar_MouseEnter);
+            this.Btn_Finalizar.MouseLeave += new System.EventHandler(this.Btn_Finalizar_MouseLeave);
             // 
             // Btn_Voltar
             // 
@@ -116,6 +119,8 @@ namespace Forms.Formularios.Inicializacao
             this.Btn_Voltar.Text = "button2";
             this.Btn_Voltar.UseVisualStyleBackColor = true;
             this.Btn_Voltar.Click += new System.EventHandler(this.Btn_Voltar_Click);
+            this.Btn_Voltar.MouseEnter += new System.EventHandler(this.Btn_Voltar_MouseEnter);
+            this.Btn_Voltar.MouseLeave += new System.EventHandler(this.Btn_Voltar_MouseLeave);
             // 
             // Msk_CPF
             // 
@@ -162,6 +167,7 @@ namespace Forms.Formularios.Inicializacao
             this.Controls.Add(this.Lbl_CPF);
             this.Controls.Add(this.Lbl_Senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AtualizaSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

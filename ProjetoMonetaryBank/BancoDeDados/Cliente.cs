@@ -13,6 +13,8 @@ namespace Forms.BancoDeDados
         [Key]
         [StringLength(14)]
         public string CPF { get; set; }
+        [ForeignKey("CPF")]
+        public virtual Login cpf { get; set; }
         [StringLength(50)]
         public string Nome { get; set; }
         public char Sexo { get; set; }
@@ -36,8 +38,7 @@ namespace Forms.BancoDeDados
         public virtual Endereco Cep { get; set; }
         [StringLength(50)]
         public string Profissao { get; set; }
-        [StringLength(15)]
-        public string Renda { get; set; }
-        public double Saldo { get; set; }
+        [Column(TypeName = "Money")]
+        public decimal Renda { get; set; }
     }
 }

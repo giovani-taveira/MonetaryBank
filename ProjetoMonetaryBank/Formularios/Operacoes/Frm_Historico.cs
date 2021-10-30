@@ -22,7 +22,7 @@ namespace Forms.Formularios.Operacoes
             Btn_Pesquisar.Text = "Pesquisar";
             Btn_Cancelar.Text = "Cancelar";
 
-            Cmb_Operacoes.Items.Add("Todas");
+            Cmb_Operacoes.Items.Add("Todos");
             Cmb_Operacoes.Items.Add("Saque");
             Cmb_Operacoes.Items.Add("Deposito");
             Cmb_Operacoes.Items.Add("Transferência");
@@ -42,7 +42,7 @@ namespace Forms.Formularios.Operacoes
             using(var ctx = new Context())
             {
                 Cmb_Operacoes.SelectedItem = "Todos";
-                Dgv_Historico.DataSource = ctx.historico.Where(h => h.CPF == cpf).OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
+                Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf).OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
             }
         }
 
@@ -52,28 +52,28 @@ namespace Forms.Formularios.Operacoes
             {
                 using (var ctx = new Context())
                 {
-                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.CPF == cpf && h.Operacao == "Saque").ToList<Historico>();
+                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf && h.Operacao == "Saque").OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
                 }
             }
             if (Cmb_Operacoes.Text == "Deposito")
             {
                 using (var ctx = new Context())
                 {
-                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.CPF == cpf && h.Operacao == "Deposito").ToList<Historico>();
+                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf && h.Operacao == "Deposito").OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
                 }
             }
             if (Cmb_Operacoes.Text == "Transferência")
             {
                 using (var ctx = new Context())
                 {
-                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.CPF == cpf && h.Operacao == "Transferência").ToList<Historico>();
+                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf && h.Operacao == "Transferência").OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
                 }
             }
-            if (Cmb_Operacoes.Text == "Todas")
+            if (Cmb_Operacoes.Text == "Tods")
             {
                 using (var ctx = new Context())
                 {
-                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.CPF == cpf).ToList<Historico>();
+                    Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf).OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
                 }
             }
         }

@@ -13,7 +13,6 @@ using Microsoft.VisualBasic;
 using ProjetoMonetaryBank.Inicializacao;
 using System.Data.SqlClient;
 using Forms.BancoDeDados;
-//using DataBase;
 
 
 namespace ProjetoMonetaryBank.Inicializacao
@@ -174,7 +173,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 }
                 catch(Exception Ex)
                 {
-                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -200,6 +199,7 @@ namespace ProjetoMonetaryBank.Inicializacao
 
             try
             {
+                var Renda = Txt_Renda.Text;
                 c.Nome = Txt_Nome.Text;
                 c.CPF = Msk_CPF.Text;
                 c.RG = Msk_RG.Text;
@@ -212,9 +212,9 @@ namespace ProjetoMonetaryBank.Inicializacao
                 c.NaoConstaPai = Chk_TemPai.Checked;
                 c.CEP = Msk_CEP.Text;
                 c.Profissao = Txt_Profissao.Text;
-                c.Renda = Txt_Renda.Text;
-                c.Saldo = 0.00;
+                c.Renda = Convert.ToDecimal(Renda);
 
+                l.Saldo = 0;
 
                 e.Cep = Msk_CEP.Text;
                 e.Logradouro = Txt_Rua.Text;
@@ -224,7 +224,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 e.Cidade = Txt_Cidade.Text;
                 e.Estado = Cmb_Estados.Text;
 
-                //l.CPF = Msk_CPF.Text;
+                l.cpf = Msk_CPF.Text;
 
                 if (Rdb_Masculino.Checked)
                 {
@@ -239,16 +239,11 @@ namespace ProjetoMonetaryBank.Inicializacao
                     c.Sexo = Rdb_Indefinido.Text.First<char>();
                 }
 
-                //ctx.login.Add(l);
+                ctx.login.Add(l);
                 ctx.endereco.Add(e);
                 ctx.cliente.Add(c);
                 ctx.SaveChanges();
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
-            }
-
             catch (ValidationException Ex)
             {
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);

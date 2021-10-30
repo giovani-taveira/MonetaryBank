@@ -18,7 +18,7 @@ namespace ProjetoMonetaryBank.Principal
     {
         string CPF;
         string senha;
-        double saldo;
+        decimal saldo;
         string Cep;
         public Frm_Principal()
         {
@@ -38,7 +38,7 @@ namespace ProjetoMonetaryBank.Principal
             Tsm_Sair.Text = "Sair";
         }
 
-        public Frm_Principal(string Nome, double Saldo, string Cpf, string Senha, string CEP) : this()
+        public Frm_Principal(string Nome, decimal Saldo, string Cpf, string Senha, string CEP) : this()
         {
             Lbl_NomeUsuario.Text = "Olá " + Nome;
             CPF = Cpf;
@@ -85,9 +85,10 @@ namespace ProjetoMonetaryBank.Principal
         {
             using (var ctx = new Context())
             {
-                var saldoAtualiza = ctx.cliente.Where(p => p.CPF == Cpf).FirstOrDefault<Cliente>();
+                var saldoAtualiza = ctx.login.Where(p => p.cpf == Cpf).FirstOrDefault<Login>();
+                
                 saldo = saldoAtualiza.Saldo;
-                Lbl_Saldo.Text = "Seu Saldo: R$" + saldo.ToString();
+                Lbl_Saldo.Text = "Seu Saldo: R$" + saldo.ToString("N2");
             }
         }
 
@@ -172,15 +173,18 @@ namespace ProjetoMonetaryBank.Principal
 
         private void Tsm_Sair_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Deseja Sair?", "Monetary Bank", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-                this.Hide();
-                Frm_Login f = new Frm_Login();
-                f.ShowDialog();
-            }
-            finally
-            {
-                this.Close();
+                try
+                {
+                    this.Hide();
+                    Frm_Login f = new Frm_Login();
+                    f.ShowDialog();
+                }
+                finally
+                {
+                    this.Close();
+                }
             }
         }
 
@@ -191,12 +195,17 @@ namespace ProjetoMonetaryBank.Principal
                 using (var ctx = new Context())
                 {
                     var RemoverConta = ctx.cliente.SingleOrDefault(x => x.CPF == CPF);
-                    var RemoverContaLogin = ctx.login.SingleOrDefault(x => x.CPF == CPF);
+                    var RemoverContaLogin = ctx.login.SingleOrDefault(x => x.cpf == CPF);
                     var RemoverContaEndereco = ctx.endereco.SingleOrDefault(x => x.Cep == Cep);
+                    var RemoverHistorico = ctx.historico.Where(x => x.Cpf == CPF).ToList();
 
                     ctx.cliente.Remove(RemoverConta);
                     ctx.login.Remove(RemoverContaLogin);
                     ctx.endereco.Remove(RemoverContaEndereco);
+                    foreach(Historico historico in RemoverHistorico)
+                    {
+                        ctx.historico.Remove(historico);
+                    }
                     ctx.SaveChanges();
 
                     try
@@ -237,7 +246,6 @@ namespace ProjetoMonetaryBank.Principal
             {
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }

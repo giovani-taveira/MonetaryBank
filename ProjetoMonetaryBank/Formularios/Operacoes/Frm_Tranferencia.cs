@@ -61,16 +61,16 @@ namespace Forms.Formularios.Operacoes
                     {
                         try
                         {
-                            var AdicionaSaldo = ctx.cliente.First(p => p.CPF == Msk_CpfRecebedor.Text);
+                            var AdicionaSaldo = ctx.login.First(p => p.cpf == Msk_CpfRecebedor.Text);
                             if (Msk_CpfRecebedor.Text == cpf)
                             {
                                 MessageBox.Show("Este CPF é inválido para esta operação!", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {
-                                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                                var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                                 AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
-                                var PerdeSaldo = ctx.cliente.First(p => p.CPF == cpf);
+                                var PerdeSaldo = ctx.login.First(p => p.cpf == cpf);
 
                                 if (PerdeSaldo.Saldo >= ValorConvertido)
                                 {
@@ -115,14 +115,14 @@ namespace Forms.Formularios.Operacoes
             using (var ctx = new Context())
             {
                 var Recebedor = ctx.cliente.First(p => p.CPF == Msk_CpfRecebedor.Text);
-                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                 Historico h = new Historico();
                 try
                 {
-                    h.CPF = cpf;
+                    h.Cpf = cpf;
                     h.Operacao = "Transferência";
                     h.NomeRecebedor = Recebedor.Nome;
-                    h.Valor = ValorConvertido;
+                    h.Valor = Math.Round(ValorConvertido, 2);
                     h.Data_Operacao = DateTime.Now;
 
                     ctx.historico.Add(h);

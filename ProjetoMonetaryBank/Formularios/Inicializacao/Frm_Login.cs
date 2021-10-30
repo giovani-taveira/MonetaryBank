@@ -71,7 +71,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 this.Cursor = Cursors.WaitCursor;
                 using (var ctx = new Context())
                 {
-                    var query = ctx.login.Where(x => x.CPF == Msk_CPFLogin.Text 
+                    var query = ctx.login.Where(x => x.cpf == Msk_CPFLogin.Text 
                         && x.Senha == Txt_Senha.Text).SingleOrDefault<Login>();
 
                     if (query != null)
@@ -85,7 +85,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                             try
                             {
                                 this.Hide();
-                                using (var f = new Frm_Principal(queryNome.Nome, queryNome.Saldo, queryNome.CPF, query.Senha, queryNome.CEP))
+                                using (var f = new Frm_Principal(queryNome.Nome, query.Saldo, queryNome.CPF, query.Senha, queryNome.CEP))
                                 {
                                     f.ShowDialog();
                                 }

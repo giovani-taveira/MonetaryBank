@@ -30,7 +30,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Login));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
             this.Btn_Continuar = new System.Windows.Forms.Button();
             this.Lbl_CPF = new System.Windows.Forms.Label();
@@ -39,17 +38,9 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Lbl_NovaSenha = new System.Windows.Forms.Label();
             this.Msk_CPFLogin = new System.Windows.Forms.MaskedTextBox();
             this.Btn_VerSenha = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Forms.Properties.Resources.Logo_Finalizado;
-            this.pictureBox1.Location = new System.Drawing.Point(33, -11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(298, 264);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // Txt_Senha
             // 
@@ -131,12 +122,22 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Btn_VerSenha.UseVisualStyleBackColor = true;
             this.Btn_VerSenha.Click += new System.EventHandler(this.Btn_VerSenha_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Forms.Properties.Resources.MonetaryBank_LogoTipo;
+            this.pictureBox2.Location = new System.Drawing.Point(33, -2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(298, 255);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(384, 461);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Btn_VerSenha);
             this.Controls.Add(this.Msk_CPFLogin);
             this.Controls.Add(this.Lbl_NovaSenha);
@@ -145,22 +146,19 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Controls.Add(this.Lbl_CPF);
             this.Controls.Add(this.Btn_Continuar);
             this.Controls.Add(this.Txt_Senha);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.Button Btn_Continuar;
         private System.Windows.Forms.Label Lbl_CPF;
@@ -169,5 +167,6 @@ namespace ProjetoMonetaryBank.Inicializacao
         private System.Windows.Forms.Label Lbl_NovaSenha;
         private System.Windows.Forms.MaskedTextBox Msk_CPFLogin;
         private System.Windows.Forms.Button Btn_VerSenha;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

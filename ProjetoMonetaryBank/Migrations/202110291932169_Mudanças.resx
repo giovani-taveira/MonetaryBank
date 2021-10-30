@@ -112,55 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ico_deposito" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico-deposito.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Logo_Finalizado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\logo-finalizado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="img_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens-Icones\img_config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="img_senha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\img-senha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_saque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico-saque.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_cadastro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\icon-cadastro.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_papperMoney" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\icon-pappermoney.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="img_Sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\img_sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico-login.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_Sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico_sair.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_historico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico-historico.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ico_senha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\ico-senha.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_transferencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\icon-transferencia.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_ID" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\imagens-icones\icon-id.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MonetaryBank-LogoTipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens-Icones\MonetaryBank-LogoTipo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

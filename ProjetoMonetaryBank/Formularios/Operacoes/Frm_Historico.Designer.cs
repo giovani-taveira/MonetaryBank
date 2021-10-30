@@ -47,7 +47,7 @@ namespace Forms.Formularios.Operacoes
             this.Dgv_Historico.Location = new System.Drawing.Point(12, 102);
             this.Dgv_Historico.Name = "Dgv_Historico";
             this.Dgv_Historico.RowTemplate.Height = 25;
-            this.Dgv_Historico.Size = new System.Drawing.Size(645, 223);
+            this.Dgv_Historico.Size = new System.Drawing.Size(653, 223);
             this.Dgv_Historico.TabIndex = 0;
             this.Dgv_Historico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -95,7 +95,7 @@ namespace Forms.Formularios.Operacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 388);
+            this.ClientSize = new System.Drawing.Size(677, 388);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Pesquisar);
             this.Controls.Add(this.Cmb_Operacoes);
@@ -104,6 +104,7 @@ namespace Forms.Formularios.Operacoes
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_Historico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historico";

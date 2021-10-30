@@ -57,8 +57,8 @@ namespace Forms.Formularios.Operacoes
                     {
                         using (var ctx = new Context())
                         {
-                            var AdicionaSaldo = ctx.cliente.First(p => p.CPF == cpf);
-                            var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                            var AdicionaSaldo = ctx.login.First(p => p.cpf == cpf);
+                            var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                             if (ValorConvertido != 0)
                             {
                                 AdicionaSaldo.Saldo = AdicionaSaldo.Saldo + ValorConvertido;
@@ -93,13 +93,13 @@ namespace Forms.Formularios.Operacoes
         {
             using (var ctx = new Context())
             {
-                var ValorConvertido = Convert.ToDouble(Txt_Valor.Text);
+                var ValorConvertido = Convert.ToDecimal(Txt_Valor.Text);
                 Historico h = new Historico();
                 try
                 {
-                    h.CPF = cpf;
+                    h.Cpf = cpf;
                     h.Operacao = "Deposito";
-                    h.Valor = ValorConvertido;
+                    h.Valor = Math.Round(ValorConvertido, 2);
                     h.Data_Operacao = DateTime.Now;
 
                     ctx.historico.Add(h);

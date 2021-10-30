@@ -68,8 +68,7 @@ namespace Forms.Formularios.Inicializacao
         {
             try
             {
-                NovaSenha();
-                MessageBox.Show("Senha Atualizada com Sucesso");
+                NovaSenha();          
             }
             catch (Exception Ex)
             {
@@ -83,14 +82,14 @@ namespace Forms.Formularios.Inicializacao
             {
                 using (var ctx = new Context())
                 {
-                    var resultado = ctx.login.Where(x => x.CPF == Msk_CPF.Text).FirstOrDefault<Login>();
+                    var resultado = ctx.login.Where(x => x.cpf == Msk_CPF.Text).FirstOrDefault<Login>();
                     if (resultado != null)
                     {
                         if (Txt_Senha.Text == Txt_SenhaConfirma.Text && Txt_Senha.Text != "" && Txt_SenhaConfirma.Text != "")
                         {
                             resultado.Senha = Txt_Senha.Text;
-                            //ctx.login.Add(l);
                             ctx.SaveChanges();
+                            MessageBox.Show("Senha Atualizada com Sucesso");
                             try
                             {
                                 this.Hide();
@@ -117,6 +116,26 @@ namespace Forms.Formularios.Inicializacao
             {
                 MessageBox.Show("Ocorreu um erro, Tente novamente" + ex);
             }
+        }
+
+        private void Btn_Finalizar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void Btn_Finalizar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void Btn_Voltar_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void Btn_Voltar_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
         }
     }
 }

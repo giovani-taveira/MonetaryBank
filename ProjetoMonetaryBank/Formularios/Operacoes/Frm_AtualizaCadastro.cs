@@ -51,7 +51,6 @@ namespace Forms.Formularios.Operacoes
             Btn_Continuar.Text = "Continuar";
             Lbl_Bairro.Text = "Bairro";
 
-
             //Estados do combo box
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
@@ -91,6 +90,7 @@ namespace Forms.Formularios.Operacoes
             {
                 var query = ctx.cliente.SingleOrDefault(c => c.CPF == CPF);
                 var queryEndereco = ctx.endereco.SingleOrDefault(e => e.Cep == query.CEP);
+                var Renda = query.Renda;
 
                 Txt_Nome.Text = query.Nome;
                 Msk_CPF.Text = query.CPF;
@@ -100,7 +100,7 @@ namespace Forms.Formularios.Operacoes
                 Txt_NomePai.Text = query.NomePai;
                 Msk_DataNascimento.Text = query.Nacimento;
                 Msk_Telefone.Text = query.Telefone;
-                Txt_Renda.Text = query.Renda;
+                Txt_Renda.Text = query.Renda.ToString();
                 Txt_Profissao.Text = query.Profissao;
                 Msk_CEP.Text = query.CEP;
 
@@ -143,11 +143,12 @@ namespace Forms.Formularios.Operacoes
                     {
                         var u = ctx.cliente.FirstOrDefault(c => c.CPF == CPF);
                         var a = ctx.endereco.FirstOrDefault(c => c.Cep == u.CEP);
+                        var Renda = Txt_Renda.Text;
 
                         u.Email = Txt_Email.Text;
                         u.Telefone = Msk_Telefone.Text;
                         u.Profissao = Txt_Profissao.Text;
-                        u.Profissao = Txt_Renda.Text;
+                        u.Renda = Convert.ToDecimal(Renda);
                         u.CEP = Msk_CEP.Text;
                         a.Cep = u.CEP;
                         a.Bairro = Txt_Bairro.Text;
@@ -158,6 +159,8 @@ namespace Forms.Formularios.Operacoes
                         a.Complemento = Txt_Complemento.Text;
 
                         ctx.SaveChanges();
+
+                        MessageBox.Show("Cadastro atualizado com sucesso!");
                     }
                 }
                 catch (Exception Ex)
