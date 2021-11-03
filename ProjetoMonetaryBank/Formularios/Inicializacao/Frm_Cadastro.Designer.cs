@@ -408,6 +408,8 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Msk_CEP.Name = "Msk_CEP";
             this.Msk_CEP.Size = new System.Drawing.Size(176, 23);
             this.Msk_CEP.TabIndex = 14;
+            this.Msk_CEP.Leave += new System.EventHandler(this.Msk_CEP_Leave);
+            this.Msk_CEP.MouseLeave += new System.EventHandler(this.Msk_CEP_MouseLeave);
             // 
             // Cmb_Estados
             // 

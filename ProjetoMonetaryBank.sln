@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forms", "ProjetoMonetaryBank\Forms.csproj", "{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDatabaseWalkthrough", "SampleDatabaseWalkthrough\SampleDatabaseWalkthrough.csproj", "{090891C6-F1A7-41D7-B28D-C050541E596A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEE95A26-0A25-48CA-A3D1-486C927EDCCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090891C6-F1A7-41D7-B28D-C050541E596A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090891C6-F1A7-41D7-B28D-C050541E596A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090891C6-F1A7-41D7-B28D-C050541E596A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090891C6-F1A7-41D7-B28D-C050541E596A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

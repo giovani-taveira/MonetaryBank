@@ -100,7 +100,7 @@ namespace Forms.Formularios.Operacoes
                 Txt_NomePai.Text = query.NomePai;
                 Msk_DataNascimento.Text = query.Nacimento;
                 Msk_Telefone.Text = query.Telefone;
-                Txt_Renda.Text = query.Renda.ToString();
+                Txt_Renda.Text = query.Renda.ToString("N2");
                 Txt_Profissao.Text = query.Profissao;
                 Msk_CEP.Text = query.CEP;
 
@@ -111,7 +111,20 @@ namespace Forms.Formularios.Operacoes
                 Cmb_Estados.SelectedItem = queryEndereco.Estado;
                 Txt_Complemento.Text = queryEndereco.Complemento;
 
-                if(query.NaoConstaPai == true)
+                if (query.Sexo == "M")
+                {
+                    Rdb_Masculino.Checked = true;
+                }
+                else if (query.Sexo == "F")
+                {
+                    Rdb_Feminino.Checked = true;
+                }
+                else if (query.Sexo == "I")
+                {
+                    Rdb_Indefinido.Checked = true;
+                }
+
+                if (query.NaoConstaPai == true)
                 {
                     Chk_TemPai.Checked = true;
                 }
@@ -157,6 +170,19 @@ namespace Forms.Formularios.Operacoes
                         a.Numero = Txt_Numero.Text;
                         a.Estado = Cmb_Estados.Text;
                         a.Complemento = Txt_Complemento.Text;
+
+                        if (Rdb_Masculino.Checked)
+                        {
+                            u.Sexo = Rdb_Masculino.Text.First<char>().ToString();
+                        }
+                        else if (Rdb_Feminino.Checked)
+                        {
+                            u.Sexo = Rdb_Feminino.Text.First<char>().ToString();
+                        }
+                        else if (Rdb_Indefinido.Checked)
+                        {
+                            u.Sexo = Rdb_Indefinido.Text.First<char>().ToString();
+                        }
 
                         ctx.SaveChanges();
 

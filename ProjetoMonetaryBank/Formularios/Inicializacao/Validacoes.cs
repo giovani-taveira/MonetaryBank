@@ -60,7 +60,6 @@ namespace ProjetoMonetaryBank.Inicializacao
             [StringLength(10, ErrorMessage = "O número deve ter no máximo 10 caracteres.")]
             public string Numero { get; set; }
 
-            [Required(ErrorMessage = "Complemento é obrigatório.")]
             [StringLength(100, ErrorMessage = "Complemento deve ter no máximo 100 caracteres.")]
             public string Complemento { get; set; }
 

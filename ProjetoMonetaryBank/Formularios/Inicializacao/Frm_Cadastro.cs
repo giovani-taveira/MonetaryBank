@@ -13,6 +13,9 @@ using Microsoft.VisualBasic;
 using ProjetoMonetaryBank.Inicializacao;
 using System.Data.SqlClient;
 using Forms.BancoDeDados;
+using Refit;
+using Forms;
+//using WSCorreios;
 
 
 namespace ProjetoMonetaryBank.Inicializacao
@@ -143,9 +146,12 @@ namespace ProjetoMonetaryBank.Inicializacao
 
         public void Btn_Continuar_Click(object sender, EventArgs e)
         {
+
+
             bool CadastroConcluido = false;
             try
             {
+                
                 Validacoes.Unit C = new Validacoes.Unit();
                 C = LeituraFormulario();
                 C.ValidaClasse();
@@ -171,7 +177,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                         CadastroConcluido = true;
                     }
                 }
-                catch(Exception Ex)
+                catch(System.Exception Ex)
                 {
                    MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -186,6 +192,39 @@ namespace ProjetoMonetaryBank.Inicializacao
             catch (ValidationException Ex)
             {
                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Msk_CEP_Leave(object sender, EventArgs e)
+        {
+            BuscarCEP(Msk_CEP.Text);
+        }
+
+        async Task BuscarCEP(string cep)
+        {
+            try
+            {
+                var cepBuscar = RestService.For<ICepApiService>("https://viacep.com.br");
+                var endereco = await cepBuscar.GetAddressAsync(cep);
+
+                Txt_Rua.Text = endereco.Logradouro;
+                Txt_Bairro.Text = endereco.Bairro;
+                Txt_Cidade.Text = endereco.Localidade;
+
+                Cmb_Estados.SelectedIndex = -1;
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + endereco.Uf + ")");
+                    if (vPos > 0)
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -228,15 +267,15 @@ namespace ProjetoMonetaryBank.Inicializacao
 
                 if (Rdb_Masculino.Checked)
                 {
-                    c.Sexo = Rdb_Masculino.Text.First<char>();
+                    c.Sexo = Rdb_Masculino.Text.First<char>().ToString();
                 }
                 else if (Rdb_Feminino.Checked)
                 {
-                    c.Sexo = Rdb_Feminino.Text.First<char>();
+                    c.Sexo = Rdb_Feminino.Text.First<char>().ToString();
                 }
                 else if (Rdb_Indefinido.Checked)
                 {
-                    c.Sexo = Rdb_Indefinido.Text.First<char>();
+                    c.Sexo = Rdb_Indefinido.Text.First<char>().ToString();
                 }
 
                 ctx.login.Add(l);
@@ -320,5 +359,12 @@ namespace ProjetoMonetaryBank.Inicializacao
         private void Frm_Cadastro_Load(object sender, EventArgs e)
         {
         }
+
+        private void Msk_CEP_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -17,7 +17,8 @@ namespace Forms.BancoDeDados
         public virtual Login cpf { get; set; }
         [StringLength(50)]
         public string Nome { get; set; }
-        public char Sexo { get; set; }
+        [StringLength(1)]
+        public string Sexo { get; set; }
         [StringLength(12)]
         public string RG { get; set; }
         [StringLength(100)]
