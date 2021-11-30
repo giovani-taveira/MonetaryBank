@@ -86,6 +86,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Nome.Name = "Txt_Nome";
             this.Txt_Nome.Size = new System.Drawing.Size(401, 23);
             this.Txt_Nome.TabIndex = 1;
+            this.Txt_Nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Nome_KeyPress);
             // 
             // Txt_NomePai
             // 
@@ -93,6 +94,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_NomePai.Name = "Txt_NomePai";
             this.Txt_NomePai.Size = new System.Drawing.Size(400, 23);
             this.Txt_NomePai.TabIndex = 12;
+            this.Txt_NomePai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_NomePai_KeyPress);
             // 
             // Txt_NomeMae
             // 
@@ -100,6 +102,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_NomeMae.Name = "Txt_NomeMae";
             this.Txt_NomeMae.Size = new System.Drawing.Size(399, 23);
             this.Txt_NomeMae.TabIndex = 9;
+            this.Txt_NomeMae.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_NomeMae_KeyPress);
             // 
             // Grp_DadosPessoais
             // 
@@ -346,6 +349,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(176, 23);
             this.Txt_Bairro.TabIndex = 18;
+            this.Txt_Bairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Bairro_KeyPress);
             // 
             // Lbl_Estado
             // 
@@ -425,6 +429,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(300, 23);
             this.Txt_Cidade.TabIndex = 19;
+            this.Txt_Cidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cidade_KeyPress);
             // 
             // Txt_Complemento
             // 
@@ -439,6 +444,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Numero.Name = "Txt_Numero";
             this.Txt_Numero.Size = new System.Drawing.Size(176, 23);
             this.Txt_Numero.TabIndex = 16;
+            this.Txt_Numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Numero_KeyPress);
             // 
             // Txt_Rua
             // 
@@ -484,6 +490,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Renda.Name = "Txt_Renda";
             this.Txt_Renda.Size = new System.Drawing.Size(180, 23);
             this.Txt_Renda.TabIndex = 21;
+            this.Txt_Renda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Renda_KeyPress);
             // 
             // Txt_Profissao
             // 
@@ -491,6 +498,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(416, 23);
             this.Txt_Profissao.TabIndex = 22;
+            this.Txt_Profissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Profissao_KeyPress);
             // 
             // Btn_Continuar
             // 

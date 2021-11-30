@@ -352,6 +352,7 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(176, 23);
             this.Txt_Bairro.TabIndex = 18;
+            this.Txt_Bairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Bairro_KeyPress);
             // 
             // Lbl_Estado
             // 
@@ -414,6 +415,7 @@ namespace Forms.Formularios.Operacoes
             this.Msk_CEP.Name = "Msk_CEP";
             this.Msk_CEP.Size = new System.Drawing.Size(176, 23);
             this.Msk_CEP.TabIndex = 14;
+            this.Msk_CEP.Leave += new System.EventHandler(this.Msk_CEP_Leave);
             // 
             // Cmb_Estados
             // 
@@ -429,6 +431,8 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(300, 23);
             this.Txt_Cidade.TabIndex = 19;
+            this.Txt_Cidade.TextChanged += new System.EventHandler(this.Txt_Cidade_TextChanged);
+            this.Txt_Cidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cidade_KeyPress);
             // 
             // Txt_Complemento
             // 
@@ -443,6 +447,7 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Numero.Name = "Txt_Numero";
             this.Txt_Numero.Size = new System.Drawing.Size(176, 23);
             this.Txt_Numero.TabIndex = 16;
+            this.Txt_Numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Numero_KeyPress);
             // 
             // Txt_Rua
             // 
@@ -488,6 +493,7 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Renda.Name = "Txt_Renda";
             this.Txt_Renda.Size = new System.Drawing.Size(180, 23);
             this.Txt_Renda.TabIndex = 21;
+            this.Txt_Renda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Renda_KeyPress);
             // 
             // Txt_Profissao
             // 
@@ -495,6 +501,7 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(416, 23);
             this.Txt_Profissao.TabIndex = 22;
+            this.Txt_Profissao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Profissao_KeyPress);
             // 
             // Btn_Continuar
             // 

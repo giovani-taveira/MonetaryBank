@@ -30,6 +30,10 @@
       <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     </PropertyGroup>
 	
+    <ItemGroup>
+      <ProjectReference Include="..\FonteDeDados\FonteDeDados.csproj" />
+    </ItemGroup>
+	
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>

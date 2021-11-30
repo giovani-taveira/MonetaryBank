@@ -55,7 +55,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             try
             {
                 NovaSenha();
-                MessageBox.Show("Senha Criada com Sucesso");
+
             }
             catch (Exception Ex)
             {

@@ -21,7 +21,7 @@ namespace Forms.Formularios.Operacoes
         {
             InitializeComponent();
             Lbl_NomeOperacao.Text = "Operação de Saque";
-            Lbl_ValidaSenha.Text = "Digite sua Senha";
+            Lbl_ValidaSenha.Text = "Insira sua Senha";
             Lbl_Valor.Text = "Qual valor deseja sacar?";
             Btn_Cancelar.Text = "Cancelar";
             Btn_Confirmar.Text = "Confirmar";
@@ -85,7 +85,7 @@ namespace Forms.Formularios.Operacoes
                         MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
+                else if (Txt_ValidaSenha.Text != senha)
                 {
                     MessageBox.Show("Senha Incorreta", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -167,6 +167,14 @@ namespace Forms.Formularios.Operacoes
                 verSenha = false;
                 Btn_Senha.Text = "Mostrar";
             }
+        }
+
+        private void Txt_Valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != 46 && e.KeyChar != 44)
+                e.Handled = true;
+            else
+                e.Handled = false;
         }
     }
 }

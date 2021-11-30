@@ -10,6 +10,7 @@ namespace Forms.BancoDeDados
     public class Endereco
     {
         [Key()]
+        public int EnderecoId { get; set; }
         [StringLength(9)]
         public string Cep { get; set; }
         [StringLength(100)]

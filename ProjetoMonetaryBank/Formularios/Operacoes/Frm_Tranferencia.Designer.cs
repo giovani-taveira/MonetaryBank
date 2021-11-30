@@ -70,6 +70,7 @@ namespace Forms.Formularios.Operacoes
             this.Txt_Valor.Name = "Txt_Valor";
             this.Txt_Valor.Size = new System.Drawing.Size(293, 23);
             this.Txt_Valor.TabIndex = 2;
+            this.Txt_Valor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Valor_KeyPress);
             // 
             // Txt_ValidaSenha
             // 

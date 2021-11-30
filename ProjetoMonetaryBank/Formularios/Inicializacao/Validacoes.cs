@@ -49,6 +49,7 @@ namespace ProjetoMonetaryBank.Inicializacao
 
             //Endereço
             [Required(ErrorMessage = "CEP obrigatório.")]
+            
             [StringLength(9, MinimumLength = 9, ErrorMessage = "O CEP deve ter 8 dígitos.")]
             public string CEP { get; set; }
 

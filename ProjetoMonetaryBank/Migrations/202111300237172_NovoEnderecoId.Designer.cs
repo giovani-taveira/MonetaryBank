@@ -7,13 +7,13 @@ namespace Forms.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Mudanças : IMigrationMetadata
+    public sealed partial class NovoEnderecoId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Mudanças));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NovoEnderecoId));
         
         string IMigrationMetadata.Id
         {
-            get { return "202110291932169_Mudanças"; }
+            get { return "202111300237172_NovoEnderecoId"; }
         }
         
         string IMigrationMetadata.Source

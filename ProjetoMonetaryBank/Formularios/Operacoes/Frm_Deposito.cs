@@ -24,7 +24,7 @@ namespace Forms.Formularios.Operacoes
             InitializeComponent();
             Lbl_NomeOperacao.Text = "Operação de Deposito";
             Lbl_Valor.Text = "Digite o Valor a ser Depositado";
-            Lbl_ValidaSenha.Text = "Confirme Sua Senha";
+            Lbl_ValidaSenha.Text = "Insira Sua Senha";
             Btn_Cancelar.Text = "Cancelar";
             Btn_Confirmar.Text = "Confirmar";
             this.Text = "Depositar";
@@ -154,6 +154,14 @@ namespace Forms.Formularios.Operacoes
                 verSenha = false;
                 Btn_Senha.Text = "Mostrar";
             }
+        }
+
+        private void Txt_Valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != 46 && e.KeyChar != 44)
+                e.Handled = true;
+            else
+                e.Handled = false;
         }
     }
 }

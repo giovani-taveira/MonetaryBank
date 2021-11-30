@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
@@ -11,9 +12,11 @@ namespace Forms.BancoDeDados
 {
     public class Context : DbContext
     {
-        public Context() : base("MonetaryBankConnectionString")
-        {
 
+        
+        public Context() : base("FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString")
+        {
+             
         }
         public override int SaveChanges()
         {
@@ -38,7 +41,8 @@ namespace Forms.BancoDeDados
         }
         public DbSet<Cliente> cliente { get; set;}
         public DbSet<Endereco> endereco { get; set; }
-        public DbSet<Login> login { get; set; }
         public DbSet<Historico> historico { get; set; }
+        public DbSet<Login> login { get; set; }
+        
     }
 }

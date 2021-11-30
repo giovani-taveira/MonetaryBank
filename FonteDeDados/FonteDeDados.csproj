@@ -4,29 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{090891C6-F1A7-41D7-B28D-C050541E596A}</ProjectGuid>
+    <ProjectGuid>{230CD6B6-F8C9-4470-9228-E72A51E9FCC7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SampleDatabaseWalkthrough</RootNamespace>
-    <AssemblyName>SampleDatabaseWalkthrough</AssemblyName>
+    <RootNamespace>FonteDeDados</RootNamespace>
+    <AssemblyName>FonteDeDados</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -61,12 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MonetaryBankDB.Designer.cs">
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjetoMonetaryBankDB.cs">
+      <DependentUpon>ProjetoMonetaryBankDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjetoMonetaryBankDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MonetaryBankDB.xsd</DependentUpon>
+      <DependentUpon>ProjetoMonetaryBankDB.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,16 +65,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="MonetaryBankDB.xsc">
-      <DependentUpon>MonetaryBankDB.xsd</DependentUpon>
+    <None Include="ProjetoMonetaryBankDB.xsc">
+      <DependentUpon>ProjetoMonetaryBankDB.xsd</DependentUpon>
     </None>
-    <None Include="MonetaryBankDB.xsd">
+    <None Include="ProjetoMonetaryBankDB.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MonetaryBankDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>ProjetoMonetaryBankDB.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MonetaryBankDB.xss">
-      <DependentUpon>MonetaryBankDB.xsd</DependentUpon>
+    <None Include="ProjetoMonetaryBankDB.xss">
+      <DependentUpon>ProjetoMonetaryBankDB.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,30 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SampleDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SampleDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SampleDatabase.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

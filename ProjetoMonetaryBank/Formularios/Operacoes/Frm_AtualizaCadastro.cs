@@ -1,6 +1,7 @@
 ﻿using Forms.BancoDeDados;
 using Microsoft.VisualBasic;
 using ProjetoMonetaryBank.Inicializacao;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,8 +89,8 @@ namespace Forms.Formularios.Operacoes
 
             using(var ctx = new Context())
             {
-                var query = ctx.cliente.SingleOrDefault(c => c.CPF == CPF);
-                var queryEndereco = ctx.endereco.SingleOrDefault(e => e.Cep == query.CEP);
+                var query = ctx.cliente.FirstOrDefault(c => c.CPF == CPF);
+                var queryEndereco = ctx.endereco.FirstOrDefault(e => e.Cep == query.CEP);
                 var Renda = query.Renda;
 
                 Txt_Nome.Text = query.Nome;
@@ -140,6 +141,33 @@ namespace Forms.Formularios.Operacoes
                 {
                     Chk_TemMae.Checked = false;
                 }
+            }
+        }
+
+        async Task BuscarCEP(string cep)
+        {
+            try
+            {
+                var cepBuscar = RestService.For<ICepApiService>("https://viacep.com.br");
+                var endereco = await cepBuscar.GetAddressAsync(cep);
+
+                Txt_Rua.Text = endereco.Logradouro;
+                Txt_Bairro.Text = endereco.Bairro;
+                Txt_Cidade.Text = endereco.Localidade;
+
+                Cmb_Estados.SelectedIndex = -1;
+                for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                {
+                    var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + endereco.Uf + ")");
+                    if (vPos > 0)
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -294,6 +322,57 @@ namespace Forms.Formularios.Operacoes
         private void Btn_Cancelar_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
+        }
+
+        public void DesativaNumero(KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        public void DesativaLetras(KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
+
+        private void Txt_Numero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaLetras(e);
+        }
+
+        private void Txt_Bairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_Cidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Txt_Cidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_Renda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaLetras(e);
+        }
+
+        private void Txt_Profissao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Msk_CEP_Leave(object sender, EventArgs e)
+        {
+            BuscarCEP(Msk_CEP.Text);
         }
     }
 }

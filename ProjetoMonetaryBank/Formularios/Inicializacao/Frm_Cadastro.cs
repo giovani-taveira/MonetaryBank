@@ -179,7 +179,7 @@ namespace ProjetoMonetaryBank.Inicializacao
                 }
                 catch(System.Exception Ex)
                 {
-                   MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocorreu um erro ao tentar se cadastrar", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -191,7 +191,7 @@ namespace ProjetoMonetaryBank.Inicializacao
             }
             catch (ValidationException Ex)
             {
-                MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 MessageBox.Show(Ex.Message, "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -365,6 +365,60 @@ namespace ProjetoMonetaryBank.Inicializacao
 
         }
 
+        public void DesativaNumero(KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
 
+        public void DesativaLetras(KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+            else
+                e.Handled = false;
+        }
+
+        private void Txt_Nome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_NomeMae_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_NomePai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_Numero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaLetras(e);
+        }
+
+        private void Txt_Cidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_Renda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaLetras(e);
+        }
+
+        private void Txt_Profissao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
+
+        private void Txt_Bairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            DesativaNumero(e);
+        }
     }
 }

@@ -7,13 +7,13 @@ namespace Forms.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class TabelaLogin : IMigrationMetadata
+    public sealed partial class NovoBD : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TabelaLogin));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NovoBD));
         
         string IMigrationMetadata.Id
         {
-            get { return "202110151905272_TabelaLogin"; }
+            get { return "202111291905493_NovoBD"; }
         }
         
         string IMigrationMetadata.Source
