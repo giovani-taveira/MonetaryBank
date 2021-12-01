@@ -69,7 +69,7 @@ namespace Forms.Formularios.Operacoes
                     Dgv_Historico.DataSource = ctx.historico.Where(h => h.Cpf == cpf && h.Operacao == "Transferência").OrderByDescending(t => t.Data_Operacao).ToList<Historico>();
                 }
             }
-            if (Cmb_Operacoes.Text == "Tods")
+            if (Cmb_Operacoes.Text == "Todos")
             {
                 using (var ctx = new Context())
                 {

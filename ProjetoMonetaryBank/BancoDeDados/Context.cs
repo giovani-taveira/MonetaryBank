@@ -18,6 +18,11 @@ namespace Forms.BancoDeDados
         {
              
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<Context>(null);
+        }
         public override int SaveChanges()
         {
             try

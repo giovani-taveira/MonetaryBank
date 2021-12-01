@@ -20,9 +20,9 @@ namespace FonteDeDados {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ProjetoMonetaryBankDB")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ProjetoMonetaryBankDB : global::System.Data.DataSet {
+    public partial class _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet : global::System.Data.DataSet {
         
         private @__MigrationHistoryDataTable table__MigrationHistory;
         
@@ -34,15 +34,13 @@ namespace FonteDeDados {
         
         private LoginsDataTable tableLogins;
         
-        private global::System.Data.DataRelation _relationFK_dbo_Clientes_dbo_Enderecoes_CEP;
-        
         private global::System.Data.DataRelation _relationFK_dbo_Clientes_dbo_Logins_CPF;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ProjetoMonetaryBankDB() {
+        public _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -53,7 +51,7 @@ namespace FonteDeDados {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected ProjetoMonetaryBankDB(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -191,7 +189,7 @@ namespace FonteDeDados {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ProjetoMonetaryBankDB cln = ((ProjetoMonetaryBankDB)(base.Clone()));
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet cln = ((_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -294,16 +292,16 @@ namespace FonteDeDados {
                     this.tableLogins.InitVars();
                 }
             }
-            this._relationFK_dbo_Clientes_dbo_Enderecoes_CEP = this.Relations["FK_dbo.Clientes_dbo.Enderecoes_CEP"];
             this._relationFK_dbo_Clientes_dbo_Logins_CPF = this.Relations["FK_dbo.Clientes_dbo.Logins_CPF"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ProjetoMonetaryBankDB";
+            this.DataSetName = "_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ProjetoMonetaryBankDB.xsd";
+            this.Namespace = "http://tempuri.org/_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectio" +
+                "nStringDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.table__MigrationHistory = new @__MigrationHistoryDataTable();
@@ -316,10 +314,6 @@ namespace FonteDeDados {
             base.Tables.Add(this.tableHistoricoes);
             this.tableLogins = new LoginsDataTable();
             base.Tables.Add(this.tableLogins);
-            this._relationFK_dbo_Clientes_dbo_Enderecoes_CEP = new global::System.Data.DataRelation("FK_dbo.Clientes_dbo.Enderecoes_CEP", new global::System.Data.DataColumn[] {
-                        this.tableEnderecoes.CepColumn}, new global::System.Data.DataColumn[] {
-                        this.tableClientes.CEPColumn}, false);
-            this.Relations.Add(this._relationFK_dbo_Clientes_dbo_Enderecoes_CEP);
             this._relationFK_dbo_Clientes_dbo_Logins_CPF = new global::System.Data.DataRelation("FK_dbo.Clientes_dbo.Logins_CPF", new global::System.Data.DataColumn[] {
                         this.tableLogins.cpfColumn}, new global::System.Data.DataColumn[] {
                         this.tableClientes.CPFColumn}, false);
@@ -367,7 +361,7 @@ namespace FonteDeDados {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -674,7 +668,7 @@ namespace FonteDeDados {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+                _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -950,7 +944,7 @@ namespace FonteDeDados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientesRow AddClientesRow(LoginsRow _parentLoginsRowByFK_dbo_Clientes_dbo_Logins_CPF, string Nome, string Sexo, string RG, string Email, string Nacimento, string Telefone, string NomeMae, bool NaoConstaMae, string NomePai, bool NaoConstaPai, EnderecoesRow _parentEnderecoesRowByFK_dbo_Clientes_dbo_Enderecoes_CEP, string Profissao, decimal Renda) {
+            public ClientesRow AddClientesRow(LoginsRow _parentLoginsRowByFK_dbo_Clientes_dbo_Logins_CPF, string Nome, string Sexo, string RG, string Email, string Nacimento, string Telefone, string NomeMae, bool NaoConstaMae, string NomePai, bool NaoConstaPai, string CEP, string Profissao, decimal Renda) {
                 ClientesRow rowClientesRow = ((ClientesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -964,14 +958,11 @@ namespace FonteDeDados {
                         NaoConstaMae,
                         NomePai,
                         NaoConstaPai,
-                        null,
+                        CEP,
                         Profissao,
                         Renda};
                 if ((_parentLoginsRowByFK_dbo_Clientes_dbo_Logins_CPF != null)) {
                     columnValuesArray[0] = _parentLoginsRowByFK_dbo_Clientes_dbo_Logins_CPF[0];
-                }
-                if ((_parentEnderecoesRowByFK_dbo_Clientes_dbo_Enderecoes_CEP != null)) {
-                    columnValuesArray[11] = _parentEnderecoesRowByFK_dbo_Clientes_dbo_Enderecoes_CEP[0];
                 }
                 rowClientesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClientesRow);
@@ -1134,7 +1125,7 @@ namespace FonteDeDados {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+                _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1213,6 +1204,8 @@ namespace FonteDeDados {
             private global::System.Data.DataColumn columnCidade;
             
             private global::System.Data.DataColumn columnEstado;
+            
+            private global::System.Data.DataColumn columnEnderecoId;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1305,6 +1298,14 @@ namespace FonteDeDados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn EnderecoIdColumn {
+                get {
+                    return this.columnEnderecoId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1349,7 +1350,8 @@ namespace FonteDeDados {
                         Complemento,
                         Bairro,
                         Cidade,
-                        Estado};
+                        Estado,
+                        null};
                 rowEnderecoesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEnderecoesRow);
                 return rowEnderecoesRow;
@@ -1357,9 +1359,9 @@ namespace FonteDeDados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EnderecoesRow FindByCep(string Cep) {
+            public EnderecoesRow FindByEnderecoId(int EnderecoId) {
                 return ((EnderecoesRow)(this.Rows.Find(new object[] {
-                            Cep})));
+                            EnderecoId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1386,6 +1388,7 @@ namespace FonteDeDados {
                 this.columnBairro = base.Columns["Bairro"];
                 this.columnCidade = base.Columns["Cidade"];
                 this.columnEstado = base.Columns["Estado"];
+                this.columnEnderecoId = base.Columns["EnderecoId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1405,10 +1408,10 @@ namespace FonteDeDados {
                 base.Columns.Add(this.columnCidade);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
+                this.columnEnderecoId = new global::System.Data.DataColumn("EnderecoId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnderecoId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCep}, true));
-                this.columnCep.AllowDBNull = false;
-                this.columnCep.Unique = true;
+                                this.columnEnderecoId}, true));
                 this.columnCep.MaxLength = 9;
                 this.columnLogradouro.MaxLength = 100;
                 this.columnNumero.MaxLength = 10;
@@ -1416,6 +1419,12 @@ namespace FonteDeDados {
                 this.columnBairro.MaxLength = 50;
                 this.columnCidade.MaxLength = 50;
                 this.columnEstado.MaxLength = 50;
+                this.columnEnderecoId.AutoIncrement = true;
+                this.columnEnderecoId.AutoIncrementSeed = -1;
+                this.columnEnderecoId.AutoIncrementStep = -1;
+                this.columnEnderecoId.AllowDBNull = false;
+                this.columnEnderecoId.ReadOnly = true;
+                this.columnEnderecoId.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1483,7 +1492,7 @@ namespace FonteDeDados {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+                _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1820,7 +1829,7 @@ namespace FonteDeDados {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+                _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2109,7 +2118,7 @@ namespace FonteDeDados {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ProjetoMonetaryBankDB ds = new ProjetoMonetaryBankDB();
+                _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet ds = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2447,17 +2456,6 @@ namespace FonteDeDados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EnderecoesRow EnderecoesRow {
-                get {
-                    return ((EnderecoesRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Clientes_dbo.Enderecoes_CEP"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.Clientes_dbo.Enderecoes_CEP"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoginsRow LoginsRow {
                 get {
                     return ((LoginsRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.Clientes_dbo.Logins_CPF"])));
@@ -2606,7 +2604,12 @@ namespace FonteDeDados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Cep {
                 get {
-                    return ((string)(this[this.tableEnderecoes.CepColumn]));
+                    try {
+                        return ((string)(this[this.tableEnderecoes.CepColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Cep\' na tabela \'Enderecoes\' é DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableEnderecoes.CepColumn] = value;
@@ -2711,6 +2714,29 @@ namespace FonteDeDados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int EnderecoId {
+                get {
+                    return ((int)(this[this.tableEnderecoes.EnderecoIdColumn]));
+                }
+                set {
+                    this[this.tableEnderecoes.EnderecoIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCepNull() {
+                return this.IsNull(this.tableEnderecoes.CepColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCepNull() {
+                this[this.tableEnderecoes.CepColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsLogradouroNull() {
                 return this.IsNull(this.tableEnderecoes.LogradouroColumn);
             }
@@ -2779,17 +2805,6 @@ namespace FonteDeDados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableEnderecoes.EstadoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientesRow[] GetClientesRows() {
-                if ((this.Table.ChildRelations["FK_dbo.Clientes_dbo.Enderecoes_CEP"] == null)) {
-                    return new ClientesRow[0];
-                }
-                else {
-                    return ((ClientesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.Clientes_dbo.Enderecoes_CEP"])));
-                }
             }
         }
         
@@ -3172,7 +3187,7 @@ namespace FonteDeDados {
         }
     }
 }
-namespace FonteDeDados.ProjetoMonetaryBankDBTableAdapters {
+namespace FonteDeDados._FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSetTableAdapters {
     
     
     /// <summary>
@@ -3337,7 +3352,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.ProjetoMonetaryBankConnectionString;
+            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.FonteDeDados_MonetaryBank;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3355,7 +3370,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjetoMonetaryBankDB.@__MigrationHistoryDataTable dataTable) {
+        public virtual int Fill(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.@__MigrationHistoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3368,9 +3383,9 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjetoMonetaryBankDB.@__MigrationHistoryDataTable GetData() {
+        public virtual _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.@__MigrationHistoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjetoMonetaryBankDB.@__MigrationHistoryDataTable dataTable = new ProjetoMonetaryBankDB.@__MigrationHistoryDataTable();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.@__MigrationHistoryDataTable dataTable = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.@__MigrationHistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3378,14 +3393,14 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB.@__MigrationHistoryDataTable dataTable) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.@__MigrationHistoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB dataSet) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             return this.Adapter.Update(dataSet, "__MigrationHistory");
         }
         
@@ -3792,7 +3807,7 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.ProjetoMonetaryBankConnectionString;
+            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.FonteDeDados_MonetaryBank;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3810,7 +3825,7 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjetoMonetaryBankDB.ClientesDataTable dataTable) {
+        public virtual int Fill(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.ClientesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3823,9 +3838,9 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjetoMonetaryBankDB.ClientesDataTable GetData() {
+        public virtual _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.ClientesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjetoMonetaryBankDB.ClientesDataTable dataTable = new ProjetoMonetaryBankDB.ClientesDataTable();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.ClientesDataTable dataTable = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.ClientesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3833,14 +3848,14 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB.ClientesDataTable dataTable) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.ClientesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB dataSet) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Clientes");
         }
         
@@ -4430,11 +4445,13 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
             tableMapping.ColumnMappings.Add("Bairro", "Bairro");
             tableMapping.ColumnMappings.Add("Cidade", "Cidade");
             tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("EnderecoId", "EnderecoId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Enderecoes] WHERE (([Cep] = @Original_Cep) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Enderecoes] WHERE (((@IsNull_Cep = 1 AND [Cep] IS NULL) OR ([Cep] = @Original_Cep)) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([EnderecoId] = @Original_EnderecoId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cep", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cep", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Logradouro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Logradouro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4448,10 +4465,11 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cidade", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EnderecoId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EnderecoId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Enderecoes] ([Cep], [Logradouro], [Numero], [Complemento], [Bairro], [Cidade], [Estado]) VALUES (@Cep, @Logradouro, @Numero, @Complemento, @Bairro, @Cidade, @Estado);
-SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderecoes WHERE (Cep = @Cep)";
+SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId FROM Enderecoes WHERE (EnderecoId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cep", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Logradouro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4462,8 +4480,8 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Enderecoes] SET [Cep] = @Cep, [Logradouro] = @Logradouro, [Numero] = @Numero, [Complemento] = @Complemento, [Bairro] = @Bairro, [Cidade] = @Cidade, [Estado] = @Estado WHERE (([Cep] = @Original_Cep) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)));
-SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderecoes WHERE (Cep = @Cep)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Enderecoes] SET [Cep] = @Cep, [Logradouro] = @Logradouro, [Numero] = @Numero, [Complemento] = @Complemento, [Bairro] = @Bairro, [Cidade] = @Cidade, [Estado] = @Estado WHERE (((@IsNull_Cep = 1 AND [Cep] IS NULL) OR ([Cep] = @Original_Cep)) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([EnderecoId] = @Original_EnderecoId));
+SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId FROM Enderecoes WHERE (EnderecoId = @EnderecoId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cep", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Logradouro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4472,6 +4490,7 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Bairro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Bairro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cidade", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cidade", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cep", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cep", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cep", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Logradouro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Logradouro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Logradouro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4485,13 +4504,15 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cidade", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cidade", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EnderecoId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EnderecoId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EnderecoId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "EnderecoId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.ProjetoMonetaryBankConnectionString;
+            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.FonteDeDados_MonetaryBank;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4500,8 +4521,8 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM dbo.Ende" +
-                "recoes";
+            this._commandCollection[0].CommandText = "SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId F" +
+                "ROM dbo.Enderecoes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4509,7 +4530,7 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjetoMonetaryBankDB.EnderecoesDataTable dataTable) {
+        public virtual int Fill(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.EnderecoesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4522,9 +4543,9 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjetoMonetaryBankDB.EnderecoesDataTable GetData() {
+        public virtual _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.EnderecoesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjetoMonetaryBankDB.EnderecoesDataTable dataTable = new ProjetoMonetaryBankDB.EnderecoesDataTable();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.EnderecoesDataTable dataTable = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.EnderecoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4532,14 +4553,14 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB.EnderecoesDataTable dataTable) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.EnderecoesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB dataSet) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Enderecoes");
         }
         
@@ -4562,61 +4583,64 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Cep, string Original_Logradouro, string Original_Numero, string Original_Complemento, string Original_Bairro, string Original_Cidade, string Original_Estado) {
+        public virtual int Delete(string Original_Cep, string Original_Logradouro, string Original_Numero, string Original_Complemento, string Original_Bairro, string Original_Cidade, string Original_Estado, int Original_EnderecoId) {
             if ((Original_Cep == null)) {
-                throw new global::System.ArgumentNullException("Original_Cep");
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Cep));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Cep));
             }
             if ((Original_Logradouro == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Logradouro));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Logradouro));
             }
             if ((Original_Numero == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Numero));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Numero));
             }
             if ((Original_Complemento == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Complemento));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Complemento));
             }
             if ((Original_Bairro == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Bairro));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Bairro));
             }
             if ((Original_Cidade == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Cidade));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Cidade));
             }
             if ((Original_Estado == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Estado));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_Estado));
             }
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_EnderecoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4639,7 +4663,7 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string Cep, string Logradouro, string Numero, string Complemento, string Bairro, string Cidade, string Estado) {
             if ((Cep == null)) {
-                throw new global::System.ArgumentNullException("Cep");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Cep));
@@ -4700,9 +4724,25 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Cep, string Logradouro, string Numero, string Complemento, string Bairro, string Cidade, string Estado, string Original_Cep, string Original_Logradouro, string Original_Numero, string Original_Complemento, string Original_Bairro, string Original_Cidade, string Original_Estado) {
+        public virtual int Update(
+                    string Cep, 
+                    string Logradouro, 
+                    string Numero, 
+                    string Complemento, 
+                    string Bairro, 
+                    string Cidade, 
+                    string Estado, 
+                    string Original_Cep, 
+                    string Original_Logradouro, 
+                    string Original_Numero, 
+                    string Original_Complemento, 
+                    string Original_Bairro, 
+                    string Original_Cidade, 
+                    string Original_Estado, 
+                    int Original_EnderecoId, 
+                    int EnderecoId) {
             if ((Cep == null)) {
-                throw new global::System.ArgumentNullException("Cep");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Cep));
@@ -4744,59 +4784,63 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Estado));
             }
             if ((Original_Cep == null)) {
-                throw new global::System.ArgumentNullException("Original_Cep");
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Cep));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Cep));
             }
             if ((Original_Logradouro == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Logradouro));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Logradouro));
             }
             if ((Original_Numero == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Numero));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Numero));
             }
             if ((Original_Complemento == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Complemento));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Complemento));
             }
             if ((Original_Bairro == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Bairro));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Bairro));
             }
             if ((Original_Cidade == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Cidade));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Cidade));
             }
             if ((Original_Estado == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Estado));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Estado));
             }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_EnderecoId));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(EnderecoId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4817,8 +4861,8 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Logradouro, string Numero, string Complemento, string Bairro, string Cidade, string Estado, string Original_Cep, string Original_Logradouro, string Original_Numero, string Original_Complemento, string Original_Bairro, string Original_Cidade, string Original_Estado) {
-            return this.Update(Original_Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Original_Cep, Original_Logradouro, Original_Numero, Original_Complemento, Original_Bairro, Original_Cidade, Original_Estado);
+        public virtual int Update(string Cep, string Logradouro, string Numero, string Complemento, string Bairro, string Cidade, string Estado, string Original_Cep, string Original_Logradouro, string Original_Numero, string Original_Complemento, string Original_Bairro, string Original_Cidade, string Original_Estado, int Original_EnderecoId) {
+            return this.Update(Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, Original_Cep, Original_Logradouro, Original_Numero, Original_Complemento, Original_Bairro, Original_Cidade, Original_Estado, Original_EnderecoId, Original_EnderecoId);
         }
     }
     
@@ -4995,7 +5039,7 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.ProjetoMonetaryBankConnectionString;
+            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.FonteDeDados_MonetaryBank;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5013,7 +5057,7 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjetoMonetaryBankDB.HistoricoesDataTable dataTable) {
+        public virtual int Fill(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.HistoricoesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5026,9 +5070,9 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjetoMonetaryBankDB.HistoricoesDataTable GetData() {
+        public virtual _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.HistoricoesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjetoMonetaryBankDB.HistoricoesDataTable dataTable = new ProjetoMonetaryBankDB.HistoricoesDataTable();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.HistoricoesDataTable dataTable = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.HistoricoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5036,14 +5080,14 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB.HistoricoesDataTable dataTable) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.HistoricoesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB dataSet) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Historicoes");
         }
         
@@ -5374,7 +5418,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.ProjetoMonetaryBankConnectionString;
+            this._connection.ConnectionString = global::FonteDeDados.Properties.Settings.Default.FonteDeDados_MonetaryBank;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5391,7 +5435,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(ProjetoMonetaryBankDB.LoginsDataTable dataTable) {
+        public virtual int Fill(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.LoginsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5404,9 +5448,9 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ProjetoMonetaryBankDB.LoginsDataTable GetData() {
+        public virtual _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.LoginsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            ProjetoMonetaryBankDB.LoginsDataTable dataTable = new ProjetoMonetaryBankDB.LoginsDataTable();
+            _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.LoginsDataTable dataTable = new _FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.LoginsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5414,14 +5458,14 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB.LoginsDataTable dataTable) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.LoginsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(ProjetoMonetaryBankDB dataSet) {
+        public virtual int Update(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Logins");
         }
         
@@ -5751,17 +5795,8 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(ProjetoMonetaryBankDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._enderecoesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._enderecoesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._loginsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Logins.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -5789,6 +5824,15 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._enderecoesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._enderecoesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._historicoesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Historicoes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -5806,16 +5850,8 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(ProjetoMonetaryBankDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._enderecoesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._enderecoesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._loginsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Logins.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -5840,6 +5876,14 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._enderecoesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._enderecoesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._historicoesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Historicoes.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -5856,13 +5900,21 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(ProjetoMonetaryBankDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._historicoesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Historicoes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._historicoesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._enderecoesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._enderecoesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5887,14 +5939,6 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._loginsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._enderecoesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Enderecoes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._enderecoesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5930,7 +5974,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(ProjetoMonetaryBankDB dataSet) {
+        public virtual int UpdateAll(_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

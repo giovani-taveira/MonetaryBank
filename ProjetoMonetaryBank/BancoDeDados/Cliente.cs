@@ -15,6 +15,7 @@ namespace Forms.BancoDeDados
         public string CPF { get; set; }
         [ForeignKey("CPF")]
         public virtual Login cpf { get; set; }
+
         [StringLength(50)]
         public string Nome { get; set; }
         [StringLength(1)]
@@ -35,8 +36,7 @@ namespace Forms.BancoDeDados
         public bool NaoConstaPai { get; set; }
         [StringLength(9)]
         public string CEP { get; set; }
-        //[ForeignKey("CEP")]
-        //public virtual Endereco Cep { get; set; }
+
         [StringLength(50)]
         public string Profissao { get; set; }
         [Column(TypeName = "Money")]

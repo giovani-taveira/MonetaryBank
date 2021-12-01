@@ -38,6 +38,8 @@ namespace ProjetoMonetaryBank.Principal
             Tsm_Sair.Text = "Sair";
         }
 
+
+
         public Frm_Principal(string Nome, decimal Saldo, string Cpf, string Senha, string CEP) : this()
         {
             Lbl_NomeUsuario.Text = "Olá " + Nome;

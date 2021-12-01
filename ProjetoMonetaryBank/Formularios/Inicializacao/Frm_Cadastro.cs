@@ -177,10 +177,10 @@ namespace ProjetoMonetaryBank.Inicializacao
                         CadastroConcluido = true;
                     }
                 }
-                catch(System.Exception Ex)
-                {
-                    MessageBox.Show("Ocorreu um erro ao tentar se cadastrar", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //catch(System.Exception Ex)
+                //{
+                //    MessageBox.Show("Ocorreu um erro ao tentar se cadastrar", "Monetary Bank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
                 finally
                 {
                     if(CadastroConcluido == true)

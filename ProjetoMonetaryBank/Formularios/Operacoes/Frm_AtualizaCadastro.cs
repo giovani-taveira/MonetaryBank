@@ -18,6 +18,7 @@ namespace Forms.Formularios.Operacoes
     public partial class Frm_AtualizaCadastro : Form
     {
         string CPF;
+
         public Frm_AtualizaCadastro()
         {
             InitializeComponent();

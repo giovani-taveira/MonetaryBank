@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="ProjetoMonetaryBankDB" targetNamespace="http://tempuri.org/ProjetoMonetaryBankDB.xsd" xmlns:mstns="http://tempuri.org/ProjetoMonetaryBankDB.xsd" xmlns="http://tempuri.org/ProjetoMonetaryBankDB.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet" targetNamespace="http://tempuri.org/_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.xsd" xmlns:mstns="http://tempuri.org/_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.xsd" xmlns="http://tempuri.org/_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProjetoMonetaryBankConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProjetoMonetaryBankConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FonteDeDados.Properties.Settings.GlobalReference.Default.ProjetoMonetaryBankConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FonteDeDados_MonetaryBank" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FonteDeDados_MonetaryBank (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FonteDeDados.Properties.Settings.GlobalReference.Default.FonteDeDados_MonetaryBank" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="__MigrationHistoryTableAdapter" GeneratorDataComponentClassName="__MigrationHistoryTableAdapter" Name="__MigrationHistory" UserDataComponentName="__MigrationHistoryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjetoMonetaryBankConnectionString (Settings)" DbObjectName="ProjetoMonetaryBank.dbo.__MigrationHistory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FonteDeDados_MonetaryBank (Settings)" DbObjectName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.__MigrationHistory" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[__MigrationHistory] WHERE (([MigrationId] = @Original_MigrationId) AND ([ContextKey] = @Original_ContextKey) AND ([ProductVersion] = @Original_ProductVersion))</CommandText>
@@ -65,7 +65,7 @@ SELECT MigrationId, ContextKey, Model, ProductVersion FROM __MigrationHistory WH
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientesTableAdapter" GeneratorDataComponentClassName="ClientesTableAdapter" Name="Clientes" UserDataComponentName="ClientesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjetoMonetaryBankConnectionString (Settings)" DbObjectName="ProjetoMonetaryBank.dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FonteDeDados_MonetaryBank (Settings)" DbObjectName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Clientes] WHERE (([CPF] = @Original_CPF) AND ((@IsNull_Nome = 1 AND [Nome] IS NULL) OR ([Nome] = @Original_Nome)) AND ((@IsNull_Sexo = 1 AND [Sexo] IS NULL) OR ([Sexo] = @Original_Sexo)) AND ((@IsNull_RG = 1 AND [RG] IS NULL) OR ([RG] = @Original_RG)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Nacimento = 1 AND [Nacimento] IS NULL) OR ([Nacimento] = @Original_Nacimento)) AND ((@IsNull_Telefone = 1 AND [Telefone] IS NULL) OR ([Telefone] = @Original_Telefone)) AND ((@IsNull_NomeMae = 1 AND [NomeMae] IS NULL) OR ([NomeMae] = @Original_NomeMae)) AND ([NaoConstaMae] = @Original_NaoConstaMae) AND ((@IsNull_NomePai = 1 AND [NomePai] IS NULL) OR ([NomePai] = @Original_NomePai)) AND ([NaoConstaPai] = @Original_NaoConstaPai) AND ((@IsNull_CEP = 1 AND [CEP] IS NULL) OR ([CEP] = @Original_CEP)) AND ((@IsNull_Profissao = 1 AND [Profissao] IS NULL) OR ([Profissao] = @Original_Profissao)) AND ([Renda] = @Original_Renda))</CommandText>
@@ -193,12 +193,13 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EnderecoesTableAdapter" GeneratorDataComponentClassName="EnderecoesTableAdapter" Name="Enderecoes" UserDataComponentName="EnderecoesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjetoMonetaryBankConnectionString (Settings)" DbObjectName="ProjetoMonetaryBank.dbo.Enderecoes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FonteDeDados_MonetaryBank (Settings)" DbObjectName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Enderecoes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Enderecoes] WHERE (([Cep] = @Original_Cep) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Enderecoes] WHERE (((@IsNull_Cep = 1 AND [Cep] IS NULL) OR ([Cep] = @Original_Cep)) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([EnderecoId] = @Original_EnderecoId))</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Cep" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Logradouro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Logradouro" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Numero" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Numero" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -211,15 +212,16 @@ SELECT CPF, Nome, Sexo, RG, Email, Nacimento, Telefone, NomeMae, NaoConstaMae, N
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cidade" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cidade" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Estado" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EnderecoId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EnderecoId" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Enderecoes] ([Cep], [Logradouro], [Numero], [Complemento], [Bairro], [Cidade], [Estado]) VALUES (@Cep, @Logradouro, @Numero, @Complemento, @Bairro, @Cidade, @Estado);
-SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderecoes WHERE (Cep = @Cep)</CommandText>
+SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId FROM Enderecoes WHERE (EnderecoId = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Logradouro" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Numero" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Numero" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Complemento" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Complemento" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -231,23 +233,24 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM dbo.Enderecoes</CommandText>
+                    <CommandText>SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId FROM dbo.Enderecoes</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Enderecoes] SET [Cep] = @Cep, [Logradouro] = @Logradouro, [Numero] = @Numero, [Complemento] = @Complemento, [Bairro] = @Bairro, [Cidade] = @Cidade, [Estado] = @Estado WHERE (([Cep] = @Original_Cep) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)));
-SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderecoes WHERE (Cep = @Cep)</CommandText>
+                    <CommandText>UPDATE [dbo].[Enderecoes] SET [Cep] = @Cep, [Logradouro] = @Logradouro, [Numero] = @Numero, [Complemento] = @Complemento, [Bairro] = @Bairro, [Cidade] = @Cidade, [Estado] = @Estado WHERE (((@IsNull_Cep = 1 AND [Cep] IS NULL) OR ([Cep] = @Original_Cep)) AND ((@IsNull_Logradouro = 1 AND [Logradouro] IS NULL) OR ([Logradouro] = @Original_Logradouro)) AND ((@IsNull_Numero = 1 AND [Numero] IS NULL) OR ([Numero] = @Original_Numero)) AND ((@IsNull_Complemento = 1 AND [Complemento] IS NULL) OR ([Complemento] = @Original_Complemento)) AND ((@IsNull_Bairro = 1 AND [Bairro] IS NULL) OR ([Bairro] = @Original_Bairro)) AND ((@IsNull_Cidade = 1 AND [Cidade] IS NULL) OR ([Cidade] = @Original_Cidade)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([EnderecoId] = @Original_EnderecoId));
+SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, EnderecoId FROM Enderecoes WHERE (EnderecoId = @EnderecoId)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Logradouro" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Numero" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Numero" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Complemento" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Complemento" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Bairro" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Bairro" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cidade" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cidade" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Estado" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Cep" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cep" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cep" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Logradouro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Logradouro" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Logradouro" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Numero" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Numero" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -260,6 +263,8 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cidade" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cidade" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Estado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Estado" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EnderecoId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EnderecoId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="EnderecoId" ColumnName="EnderecoId" DataSourceName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Enderecoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@EnderecoId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="EnderecoId" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -273,12 +278,13 @@ SELECT Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado FROM Enderec
               <Mapping SourceColumn="Bairro" DataSetColumn="Bairro" />
               <Mapping SourceColumn="Cidade" DataSetColumn="Cidade" />
               <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="EnderecoId" DataSetColumn="EnderecoId" />
             </Mappings>
             <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HistoricoesTableAdapter" GeneratorDataComponentClassName="HistoricoesTableAdapter" Name="Historicoes" UserDataComponentName="HistoricoesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjetoMonetaryBankConnectionString (Settings)" DbObjectName="ProjetoMonetaryBank.dbo.Historicoes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FonteDeDados_MonetaryBank (Settings)" DbObjectName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Historicoes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Historicoes] WHERE (([Codigo] = @Original_Codigo) AND ((@IsNull_Cpf = 1 AND [Cpf] IS NULL) OR ([Cpf] = @Original_Cpf)) AND ((@IsNull_Operacao = 1 AND [Operacao] IS NULL) OR ([Operacao] = @Original_Operacao)) AND ([Valor] = @Original_Valor) AND ([Data_Operacao] = @Original_Data_Operacao))</CommandText>
@@ -329,7 +335,7 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Operacao" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Operacao" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_Valor" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Valor" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Data_Operacao" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Data_Operacao" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Codigo" ColumnName="Codigo" DataSourceName="ProjetoMonetaryBank.dbo.Historicoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Codigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Codigo" ColumnName="Codigo" DataSourceName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Historicoes" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Codigo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Codigo" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -347,7 +353,7 @@ SELECT Codigo, Cpf, Operacao, Valor, NomeRecebedor, Data_Operacao FROM Historico
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LoginsTableAdapter" GeneratorDataComponentClassName="LoginsTableAdapter" Name="Logins" UserDataComponentName="LoginsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProjetoMonetaryBankConnectionString (Settings)" DbObjectName="ProjetoMonetaryBank.dbo.Logins" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FonteDeDados_MonetaryBank (Settings)" DbObjectName="[FonteDeDados.Properties.Settings.ProjetoMonetaryBankConnectionString].dbo.Logins" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Logins] WHERE (([cpf] = @Original_cpf) AND ((@IsNull_Senha = 1 AND [Senha] IS NULL) OR ([Senha] = @Original_Senha)) AND ([Saldo] = @Original_Saldo))</CommandText>
@@ -405,7 +411,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ProjetoMonetaryBankDB" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ProjetoMonetaryBankDB" msprop:Generator_UserDSName="ProjetoMonetaryBankDB">
+  <xs:element name="_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet" msprop:Generator_UserDSName="_FonteDeDados_Properties_Settings_ProjetoMonetaryBankConnectionStringDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="__MigrationHistory" msprop:Generator_TableClassName="__MigrationHistoryDataTable" msprop:Generator_TableVarName="table__MigrationHistory" msprop:Generator_TablePropName="__MigrationHistory" msprop:Generator_RowDeletingName="__MigrationHistoryRowDeleting" msprop:Generator_RowChangingName="__MigrationHistoryRowChanging" msprop:Generator_RowEvHandlerName="__MigrationHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="__MigrationHistoryRowDeleted" msprop:Generator_UserTableName="__MigrationHistory" msprop:Generator_RowChangedName="__MigrationHistoryRowChanged" msprop:Generator_RowEvArgName="__MigrationHistoryRowChangeEvent" msprop:Generator_RowClassName="__MigrationHistoryRow">
@@ -525,7 +531,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)</CommandText>
         <xs:element name="Enderecoes" msprop:Generator_TableClassName="EnderecoesDataTable" msprop:Generator_TableVarName="tableEnderecoes" msprop:Generator_TablePropName="Enderecoes" msprop:Generator_RowDeletingName="EnderecoesRowDeleting" msprop:Generator_RowChangingName="EnderecoesRowChanging" msprop:Generator_RowEvHandlerName="EnderecoesRowChangeEventHandler" msprop:Generator_RowDeletedName="EnderecoesRowDeleted" msprop:Generator_UserTableName="Enderecoes" msprop:Generator_RowChangedName="EnderecoesRowChanged" msprop:Generator_RowEvArgName="EnderecoesRowChangeEvent" msprop:Generator_RowClassName="EnderecoesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Cep" msprop:Generator_ColumnVarNameInTable="columnCep" msprop:Generator_ColumnPropNameInRow="Cep" msprop:Generator_ColumnPropNameInTable="CepColumn" msprop:Generator_UserColumnName="Cep">
+              <xs:element name="Cep" msprop:Generator_ColumnVarNameInTable="columnCep" msprop:Generator_ColumnPropNameInRow="Cep" msprop:Generator_ColumnPropNameInTable="CepColumn" msprop:Generator_UserColumnName="Cep" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="9" />
@@ -574,6 +580,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="EnderecoId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEnderecoId" msprop:Generator_ColumnPropNameInRow="EnderecoId" msprop:Generator_ColumnPropNameInTable="EnderecoIdColumn" msprop:Generator_UserColumnName="EnderecoId" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -641,7 +648,7 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)</CommandText>
     </xs:unique>
     <xs:unique name="Enderecoes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Enderecoes" />
-      <xs:field xpath="mstns:Cep" />
+      <xs:field xpath="mstns:EnderecoId" />
     </xs:unique>
     <xs:unique name="Historicoes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Historicoes" />
@@ -654,7 +661,6 @@ SELECT cpf, Senha, Saldo FROM Logins WHERE (cpf = @cpf)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_dbo.Clientes_dbo.Enderecoes_CEP" msdata:parent="Enderecoes" msdata:child="Clientes" msdata:parentkey="Cep" msdata:childkey="CEP" msprop:Generator_UserChildTable="Clientes" msprop:Generator_ChildPropName="GetClientesRows" msprop:Generator_UserRelationName="FK_dbo.Clientes_dbo.Enderecoes_CEP" msprop:Generator_RelationVarName="_relationFK_dbo_Clientes_dbo_Enderecoes_CEP" msprop:Generator_UserParentTable="Enderecoes" msprop:Generator_ParentPropName="EnderecoesRow" />
       <msdata:Relationship name="FK_dbo.Clientes_dbo.Logins_CPF" msdata:parent="Logins" msdata:child="Clientes" msdata:parentkey="cpf" msdata:childkey="CPF" msprop:Generator_UserChildTable="Clientes" msprop:Generator_ChildPropName="GetClientesRows" msprop:Generator_UserRelationName="FK_dbo.Clientes_dbo.Logins_CPF" msprop:Generator_RelationVarName="_relationFK_dbo_Clientes_dbo_Logins_CPF" msprop:Generator_UserParentTable="Logins" msprop:Generator_ParentPropName="LoginsRow" />
     </xs:appinfo>
   </xs:annotation>

@@ -1,5 +1,6 @@
 ﻿using Forms.BancoDeDados;
 using ProjetoMonetaryBank.Inicializacao;
+using ProjetoMonetaryBank.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Forms.Formularios.Inicializacao
     public partial class AtualizaSenha : Form
     {
         bool verSenha = false;
+        public static bool FechaFormPrincipal = false;
         public AtualizaSenha()
         {
             InitializeComponent();
@@ -76,6 +78,7 @@ namespace Forms.Formularios.Inicializacao
             }
         }
 
+
         void NovaSenha()
         {
             try
@@ -93,8 +96,6 @@ namespace Forms.Formularios.Inicializacao
                             try
                             {
                                 this.Hide();
-                                Frm_Login f = new Frm_Login();
-                                f.ShowDialog();
                             }
                             finally
                             {
